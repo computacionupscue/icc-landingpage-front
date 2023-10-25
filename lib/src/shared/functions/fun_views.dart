@@ -34,16 +34,7 @@
 //     }
 //   }
 
-//   static Future<bool> Function()? returnHomePanel(homeBloc) {
-//     if (Platform.isIOS) {
-//       return null;
-//     }
-
-//     return () async {
-//       homeBloc.add(const HomeDrawerDestinationSelected(value: 0));
-//       return true;
-//     };
-//   }
+  
 
 //   /// TODO: ERROR: manage muti press OK
 //   static Flushbar<dynamic> showFlushBar({

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart' show GlobalKey, NavigatorState;
 import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/screens/not_found_page.dart';
 
+import 'app_routes_pages.dart';
+
 // PAGES
 import 'package:landing_page/src/login/login.dart';
-
-import 'app_routes_pages.dart';
 
 class AppRouter {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();

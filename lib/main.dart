@@ -8,7 +8,7 @@ Future<void> main() async {
   //TODO: add Enviroment
   // await Environment.initEnvironment();
 
-//TODO: Confin FirebaseCore
+  //TODO: Confin FirebaseCore
   // / Inizializar [Firebase]
   // await Firebase.initializeApp(
   //   options: DefaultFirebaseOptions.currentPlatform,
