@@ -1,61 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:landing_page/app/config/app_config.dart';
 import 'package:landing_page/src/shared/responsive.dart';
+
+import '../bloc/home/home_bloc.dart';
+import 'home_header.dart';
+import 'home_menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Responsive re = Responsive.of(context);
+    return BlocProvider(
+      create: (context) => HomeBloc(),
+      child: const _HomePageView(),
+    );
+  }
+}
 
+class _HomePageView extends StatelessWidget {
+  const _HomePageView();
+
+  @override
+  Widget build(BuildContext context) {
+    Responsive re = Responsive.of(context);
     return Scaffold(
         body: ListView(
       children: [
-        Container(
-            height: re.hp(5),
-            width: re.hp(220),
-            color: AppColors.primaryBlue,
-            child: Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, // Color del texto del botón
-                    textStyle: const TextStyle(
-                        fontFamily: 'Roboto' // Tamaño del texto del botón
-                        ),
-                  ),
-                  child: const Text(
-                    "Modo Oscuro",
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, // Color del texto del botón
-                    textStyle: const TextStyle(
-                        fontFamily: 'Roboto' // Tamaño del texto del botón
-                        ),
-                  ),
-                  child: const Text(
-                    "Fuente",
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, // Color del texto del botón
-                    textStyle: const TextStyle(
-                        fontFamily: 'Roboto' // Tamaño del texto del botón
-                        ),
-                  ),
-                  child: const Text(
-                    "Idioma",
-                  ),
-                ),
-              ],
-            )),
+        Header(re: re),
         Container(
           margin: const EdgeInsets.symmetric(vertical: AppLayoutConst.marginL),
           height: re.hp(15),
@@ -64,80 +37,7 @@ class HomePage extends StatelessWidget {
             AppAssets.upsLogo,
           ),
         ),
-        Container(
-            height: re.hp(5),
-            width: re.hp(220),
-            color: AppColors.primaryBlue,
-            child: Row(
-              children: [
-                Container(
-                    padding:
-                        const EdgeInsets.only(left: AppLayoutConst.marginMenu2),
-                    margin:
-                        const EdgeInsets.only(right: AppLayoutConst.marginMenu),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        foregroundColor:
-                            Colors.white, // Color del texto del botón
-                        textStyle: const TextStyle(
-                            fontFamily: 'Roboto' // Tamaño del texto del botón
-                            ),
-                      ),
-                      child: const Text(
-                        "Directiva",
-                      ),
-                    )),
-                Container(
-                    margin:
-                        const EdgeInsets.only(right: AppLayoutConst.marginMenu),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        foregroundColor:
-                            Colors.white, // Color del texto del botón
-                        textStyle: const TextStyle(
-                            fontFamily: 'Roboto' // Tamaño del texto del botón
-                            ),
-                      ),
-                      child: const Text(
-                        "Malla Curricular",
-                      ),
-                    )),
-                Container(
-                    margin:
-                        const EdgeInsets.only(right: AppLayoutConst.marginMenu),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        foregroundColor:
-                            Colors.white, // Color del texto del botón
-                        textStyle: const TextStyle(
-                            fontFamily: 'Roboto' // Tamaño del texto del botón
-                            ),
-                      ),
-                      child: const Text(
-                        "Grupos ASU",
-                      ),
-                    )),
-                Container(
-                    padding: const EdgeInsets.only(
-                        right: AppLayoutConst.marginMenu2),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        foregroundColor:
-                            Colors.white, // Color del texto del botón
-                        textStyle: const TextStyle(
-                            fontFamily: 'Roboto' // Tamaño del texto del botón
-                            ),
-                      ),
-                      child: const Text(
-                        "Proyectos",
-                      ),
-                    )),
-              ],
-            )),
+        MenuHome(re: re),
         Container(
           height: re.hp(50),
           width: re.hp(220),
@@ -346,12 +246,19 @@ class HomePage extends StatelessWidget {
                               .cover, // Puedes ajustar esto según tus necesidades
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: const Text("ASU\nRECICLA\nUPS",
-                            style:
-                                TextStyle(fontSize: 20, fontFamily: "Roboto"),
-                            textAlign: TextAlign.center),
+                      GestureDetector(
+                        onTap: () {
+                          final homebloc = context.read<HomeBloc>();
+                          homebloc.add(const GetDataEvent(
+                              valor: 'DEsde GestureDEtector'));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: const Text("ASU\nRECICLA\nUPS",
+                              style:
+                                  TextStyle(fontSize: 20, fontFamily: "Roboto"),
+                              textAlign: TextAlign.center),
+                        ),
                       ),
                     ],
                   )),
