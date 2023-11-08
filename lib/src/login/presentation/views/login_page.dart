@@ -15,15 +15,113 @@ class LoginPage extends StatelessWidget {
           children: [
             Container(
               margin: const EdgeInsets.only(bottom: AppLayoutConst.marginM),
-              height: 100,
-              width: 100,
+              height: re.hp(15),
+              width: re.hp(220),
               color: AppColors.primaryBlue,
+              padding: const EdgeInsets.all(AppLayoutConst.marginL),
+              child: FittedBox(
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Image.asset(
+                    AppAssets.upsLogoWhite,
+                    height: re.hp(10),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(30.0),
+                  ),
+                  Text(
+                    'Acompañamiento Academico',
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(color: Colors.white, fontSize: 30),
+                  ),
+                ]),
+              ),
             ),
-            Text('Hola Mundo LoginPage', style: TextStyle(fontSize: re.hp(5))),
-            Image.asset(
-              AppAssets.upsLogo,
-              height: re.hp(10),
-            )
+            const SizedBox(height: 15),
+            Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: AppLayoutConst.marginXL),
+                  child: Text(
+                    "Bienvenido a la Consejería Académica",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(color: AppColors.primaryBlue, fontSize: 30),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: AppLayoutConst.marginXL,
+                      vertical: AppLayoutConst.marginXL),
+                  child: Text(
+                    "En el caso de tener alguna dificultad, te podemos ayudar, por favor ingresa tu numero de cedula",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 19.5),
+                  ),
+                ),
+                Container(
+                    width: 585,
+                    margin:
+                        const EdgeInsets.only(bottom: AppLayoutConst.marginM),
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.email_outlined),
+                        hintText: "Correo",
+                        fillColor: Colors.white,
+                        filled: true,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black, // Color del borde
+                            width: 2.0, // Ancho del borde
+                          ),
+                        ),
+                      ),
+                    )),
+                Container(
+                    width: 585,
+                    margin:
+                        const EdgeInsets.only(bottom: AppLayoutConst.marginS),
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.email_outlined),
+                        hintText: "Cedula",
+                        fillColor: Colors.white,
+                        filled: true,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black, // Color del borde
+                            width: 2.0, // Ancho del borde
+                          ),
+                        ),
+                      ),
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(top: AppLayoutConst.marginL),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primaryBlueMaterial,
+                        foregroundColor: Colors.black,
+                        fixedSize: const Size(250, 40)),
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, '/second'); // Navegar a la ruta '/second
+                    },
+                    child: const Text("Siguiente",
+                        style: TextStyle(
+                            color: Colors.white,
+                            backgroundColor: AppColors.primaryBlueMaterial,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

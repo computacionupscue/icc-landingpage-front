@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:landing_page/src/homePage/homePage.dart';
+import 'package:landing_page/src/login/presentation/views/login_page.dart';
 
 import '../../config/app_config.dart';
 import '../../config/router/app_router.dart';
@@ -10,7 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp( //AQUI IBA .router
+      initialRoute: '/', // Ruta inicial
+      routes: {
+        '/': (context) => LoginPage(), // Ruta principal
+        '/second': (context) => HomePage(), // Otra ruta
+      },
       //TODO: ajustar segun varibale de entorno
       // debugShowCheckedModeBanner: !Environment.appProd,
 
@@ -27,7 +34,7 @@ class MyApp extends StatelessWidget {
       //     RepositoryProvider.of<GlobalKey<ScaffoldMessengerState>>(context),
 
       title: title,
-      routerConfig: AppRouter.router,
+      // routerConfig: AppRouter.router, ESTO NO ESTABA COMENTADO
 
       // TODO: config theme
       // theme:  AppTheme.light,

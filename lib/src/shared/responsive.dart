@@ -108,6 +108,10 @@ class AppLayoutConst {
   /// Margin XL = 32.0
   static const double marginXL = 32;
 
+  static const double marginMenu = 250;
+
+  static const double marginMenu2 = 170;
+
   // Padding
   /// Padding Zero = 0.0
   static const double paddingZero = 0;
