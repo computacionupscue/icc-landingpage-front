@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/app/config/router/app_routes_assets.dart';
-import 'package:landing_page/app/config/theme/app_colors.dart';
 
+class DirectivaPage extends StatelessWidget {
+  const DirectivaPage({super.key});
 
-import 'package:landing_page/src/shared/responsive.dart';
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text("Pagina Directiva"),
+      ),
+    );
+  }
+}
+/*
+class FormularioPage extends StatelessWidget {
+  const FormularioPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
-
     return Scaffold(
       body: Center(
         child: Column(
@@ -34,7 +41,7 @@ class LoginPage extends StatelessWidget {
                       padding: EdgeInsets.all(30.0),
                     ),
                     Text(
-                      'Acompañamiento Academico',
+                      'Formulario de Registro',
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!
@@ -44,7 +51,6 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 15),
             Column(
               children: [
                 Container(
@@ -71,7 +77,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    width: re.hp(78),
+                    width: 585,
                     margin:
                         const EdgeInsets.only(bottom: AppLayoutConst.marginM),
                     child: const TextField(
@@ -89,7 +95,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     )),
                 Container(
-                    width: re.hp(78),
+                    width: 585,
                     margin:
                         const EdgeInsets.only(bottom: AppLayoutConst.marginS),
                     child: const TextField(
@@ -113,10 +119,7 @@ class LoginPage extends StatelessWidget {
                         backgroundColor: AppColors.primaryBlueMaterial,
                         foregroundColor: Colors.black,
                         fixedSize: const Size(250, 40)),
-                    onPressed: () {
-                      Navigator.pushNamed(
-                      context, '/home');
-                    },
+                    onPressed: () {},
                     child: const Text("Siguiente",
                         style: TextStyle(
                             color: Colors.white,
@@ -126,12 +129,11 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
+*/

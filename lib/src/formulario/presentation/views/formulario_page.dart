@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/app/config/router/app_routes_assets.dart';
-import 'package:landing_page/app/config/theme/app_colors.dart';
-
-
 import 'package:landing_page/src/shared/responsive.dart';
+import 'package:landing_page/app/config/app_config.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class FormularioPage extends StatelessWidget {
+  const FormularioPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
-
     return Scaffold(
       body: Center(
         child: Column(
@@ -24,7 +20,7 @@ class LoginPage extends StatelessWidget {
               padding: const EdgeInsets.all(AppLayoutConst.marginL),
               child: FittedBox(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center, 
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
                       AppAssets.upsLogoWhite,
@@ -34,7 +30,7 @@ class LoginPage extends StatelessWidget {
                       padding: EdgeInsets.all(30.0),
                     ),
                     Text(
-                      'Acompañamiento Academico',
+                      'Formulario de Registro',
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!
@@ -51,7 +47,7 @@ class LoginPage extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(
                       horizontal: AppLayoutConst.marginXL),
                   child: Text(
-                    "Bienvenido a la Consejería Académica",
+                    "Bienvenido a la Carrera de Computacion",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -63,7 +59,7 @@ class LoginPage extends StatelessWidget {
                       horizontal: AppLayoutConst.marginXL,
                       vertical: AppLayoutConst.marginXL),
                   child: Text(
-                    "En el caso de tener alguna dificultad, te podemos ayudar, por favor ingresa tu numero de cedula",
+                    "Aqui puedes tener mas informacion sobre la carrera, inscribete con tu correo y tu numero de cedula",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -71,7 +67,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    width: re.hp(78),
+                    width: 585,
                     margin:
                         const EdgeInsets.only(bottom: AppLayoutConst.marginM),
                     child: const TextField(
@@ -89,7 +85,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     )),
                 Container(
-                    width: re.hp(78),
+                    width: 585,
                     margin:
                         const EdgeInsets.only(bottom: AppLayoutConst.marginS),
                     child: const TextField(
@@ -113,10 +109,7 @@ class LoginPage extends StatelessWidget {
                         backgroundColor: AppColors.primaryBlueMaterial,
                         foregroundColor: Colors.black,
                         fixedSize: const Size(250, 40)),
-                    onPressed: () {
-                      Navigator.pushNamed(
-                      context, '/home');
-                    },
+                    onPressed: () {},
                     child: const Text("Siguiente",
                         style: TextStyle(
                             color: Colors.white,
@@ -126,12 +119,10 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-

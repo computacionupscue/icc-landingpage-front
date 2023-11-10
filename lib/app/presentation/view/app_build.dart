@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/src/homePage/homePage.dart';
+import 'package:landing_page/src/asu/presentation/views/asu_page.dart';
+import 'package:landing_page/src/directiva/directiva.dart';
+import 'package:landing_page/src/formulario/presentation/views/formulario_page.dart';
+import 'package:landing_page/src/home/home.dart';
 import 'package:landing_page/src/login/presentation/views/login_page.dart';
+import 'package:landing_page/src/mallaCurricular/mallaCurricular.dart';
+import 'package:landing_page/src/proyectos/presentation/proyectos_presentation.dart';
 
-import '../../config/app_config.dart';
-import '../../config/router/app_router.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,7 +19,13 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', // Ruta inicial
       routes: {
         '/': (context) => LoginPage(), // Ruta principal
-        '/second': (context) => HomePage(), // Otra ruta
+        '/home': (context) => HomePage(),
+        '/formulario':(context) => FormularioPage(),
+        '/directiva':(context) => DirectivaPage(),
+        '/malla':(context) => MallaPage(),
+        '/asu':(context) => AsuPage(),
+        '/proyectos':(context) => ProyectosPage(),
+         // Otra ruta
       },
       //TODO: ajustar segun varibale de entorno
       // debugShowCheckedModeBanner: !Environment.appProd,
