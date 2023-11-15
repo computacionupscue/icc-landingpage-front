@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:landing_page/app/config/app_config.dart';
 import 'package:landing_page/src/home/presentation/views/home_footer.dart';
 import 'package:landing_page/src/home/presentation/views/home_groupAsu.dart';
@@ -22,6 +23,14 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+final List<String> images = [
+  'assets/images/logos/ups.png',
+  'assets/images/logos/ups-white.png',
+  'assets/images/ups-30a.png',
+  'assets/images/ups-30a-white.png'
+  // ... más rutas de imágenes
+];
 
 class _HomePageView extends StatelessWidget {
   const _HomePageView();
@@ -46,12 +55,26 @@ class _HomePageView extends StatelessWidget {
           height: re.hp(50),
           width: re.hp(220),
           color: AppColors.primaryYellow,
-          child: const Center(
-            child: Text("NOVEDADES"),
+          child: Center(
+            child: Swiper(
+              itemBuilder: (BuildContext context, int index) {
+                return Image.asset(
+                  images[index],
+                  fit: BoxFit.fill,
+                );
+              },
+              indicatorLayout: PageIndicatorLayout.SCALE,
+              autoplay: true,
+              autoplayDelay: 5000,
+              itemCount: images.length,
+              pagination: const SwiperPagination(),
+              control: const SwiperControl(),
+              fade: 1.0,
+              viewportFraction: 0.85,
+            ),
           ),
         ),
         Informacion(re: re),
-        
         const Divider(
           color: Colors.black, // Cambiar el color de la línea
           thickness: 2, // Cambiar el grosor de la línea
@@ -71,4 +94,3 @@ class _HomePageView extends StatelessWidget {
     ));
   }
 }
-

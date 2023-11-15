@@ -13,20 +13,39 @@ class Registro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (_, constraints) {
+        return (constraints.maxWidth > 1200)
+            ? _DesktopModel(re: re)
+            : _MobileModel(re: re);
+      },
+    );
+  }
+}
+
+class _DesktopModel extends StatelessWidget {
+  const _DesktopModel({
+    required this.re,
+  });
+
+  final Responsive re;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       height: re.hp(60),
-      width: re.hp(220),
+      width: double.maxFinite,
       color: AppColors.primaryYellow,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: const EdgeInsets.only(left: 200),
             margin: const EdgeInsets.only(top: AppLayoutConst.marginXL),
             child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(
-                  context, '/formulario'
-                ); 
+                Navigator.pushNamed(context, '/formulario');
               },
               style: TextButton.styleFrom(
                 foregroundColor:
@@ -36,21 +55,22 @@ class Registro extends StatelessWidget {
                     fontFamily: 'Roboto' // Tamaño del texto del botón
                     ),
               ),
-              child: const Text(
+              child: Text(
                   "Te interesa la carrera,\nregistrate para tener\nmas informacion",
-                  style: TextStyle(fontSize: 40),
+                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                        color: AppColors.primaryBlue,
+                      ),
                   textAlign: TextAlign.center),
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 400),
+            margin: const EdgeInsets.only(right: 200),
             child: ClipOval(
               child: Image.asset(
                 AppAssets.salesianosLogo,
                 width: re.hp(50), // Ancho de la imagen
                 height: re.hp(35), // Alto de la imagen
-                fit: BoxFit
-                    .cover, // Puedes ajustar esto según tus necesidades
+                fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
               ),
             ),
           ),
@@ -60,3 +80,58 @@ class Registro extends StatelessWidget {
   }
 }
 
+class _MobileModel extends StatelessWidget {
+  const _MobileModel({
+    required this.re,
+  });
+
+  final Responsive re;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: re.hp(70),
+      width: double.maxFinite,
+      color: AppColors.primaryYellow,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            margin: const EdgeInsets.only(top: AppLayoutConst.marginXL),
+            child: TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/formulario');
+              },
+              style: TextButton.styleFrom(
+                foregroundColor:
+                    AppColors.primaryBlue, // Color del texto del botón
+                textStyle: const TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: 'Roboto' // Tamaño del texto del botón
+                    ),
+              ),
+              child: Text(
+                  "Te interesa la carrera,\nregistrate para tener\nmas informacion",
+                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                        color: AppColors.primaryBlue,
+                      ),
+                  textAlign: TextAlign.center),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(bottom: AppLayoutConst.marginXL),
+            child: ClipOval(
+              child: Image.asset(
+                AppAssets.salesianosLogo,
+                width: re.hp(50), // Ancho de la imagen
+                height: re.hp(35), // Alto de la imagen
+                fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

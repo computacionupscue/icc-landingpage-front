@@ -19,6 +19,7 @@ class Header extends StatelessWidget {
         width: re.hp(220),
         color: AppColors.primaryBlue,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextButton(
               onPressed: () {
@@ -27,9 +28,9 @@ class Header extends StatelessWidget {
               },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white, // Color del texto del botón
-                textStyle: const TextStyle(
-                    fontFamily: 'Roboto' // Tamaño del texto del botón
-                    ),
+                textStyle: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
               ),
               child: BlocBuilder<HomeBloc, HomeState>(
                 builder: (context, state) {
@@ -53,9 +54,9 @@ class Header extends StatelessWidget {
               onPressed: () {},
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white, // Color del texto del botón
-                textStyle: const TextStyle(
-                    fontFamily: 'Roboto' // Tamaño del texto del botón
-                    ),
+                textStyle: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
               ),
               child: const Text(
                 "Fuente",
@@ -65,9 +66,9 @@ class Header extends StatelessWidget {
               onPressed: () {},
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white, // Color del texto del botón
-                textStyle: const TextStyle(
-                    fontFamily: 'Roboto' // Tamaño del texto del botón
-                    ),
+                textStyle: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
               ),
               child: const Text(
                 "Idioma",

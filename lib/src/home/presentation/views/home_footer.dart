@@ -14,28 +14,31 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: re.hp(25),
-        width: re.hp(220),
+        width: double.maxFinite,
         color: AppColors.primaryBlueMaterial,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.only(left: 100),
-              child: const Text("REDES SOCIALES",
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: "Roboto",
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
+              padding: const EdgeInsets.only(left: 200),
+              
+              child: Text("REDES SOCIALES",
+                  style:
+                    Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(color: Colors.white,fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center),
             ),
             Container(
-              padding: const EdgeInsets.only(left: 1000),
-              child: const Text("CONTACTO",
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: "Roboto",
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
+              padding: const EdgeInsets.only(right: 200),
+              child: Text("CONTACTO",
+                  style:
+                    Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(color: Colors.white,fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center),
             ),
           ],
