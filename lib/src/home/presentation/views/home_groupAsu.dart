@@ -15,6 +15,25 @@ class GroupAsu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (_, constraints) {
+        return (constraints.maxWidth > 600)
+            ? _DesktopModel(re: re)
+            : _MobileModel(re: re);
+      },
+    );
+  }
+}
+
+class _DesktopModel extends StatelessWidget {
+  const _DesktopModel({
+    required this.re,
+  });
+
+  final Responsive re;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 50),
       height: re.hp(50),
@@ -44,10 +63,9 @@ class GroupAsu extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20),
                   child: Text("ASU\nRECICLA\nUPS",
                       style:
-                        Theme.of(context)
-                        .textTheme
-                        .headlineSmall!
-                        .copyWith(color: AppColors.primaryBlue,),
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: AppColors.primaryBlue,
+                              ),
                       textAlign: TextAlign.center),
                 ),
               ),
@@ -67,11 +85,9 @@ class GroupAsu extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(top: 20),
                 child: Text("ASU\nSOFTWARE\nLIBRE",
-                    style:
-                        Theme.of(context)
-                        .textTheme
-                        .headlineSmall!
-                        .copyWith(color: AppColors.primaryBlue,),
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: AppColors.primaryBlue,
+                        ),
                     textAlign: TextAlign.center),
               ),
             ],
@@ -90,11 +106,105 @@ class GroupAsu extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(top: 20),
                 child: Text("ASU\nIEEE\nUPS",
-                    style:
-                        Theme.of(context)
-                        .textTheme
-                        .headlineSmall!
-                        .copyWith(color: AppColors.primaryBlue,),
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: AppColors.primaryBlue,
+                        ),
+                    textAlign: TextAlign.center),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MobileModel extends StatelessWidget {
+  const _MobileModel({
+    required this.re,
+  });
+
+  final Responsive re;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 50),
+      height: re.hp(140),
+      width: double.maxFinite,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            children: [
+              ClipOval(
+                child: Image.asset(
+                  AppAssets.salesianosLogo,
+                  width: re.hp(25), // Ancho de la imagen
+                  height: re.hp(25), // Alto de la imagen
+                  fit:
+                      BoxFit.cover, // Puedes ajustar esto según tus necesidades
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  final homebloc = context.read<HomeBloc>();
+                  homebloc
+                      .add(const GetDataEvent(valor: 'DEsde GestureDEtector'));
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Text("ASU\nRECICLA\nUPS",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: AppColors.primaryBlue,
+                              ),
+                      textAlign: TextAlign.center),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20,),
+          Column(
+            children: [
+              ClipOval(
+                child: Image.asset(
+                  AppAssets.salesianosLogo,
+                  width: re.hp(25), // Ancho de la imagen
+                  height: re.hp(25), // Alto de la imagen
+                  fit:
+                      BoxFit.cover, // Puedes ajustar esto según tus necesidades
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text("ASU\nSOFTWARE\nLIBRE",
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: AppColors.primaryBlue,
+                        ),
+                    textAlign: TextAlign.center),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20,),
+          Column(
+            children: [
+              ClipOval(
+                child: Image.asset(
+                  AppAssets.salesianosLogo,
+                  width: re.hp(25), // Ancho de la imagen
+                  height: re.hp(25), // Alto de la imagen
+                  fit:
+                      BoxFit.cover, // Puedes ajustar esto según tus necesidades
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text("ASU\nIEEE\nUPS",
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: AppColors.primaryBlue,
+                        ),
                     textAlign: TextAlign.center),
               ),
             ],

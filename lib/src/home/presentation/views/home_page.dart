@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
-import 'package:landing_page/app/config/app_config.dart';
 import 'package:landing_page/src/home/presentation/views/home_footer.dart';
 import 'package:landing_page/src/home/presentation/views/home_groupAsu.dart';
 import 'package:landing_page/src/home/presentation/views/home_informacion.dart';
+import 'package:landing_page/src/home/presentation/views/home_logo.dart';
+import 'package:landing_page/src/home/presentation/views/home_novedades.dart';
 import 'package:landing_page/src/home/presentation/views/home_registro.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -24,14 +24,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-final List<String> images = [
-  'assets/images/logos/ups.png',
-  'assets/images/logos/ups-white.png',
-  'assets/images/ups-30a.png',
-  'assets/images/ups-30a-white.png'
-  // ... más rutas de imágenes
-];
-
 class _HomePageView extends StatelessWidget {
   const _HomePageView();
 
@@ -42,52 +34,23 @@ class _HomePageView extends StatelessWidget {
         body: ListView(
       children: [
         Header(re: re),
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: AppLayoutConst.marginL),
-          height: re.hp(15),
-          width: re.hp(220),
-          child: Image.asset(
-            AppAssets.upsLogo,
-          ),
-        ),
+        Logo(re: re),
         MenuHome(re: re),
-        Container(
-          height: re.hp(50),
-          width: re.hp(220),
-          color: AppColors.primaryYellow,
-          child: Center(
-            child: Swiper(
-              itemBuilder: (BuildContext context, int index) {
-                return Image.asset(
-                  images[index],
-                  fit: BoxFit.fill,
-                );
-              },
-              indicatorLayout: PageIndicatorLayout.SCALE,
-              autoplay: true,
-              autoplayDelay: 5000,
-              itemCount: images.length,
-              pagination: const SwiperPagination(),
-              control: const SwiperControl(),
-              fade: 1.0,
-              viewportFraction: 0.85,
-            ),
-          ),
+        Novedades(re: re),
+        const Divider(
+          color: Colors.black, // Cambiar el color de la línea
+          thickness: 2, // Cambiar el grosor de la línea
+          indent: 60, // Cambiar el espacio izquierdo
+          endIndent: 60, // Cambiar el espacio derecho
         ),
         Informacion(re: re),
         const Divider(
           color: Colors.black, // Cambiar el color de la línea
           thickness: 2, // Cambiar el grosor de la línea
-          indent: 20, // Cambiar el espacio izquierdo
-          endIndent: 20, // Cambiar el espacio derecho
+          indent: 60, // Cambiar el espacio izquierdo
+          endIndent: 60, // Cambiar el espacio derecho
         ),
         Registro(re: re),
-        const Divider(
-          color: Colors.black, // Cambiar el color de la línea
-          thickness: 2, // Cambiar el grosor de la línea
-          indent: 20, // Cambiar el espacio izquierdo
-          endIndent: 20, // Cambiar el espacio derecho
-        ),
         GroupAsu(re: re),
         Footer(re: re)
       ],

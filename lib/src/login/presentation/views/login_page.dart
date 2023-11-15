@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/router/app_routes_assets.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 
-
 import 'package:landing_page/src/shared/responsive.dart';
 
 class LoginPage extends StatelessWidget {
@@ -17,31 +16,31 @@ class LoginPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.only(bottom: AppLayoutConst.marginM),
               height: re.hp(15),
-              width: re.hp(220),
+              width: double.maxFinite,
               color: AppColors.primaryBlue,
-              padding: const EdgeInsets.all(AppLayoutConst.marginL),
-              child: FittedBox(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center, 
-                  children: [
-                    Image.asset(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                   padding: const EdgeInsets.only(left: 400),
+                    child: Image.asset(
                       AppAssets.upsLogoWhite,
                       height: re.hp(10),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(30.0),
-                    ),
-                    Text(
+                    )
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(right: 400),
+                    child: Text(
                       'Acompañamiento Academico',
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!
                           .copyWith(color: Colors.white, fontSize: 30),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: 15),
@@ -114,8 +113,7 @@ class LoginPage extends StatelessWidget {
                         foregroundColor: Colors.black,
                         fixedSize: const Size(250, 40)),
                     onPressed: () {
-                      Navigator.pushNamed(
-                      context, '/home');
+                      Navigator.pushNamed(context, '/home');
                     },
                     child: const Text("Siguiente",
                         style: TextStyle(
@@ -133,5 +131,3 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
-
