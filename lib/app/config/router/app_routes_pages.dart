@@ -2,6 +2,11 @@ enum PAGES {
   loading,
   login,
   home,
+  formulario,
+  directiva,
+  malla,
+  asu,
+  proyectos
 }
 
 extension AppPageExtension on PAGES {
@@ -13,6 +18,16 @@ extension AppPageExtension on PAGES {
         return "/login";
       case PAGES.home:
         return "/home";
+      case PAGES.formulario:
+        return "/formulario";
+      case PAGES.directiva:
+        return "/directiva";
+      case PAGES.malla:
+        return "/malla";
+      case PAGES.asu:
+        return "/asu";
+      case PAGES.proyectos:
+        return "/proyectos";
     }
   }
 
@@ -24,6 +39,16 @@ extension AppPageExtension on PAGES {
         return "login";
       case PAGES.home:
         return "home";
+      case PAGES.formulario:
+        return "formulario";
+      case PAGES.directiva:
+        return "directiva";
+      case PAGES.malla:
+        return "malla";
+      case PAGES.asu:
+        return "asu";
+      case PAGES.proyectos:
+        return "proyectos";
     }
   }
 }

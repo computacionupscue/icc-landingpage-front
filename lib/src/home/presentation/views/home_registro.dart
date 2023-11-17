@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/app_routes_assets.dart';
+import 'package:landing_page/app/config/router/app_routes_pages.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -45,7 +47,7 @@ class _DesktopModel extends StatelessWidget {
             margin: const EdgeInsets.only(top: AppLayoutConst.marginXL),
             child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/formulario');
+                GoRouter.of(context).go(PAGES.formulario.pagePath);
               },
               style: TextButton.styleFrom(
                 foregroundColor:

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:landing_page/app/config/router/app_routes_pages.dart';
 
 import 'package:landing_page/app/config/theme/app_colors.dart';
 
@@ -24,9 +26,7 @@ class MenuHome extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(
-                  context, '/directiva'
-                ); 
+                GoRouter.of(context).go(PAGES.directiva.pagePath);
               },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white, // Color del texto del botón
@@ -40,8 +40,7 @@ class MenuHome extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(
-              context, '/malla'); // Navegar a la ruta '/second
+                GoRouter.of(context).go(PAGES.malla.pagePath);// Navegar a la ruta '/second
               },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white, // Color del texto del botón
@@ -55,8 +54,7 @@ class MenuHome extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(
-                  context, '/asu'); // Navegar a la ruta '/second
+                GoRouter.of(context).go(PAGES.asu.pagePath);// Navegar a la ruta '/second
               },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white, // Color del texto del botón
@@ -70,8 +68,7 @@ class MenuHome extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-            Navigator.pushNamed(
-              context, '/proyectos');
+                GoRouter.of(context).go(PAGES.proyectos.pagePath);
               },
               style: TextButton.styleFrom(
             foregroundColor: Colors.white, // Color del texto del botón

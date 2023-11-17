@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:landing_page/app/config/router/app_router.dart';
 import 'package:landing_page/src/asu/presentation/views/asu_page.dart';
 import 'package:landing_page/src/directiva/directiva.dart';
 import 'package:landing_page/src/formulario/presentation/views/formulario_page.dart';
@@ -7,7 +8,6 @@ import 'package:landing_page/src/login/presentation/views/login_page.dart';
 import 'package:landing_page/src/mallaCurricular/mallaCurricular.dart';
 import 'package:landing_page/src/proyectos/presentation/proyectos_presentation.dart';
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -15,18 +15,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( //AQUI IBA .router
-      initialRoute: '/', // Ruta inicial
-      routes: {
-        '/': (context) => LoginPage(), // Ruta principal
-        '/home': (context) => HomePage(),
-        '/formulario':(context) => FormularioPage(),
-        '/directiva':(context) => DirectivaPage(),
-        '/malla':(context) => MallaPage(),
-        '/asu':(context) => AsuPage(),
-        '/proyectos':(context) => ProyectosPage(),
-         // Otra ruta
-      },
+    return MaterialApp.router(
+      //initialRoute: '/', // Ruta inicial
+      // routes: {
+      //'/': (context) => LoginPage(), // Ruta principal
+      // '/home': (context) => HomePage(),
+      // '/formulario':(context) => FormularioPage(),
+      // '/directiva':(context) => DirectivaPage(),
+      // '/malla':(context) => MallaPage(),
+      // '/asu':(context) => AsuPage(),
+      // '/proyectos':(context) => ProyectosPage(),
+      // Otra ruta
+      // },
       //TODO: ajustar segun varibale de entorno
       // debugShowCheckedModeBanner: !Environment.appProd,
 
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       //     RepositoryProvider.of<GlobalKey<ScaffoldMessengerState>>(context),
 
       title: title,
-      // routerConfig: AppRouter.router, ESTO NO ESTABA COMENTADO
+      routerConfig: AppRouter.router,
 
       // TODO: config theme
       // theme:  AppTheme.light,
