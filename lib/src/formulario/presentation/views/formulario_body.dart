@@ -39,7 +39,7 @@ class _DesktopModel extends StatelessWidget {
           margin:
               const EdgeInsets.symmetric(horizontal: AppLayoutConst.marginXL),
           child: Text(
-            "Bienvenido a la Consejería Académica",
+            "Bienvenido a la Carrera de Computacion",
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -51,7 +51,7 @@ class _DesktopModel extends StatelessWidget {
               horizontal: AppLayoutConst.marginXL,
               vertical: AppLayoutConst.marginXL),
           child: Text(
-            "En el caso de tener alguna dificultad, te podemos ayudar, por favor ingresa tu numero de cedula",
+            "Aqui puedes tener mas informacion sobre la carrera, inscribete con tu correo y tu numero de cedula",
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -97,7 +97,7 @@ class _DesktopModel extends StatelessWidget {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryBlueMaterial,
-                foregroundColor: Colors.black,  
+                foregroundColor: Colors.black,
                 fixedSize: const Size(250, 45)),
             onPressed: () {
               GoRouter.of(context).go(PAGES.home.pagePath);
@@ -130,7 +130,7 @@ class _MobileModel extends StatelessWidget {
           margin:
               const EdgeInsets.symmetric(horizontal: AppLayoutConst.marginXL),
           child: Text(
-            "Bienvenido a la Consejería Académica",
+            "Bienvenido a la Carrera de Computacion",
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -142,7 +142,7 @@ class _MobileModel extends StatelessWidget {
               horizontal: AppLayoutConst.marginXL,
               vertical: AppLayoutConst.marginXL),
           child: Text(
-            "En el caso de tener alguna dificultad, te podemos ayudar, por favor ingresa tu numero de cedula",
+            "Aqui puedes tener mas informacion sobre la carrera, inscribete con tu correo y tu numero de cedula",
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!

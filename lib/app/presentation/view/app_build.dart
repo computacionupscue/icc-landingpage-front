@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/router/app_router.dart';
-import 'package:landing_page/src/asu/presentation/views/asu_page.dart';
-import 'package:landing_page/src/directiva/directiva.dart';
-import 'package:landing_page/src/formulario/presentation/views/formulario_page.dart';
-import 'package:landing_page/src/home/home.dart';
-import 'package:landing_page/src/login/presentation/views/login_page.dart';
-import 'package:landing_page/src/mallaCurricular/mallaCurricular.dart';
-import 'package:landing_page/src/proyectos/presentation/proyectos_presentation.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -3,14 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:landing_page/src/home/presentation/views/home_footer.dart';
 import 'package:landing_page/src/home/presentation/views/home_groupAsu.dart';
 import 'package:landing_page/src/home/presentation/views/home_informacion.dart';
-import 'package:landing_page/src/home/presentation/views/home_logo.dart';
 import 'package:landing_page/src/home/presentation/views/home_novedades.dart';
 import 'package:landing_page/src/home/presentation/views/home_registro.dart';
 import 'package:landing_page/src/shared/responsive.dart';
-
 import '../bloc/home/home_bloc.dart';
-import 'home_header.dart';
-import 'home_menu.dart';
+import '../../../shared/home_menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -33,8 +30,8 @@ class _HomePageView extends StatelessWidget {
     return Scaffold(
         body: ListView(
       children: [
-        Header(re: re),
-        Logo(re: re),
+        //Header(re: re),
+        //Logo(re: re),
         MenuHome(re: re),
         Novedades(re: re),
         const Divider(

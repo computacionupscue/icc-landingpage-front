@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:landing_page/app/config/app_config.dart';
-import 'package:landing_page/app/config/router/app_routes_assets.dart';
-import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/login/presentation/views/login_header.dart';
 import 'package:landing_page/src/login/presentation/views/login_body.dart';
 

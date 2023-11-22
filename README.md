@@ -1,37 +1,45 @@
-# landing_page
+# Requerimientos
 
-A new Flutter project.
+## Front
 
-Flutter 3.13.4 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 367f9ea16b (6 weeks ago) • 2023-09-12 23:27:53 -0500
-Engine • revision 9064459a8b
-Tools • Dart 3.1.2 • DevTools 2.25.0
+Paginas:
 
-```bash
-flutter create --org ec.edu.ups.icc landing_page
-```
+- LoginPage: se encarga de loguear a los usuarios.
 
+- HomePage: informacion de la carrera, links a grupos ASU, link de registro, galeria de novedades de la carrera.
 
+- RegistroPage: aqui los usuarios pondran sus datos de contacto para poder informarlos sobre las novedades de la carrera.
 
+- DirectivaPage: informacion general de los docentes y correo institucional.
 
-## Localization
+- MallaPage: informacion de las materias que cursaran a lo largo de las carreras con sus horas de aprendizaje.
 
-This project generates localized messages based on arb files found in
-the `lib/l18n` directory.
+- AsuPage: informacion detallada de lo que se hace en cada grupo asu, ademas de informacion de contacto.
 
-Add packages
+-ProyectosPage: repositorio de los proyectos que se han desarrollado en la carrera.
 
-```bash
-flutter pub add sang slang_flutter 
-flutter pub add build_runner slang_build_runner --dev
-```
+## Back
 
-```bash
-flutter pub add intl:any
-```
+- Base de datos: todos los datos se iran guardando en una base de datos firebase.
 
-```bash
-dart run slang
-```
+- API: para el desarrollo de la pagina se va a utilizar API Rest.
+
+- Autenticacion: la parte de autenticacion se va a manejar en en firebase.
+
+## Deploy
+
+- Servidor de acceso: contenedor de despliegue (Node).
+
+## Funcionalidad
+
+- sdk: la version de sdk esta entre 3.1.2 y 4.0.0.
+
+- IDE: la ide que se utilizamos es Visual Studio Code.
+
+- Gestion de estado: para la gestion de estado se utiliza Bloc.
+
+- Diseño Responsivo: para el diseño responsivo se maneja una clase en la seccion de shared que se encargara de hacer responsive a toda la pagina.
+
+- Manejo de Navegación: para la navegacion se utiliza GoRoute.
 
 

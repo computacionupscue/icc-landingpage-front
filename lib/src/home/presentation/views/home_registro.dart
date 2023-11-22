@@ -103,7 +103,7 @@ class _MobileModel extends StatelessWidget {
             margin: const EdgeInsets.only(top: AppLayoutConst.marginXL),
             child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/formulario');
+                GoRouter.of(context).go(PAGES.formulario.pagePath);
               },
               style: TextButton.styleFrom(
                 foregroundColor:

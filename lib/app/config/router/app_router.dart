@@ -68,54 +68,6 @@ class AppRouter {
         name: PAGES.proyectos.pageName,
         builder: (context, state) => const ProyectosPage(),
       ),
-
-      // GoRoute(
-      //   path: PAGES.login.pagePath,
-      //   name: PAGES.login.pageName,
-      //   builder: (context, state) => const LoginPage(),
-      //   routes: [
-      //     GoRoute(
-      //       path: PAGES.home.pagePath,
-      //       name: PAGES.home.pageName,
-      //       builder: (context, state) => const HomePage(),
-      //       routes: [
-      //         GoRoute(
-      //           path: PAGES.formulario.pagePath,
-      //           name: PAGES.formulario.pageName,
-      //           builder: (context, state) => const FormularioPage(),
-      //           routes: [
-      //             GoRoute(
-      //               path: PAGES.directiva.pagePath,
-      //               name: PAGES.directiva.pageName,
-      //               builder: (context, state) => const DirectivaPage(),
-      //               routes: [
-      //                 GoRoute(
-      //                   path: PAGES.malla.pagePath,
-      //                   name: PAGES.malla.pageName,
-      //                   builder: (context, state) => const MallaPage(),
-      //                   routes: [
-      //                     GoRoute(
-      //                       path: PAGES.asu.pagePath,
-      //                       name: PAGES.asu.pageName,
-      //                       builder: (context, state) => const AsuPage(),
-      //                       routes: [
-      //                         GoRoute(
-      //                           path: PAGES.proyectos.pagePath,
-      //                           name: PAGES.proyectos.pageName,
-      //                           builder: (context, state) => const ProyectosPage(),
-      //                         ),
-      //                       ],
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ],
-      //             ),
-      //           ],
-      //         ),
-      //       ],
-      //     ),
-      //   ],
-      // ),
     ],
 
     errorBuilder: (context, state) => NotFoundScreen(

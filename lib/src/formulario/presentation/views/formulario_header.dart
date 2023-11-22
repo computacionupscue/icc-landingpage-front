@@ -15,7 +15,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) {
-        return (constraints.maxWidth > 1200)
+        return (constraints.maxWidth > 1100)
             ? _DesktopModel(re: re)
             : _MobileModel(re: re);
       },
@@ -49,7 +49,7 @@ class _DesktopModel extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(right: 200),
             child: Text(
-              'Acompañamiento Academico',
+              'Formulario de Registro',
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
@@ -84,7 +84,7 @@ class _MobileModel extends StatelessWidget {
             height: re.hp(10),
           ),
           Text(
-            'Acompañamiento Academico',
+            'Formulario de Registro',
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!

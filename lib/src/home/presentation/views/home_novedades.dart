@@ -30,7 +30,7 @@ class Novedades extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return Image.asset(
               images[index],
-              fit: BoxFit.fill,
+              fit: BoxFit.contain,
             );
           },
           indicatorLayout: PageIndicatorLayout.SCALE,
