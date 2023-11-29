@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:landing_page/src/home/presentation/bloc/home/home_bloc.dart';
 import 'package:landing_page/src/home/presentation/views/home_footer.dart';
 import 'package:landing_page/src/home/presentation/views/home_groupAsu.dart';
 import 'package:landing_page/src/home/presentation/views/home_informacion.dart';
 import 'package:landing_page/src/home/presentation/views/home_novedades.dart';
 import 'package:landing_page/src/home/presentation/views/home_registro.dart';
 import 'package:landing_page/src/shared/responsive.dart';
-import '../bloc/home/home_bloc.dart';
 import '../../../shared/home_menu.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,6 +17,8 @@ class HomePage extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeBloc(),
       child: const _HomePageView(),
+      // create: (context) => HeaderBloc(),
+      // child: const _HomePageView(),
     );
   }
 }

@@ -13,13 +13,14 @@ class Informacion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
-    return LayoutBuilder(
-      builder: (_, constraints) {
-        return (constraints.maxWidth > 950)
-            ? _DesktopModel(re: re)
-            : _MobileModel(re: re);
-      },
-    );
+    // return LayoutBuilder(
+    //   builder: (_, constraints) {
+    //     return (constraints.maxWidth > 950)
+    //         ? _DesktopModel(re: re)
+    //         : _MobileModel(re: re);
+    //   },
+    // )<
+    return re.width<950 ? _MobileModel(re: re): _DesktopModel(re: re);
   }
 }
 

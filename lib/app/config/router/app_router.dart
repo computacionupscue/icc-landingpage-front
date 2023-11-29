@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' show GlobalKey, NavigatorState;
 
 import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/screens/not_found_page.dart';
+import 'package:landing_page/src/perfilColab/perfilColab.dart';
 import 'app_routes_pages.dart';
 
 // PAGES
@@ -67,6 +68,11 @@ class AppRouter {
         path: PAGES.proyectos.pagePath,
         name: PAGES.proyectos.pageName,
         builder: (context, state) => const ProyectosPage(),
+      ),
+      GoRoute(
+        path: PAGES.perfilColab.pagePath,
+        name: PAGES.perfilColab.pageName,
+        builder: (context, state) => const PerfilColabPage(),
       ),
     ],
 

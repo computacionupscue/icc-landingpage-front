@@ -6,7 +6,8 @@ enum PAGES {
   directiva,
   malla,
   asu,
-  proyectos
+  proyectos,
+  perfilColab
 }
 
 extension AppPageExtension on PAGES {
@@ -28,6 +29,8 @@ extension AppPageExtension on PAGES {
         return "/asu";
       case PAGES.proyectos:
         return "/proyectos";
+      case PAGES.perfilColab:
+        return "/perfilColaboradores";
     }
   }
 
@@ -49,6 +52,8 @@ extension AppPageExtension on PAGES {
         return "asu";
       case PAGES.proyectos:
         return "proyectos";
+      case PAGES.perfilColab:
+        return "perfilColaboradores";
     }
   }
 }

@@ -11,3 +11,5 @@ class GetDataEvent extends HomeEvent {
   const GetDataEvent({required this.valor});
   final String valor;
 }
+
+

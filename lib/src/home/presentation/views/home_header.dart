@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:landing_page/app/config/app_config.dart';
+import 'package:landing_page/src/home/home.dart';
+import 'package:landing_page/src/home/presentation/bloc/header/header_bloc.dart';
 import 'package:landing_page/src/home/presentation/bloc/home/home_bloc.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -25,27 +27,44 @@ class Header extends StatelessWidget {
               onPressed: () {
                 final homebloc = context.read<HomeBloc>();
                 homebloc.add(const GetDataEvent(valor: 'Modo claro'));
+
+                // final headerbloc = context.read()<HeaderBloc>();
+                // headerbloc.add(const ToggleThemeEvent(valor: 'Modo oscuro'));
               },
               style: TextButton.styleFrom(
-                foregroundColor: Colors.white, // Color del texto del botón
-                textStyle: Theme.of(context)
-                          .textTheme
-                          .bodyLarge
-              ),
+                  foregroundColor: Colors.white, // Color del texto del botón
+                  textStyle: Theme.of(context).textTheme.bodyLarge),
+              // child: BlocBuilder<HeaderBloc, HeaderState>(
+              //   builder: (context, state) {
+              //      return MaterialApp(
+              //       theme: state is HeaderLightThemeState
+              //           ? ThemeData.light()
+              //           : ThemeData.dark(),
+              //       home: HomePage(),
+              //     );
+              //   },
+
+              // ),
               child: BlocBuilder<HomeBloc, HomeState>(
                 builder: (context, state) {
-                  if (state is HomeInitial) {
-                    return const Text(
-                      "Modo Oscuro",
-                    );
-                  } else if (state is HomeLoading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
+                  // if (state is HomeInitial) {
+                  //   return const Text(
+                  //     "Modo Oscuro",
+                  //   );
+                  // } else if (state is HomeLoading) {
+                  //   return const Center(
+                  //     child: CircularProgressIndicator(),
+                  //   );
+                  // }
 
-                  return Text(
-                    (state as HomeLoaded).valor,
+                  // return Text(
+                  //   (state as HomeLoaded).valor,
+                  // );
+                  return MaterialApp(
+                    theme: state is HomeInitial
+                        ? ThemeData.light()
+                        : ThemeData.dark(),
+                    home: HomePage(),
                   );
                 },
               ),
@@ -53,11 +72,8 @@ class Header extends StatelessWidget {
             TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(
-                foregroundColor: Colors.white, // Color del texto del botón
-                textStyle: Theme.of(context)
-                          .textTheme
-                          .bodyLarge
-              ),
+                  foregroundColor: Colors.white, // Color del texto del botón
+                  textStyle: Theme.of(context).textTheme.bodyLarge),
               child: const Text(
                 "Fuente",
               ),
@@ -65,11 +81,8 @@ class Header extends StatelessWidget {
             TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(
-                foregroundColor: Colors.white, // Color del texto del botón
-                textStyle: Theme.of(context)
-                          .textTheme
-                          .bodyLarge
-              ),
+                  foregroundColor: Colors.white, // Color del texto del botón
+                  textStyle: Theme.of(context).textTheme.bodyLarge),
               child: const Text(
                 "Idioma",
               ),

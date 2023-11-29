@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/router/app_router.dart';
+import 'package:landing_page/app/config/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
