@@ -1,6 +1,5 @@
 name: landing_page
-description: Landing Page de la Carrera de Computacion  de la Universidad
-  Politécnica Salesiana.
+description: Landing Page de la Carrera de Computacion  de la Universidad Politécnica Salesiana.
 
 publish_to: "none"
 
@@ -15,10 +14,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
-  flutter_icons: ^1.1.0
-  flutter_swiper_null_safety: ^1.0.2
-  font_awesome_flutter: ^10.6.0
   go_router: ^12.0.0
+  flutter_swiper_null_safety: ^1.0.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
