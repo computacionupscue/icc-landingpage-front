@@ -74,13 +74,13 @@ class _MyButtonState extends State<CustomDirectivaBox> {
                     Text(widget.nombre,
                         style: Theme.of(context)
                             .textTheme
-                            .titleMedium!
+                            .bodyMedium!
                             .copyWith(fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center),
                     Text(widget.cargo,
                         style: Theme.of(context)
                             .textTheme
-                            .titleSmall!
+                            .bodySmall!
                             .copyWith(color: AppColors.primaryBlue),
                         textAlign: TextAlign.center),
                     Row(
@@ -101,7 +101,7 @@ class _MyButtonState extends State<CustomDirectivaBox> {
                         Text(widget.correo,
                             style: Theme.of(context)
                                 .textTheme
-                                .titleSmall!
+                                .bodySmall!
                                 .copyWith(color: AppColors.primaryBlue),
                             textAlign: TextAlign.center),
                       ],

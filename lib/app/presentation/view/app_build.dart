@@ -40,9 +40,9 @@ class MyApp extends StatelessWidget {
       routerConfig: AppRouter.router,
 
       // TODO: config theme
-      // theme:  AppTheme.light,
-      // darkTheme: AppTheme.dark,
-      // themeMode: themeMode,
+      theme:  AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.light,
     );
   }
 }

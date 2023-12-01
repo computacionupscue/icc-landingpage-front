@@ -30,29 +30,30 @@ class _HomePageView extends StatelessWidget {
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
     return Scaffold(
-        body: ListView(
-      children: [
-        //Header(re: re),
-        //Logo(re: re),
-        MenuHome(re: re),
-        Novedades(re: re),
-        const Divider(
-          color: Colors.black, // Cambiar el color de la línea
-          thickness: 2, // Cambiar el grosor de la línea
-          indent: 60, // Cambiar el espacio izquierdo
-          endIndent: 60, // Cambiar el espacio derecho
-        ),
-        Informacion(re: re),
-        const Divider(
-          color: Colors.black, // Cambiar el color de la línea
-          thickness: 2, // Cambiar el grosor de la línea
-          indent: 60, // Cambiar el espacio izquierdo
-          endIndent: 60, // Cambiar el espacio derecho
-        ),
-        Registro(re: re),
-        GroupAsu(re: re),
-        Footer(re: re)
-      ],
-    ));
+      body: ListView(
+        children: [
+          //Header(re: re),
+          //Logo(re: re),
+          MenuHome(re: re),
+          Novedades(re: re),
+          const Divider(
+            color: Colors.black, // Cambiar el color de la línea
+            thickness: 2, // Cambiar el grosor de la línea
+            indent: 60, // Cambiar el espacio izquierdo
+            endIndent: 60, // Cambiar el espacio derecho
+          ),
+          Informacion(re: re),
+          const Divider(
+            color: Colors.black, // Cambiar el color de la línea
+            thickness: 2, // Cambiar el grosor de la línea
+            indent: 60, // Cambiar el espacio izquierdo
+            endIndent: 60, // Cambiar el espacio derecho
+          ),
+          Registro(re: re),
+          GroupAsu(re: re),
+          Footer(re: re)
+        ],
+      )
+    );
   }
 }

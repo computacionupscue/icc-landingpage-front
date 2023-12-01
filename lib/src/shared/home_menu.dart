@@ -22,69 +22,61 @@ class MenuHome extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: re.hp(5),
-          width: double.maxFinite,
-          color: AppColors.primaryBlue,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () {
-                  final homebloc = context.read<HomeBloc>();
-                  homebloc.add(const GetDataEvent(valor: 'Modo claro'));
-                },
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.white, // Color del texto del botón
-                  textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                ),
-                child: BlocBuilder<HomeBloc, HomeState>(
-                  builder: (context, state) {
-                    if (state is HomeInitial) {
-                      return const Text(
-                        "Modo Oscuro",
-                      );
-                    } else if (state is HomeLoading) {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-
-                    return Text(
-                      (state as HomeLoaded).valor,
-                    );
+            height: re.hp(5),
+            width: double.maxFinite,
+            color: AppColors.primaryBlue,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    final homebloc = context.read<HomeBloc>();
+                    homebloc.add(const GetDataEvent(valor: 'Modo claro'));
                   },
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.white, // Color del texto del botón
-                  textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                ),
-                child: const Text(
-                  "Fuente",
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.white, // Color del texto del botón
-                  textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                ),
-                child: const Text(
-                  "Idioma",
-                ),
-              ),
-            ],
-          )
-        ),
+                  style: TextButton.styleFrom(
+                      foregroundColor:
+                          Colors.white, // Color del texto del botón
+                      textStyle: Theme.of(context).textTheme.bodyMedium),
+                  child: BlocBuilder<HomeBloc, HomeState>(
+                    builder: (context, state) {
+                      if (state is HomeInitial) {
+                        return const Text(
+                          "Modo Oscuro",
+                        );
+                      } else if (state is HomeLoading) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
 
+                      return Text(
+                        (state as HomeLoaded).valor,
+                      );
+                    },
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                      foregroundColor:
+                          Colors.white, // Color del texto del botón
+                      textStyle: Theme.of(context).textTheme.bodyMedium),
+                  child: const Text(
+                    "Fuente",
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                      foregroundColor:
+                          Colors.white, // Color del texto del botón
+                      textStyle: Theme.of(context).textTheme.bodyMedium),
+                  child: const Text(
+                    "Idioma",
+                  ),
+                ),
+              ],
+            )),
         Container(
           margin: const EdgeInsets.symmetric(vertical: AppLayoutConst.marginL),
           height: re.hp(15),
@@ -106,41 +98,35 @@ class MenuHome extends StatelessWidget {
                   GoRouter.of(context).go(PAGES.directiva.pagePath);
                 },
                 style: TextButton.styleFrom(
-                  foregroundColor: Colors.white, // Color del texto del botón
-                  textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                ),
+                    foregroundColor: Colors.white, // Color del texto del botón
+                    textStyle: Theme.of(context).textTheme.bodyMedium),
                 child: const Text(
                   "Directiva",
                 ),
               ),
               TextButton(
                 onPressed: () {
-                  GoRouter.of(context).go(PAGES.malla.pagePath);// Navegar a la ruta '/second
+                  GoRouter.of(context)
+                      .go(PAGES.malla.pagePath); // Navegar a la ruta '/second
                 },
                 style: TextButton.styleFrom(
-                  foregroundColor: Colors.white, // Color del texto del botón
-                  textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                ),
+                    foregroundColor: Colors.white, // Color del texto del botón
+                    textStyle: Theme.of(context).textTheme.bodyMedium),
                 child: const Text(
                   "Malla Curricular",
                 ),
               ),
               TextButton(
                 onPressed: () {
-                  GoRouter.of(context).go(PAGES.asu.pagePath);// Navegar a la ruta '/second
+                  GoRouter.of(context)
+                      .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
                 },
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.white, // Color del texto del botón
-                  textStyle: Theme.of(context)
-                            .textTheme
-                            .bodyLarge,
+                  textStyle: Theme.of(context).textTheme.bodyMedium,
                 ),
                 child: const Text(
-              "Grupos ASU",
+                  "Grupos ASU",
                 ),
               ),
               TextButton(
@@ -148,11 +134,8 @@ class MenuHome extends StatelessWidget {
                   GoRouter.of(context).go(PAGES.proyectos.pagePath);
                 },
                 style: TextButton.styleFrom(
-              foregroundColor: Colors.white, // Color del texto del botón
-              textStyle: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                ),
+                    foregroundColor: Colors.white, // Color del texto del botón
+                    textStyle: Theme.of(context).textTheme.bodyMedium),
                 child: const Text(
                   "Proyectos",
                 ),

@@ -17,8 +17,8 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: re.hp(5),
-        width: re.hp(220),
+        // height: re.hp(5),
+        // width: re.hp(220),
         color: AppColors.primaryBlue,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

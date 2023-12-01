@@ -26,14 +26,14 @@ class PerfilColabPage extends StatelessWidget {
                   Text("JENNIFER ANDREA YEPEZ ALULEMA",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center),
                   SizedBox(
                     height: re.hp(1),
                   ),
                   Text("DIRECCION DE CARRERA DE COMPUTACION",
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       textAlign: TextAlign.center),
                   SizedBox(
                     height: re.hp(1),
@@ -41,7 +41,7 @@ class PerfilColabPage extends StatelessWidget {
                   Text("    Educación",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center),
                   SizedBox(
@@ -50,7 +50,7 @@ class PerfilColabPage extends StatelessWidget {
                   VinietaText("   INGENIERO DE SISTEMAS",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold)),
                   SizedBox(
                     height: re.hp(2),
@@ -58,7 +58,7 @@ class PerfilColabPage extends StatelessWidget {
                   VinietaText("   BACHILLER EN COMERCIO Y ADMINISTRACION",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold)),
                   SizedBox(
                     height: re.hp(2),
@@ -67,7 +67,7 @@ class PerfilColabPage extends StatelessWidget {
                       "   MASTER OF SCIENCE IN COMPUTER FORENSICS AND CYBER SECURITY",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold)),
                   SizedBox(
                     height: re.hp(2),
@@ -76,7 +76,7 @@ class PerfilColabPage extends StatelessWidget {
                       "   COMPETENCIA DIGITAL PERSONAL DOCENTE E INVESTIGACION -PDI",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold)),
                   SizedBox(
                     height: re.hp(2),
@@ -84,7 +84,7 @@ class PerfilColabPage extends StatelessWidget {
                   Text("    Asignaturas Dictadas",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold)),
                   SizedBox(
                     height: re.hp(2),
@@ -92,7 +92,7 @@ class PerfilColabPage extends StatelessWidget {
                   VinietaText("   FUNDAMENTOS DE BASE DE DATOS | COMPUTACIÓN",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold)),
                   SizedBox(
                     height: re.hp(2),
@@ -100,7 +100,7 @@ class PerfilColabPage extends StatelessWidget {
                   VinietaText("   SEGURIDAD DE LA INFORMACIÓN | COMPUTACIÓN",
                       style: Theme.of(context)
                           .textTheme
-                          .titleMedium!
+                          .bodyMedium!
                           .copyWith(fontWeight: FontWeight.bold)),
                 ],
               )
@@ -133,7 +133,7 @@ class VinietaText extends StatelessWidget {
               ),
             ),
           ),
-          TextSpan(text: text, style: Theme.of(context).textTheme.titleMedium)
+          TextSpan(text: text, style: Theme.of(context).textTheme.bodyMedium)
         ],
       ),
     );
