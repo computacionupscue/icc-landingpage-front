@@ -35,24 +35,37 @@ class _DesktopModel extends StatelessWidget {
         height: re.hp(25),
         width: double.maxFinite,
         color: AppColors.primaryBlueMaterial,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              padding: const EdgeInsets.only(left: 200),
-              child: Text("REDES SOCIALES",
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center),
-            ),
-            Container(
-              padding: const EdgeInsets.only(right: 200),
-              child: Text("CONTACTO",
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center),
-            ),
+            Text("Síguenos",
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    color: Colors.white, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                icon: Icon(FontAwesome.facebook),
+                onPressed: () {
+                  // Acción al hacer clic en el ícono de Facebook
+                },
+              ),
+              IconButton(
+                icon: Icon(FontAwesome.twitter),
+                onPressed: () {
+                  // Acción al hacer clic en el ícono de Twitter
+                },
+              ),
+              IconButton(
+                icon: Icon(FontAwesome.instagram),
+                onPressed: () {
+                  // Acción al hacer clic en el ícono de Instagram
+                },
+              ),
+              ],
+            )
           ],
         ));
   }
