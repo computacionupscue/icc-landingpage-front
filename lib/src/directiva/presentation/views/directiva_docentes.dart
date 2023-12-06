@@ -15,7 +15,7 @@ class Docentes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
-    return re.width<1160 ? _MobileModel(re: re): _DesktopModel(re: re);
+    return re.width < 1160 ? _MobileModel(re: re) : _DesktopModel(re: re);
   }
 }
 
@@ -49,29 +49,124 @@ class _DesktopModel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
-              ),
+                  nombre: "ARCE CUESTA DIANA CAROLINA",
+                  cargo: "Docente",
+                  correo: "darcec@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
               CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
-              ),
+                  nombre: "ARCOS ARGUDO MIGUEL ARTURO",
+                  cargo: "Docente",
+                  correo: "marcos@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
               CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
-              ),
+                  nombre: "BOJORQUE CHASI RODOLFO XAVIER",
+                  cargo: "Docente",
+                  correo: "rbojorque@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
               CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
+                  nombre: "BRAVO QUEZADA OMAR GUSTAVO",
+                  cargo: "Docente",
+                  correo: "obravo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+            ],
+          ),
+          SizedBox(
+            height: re.hp(10),
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CustomDirectivaBox(
+                  nombre: "FLORES VAZQUEZ MARCELO ESTEBAN",
+                  cargo: "Docente",
+                  correo: "mfloresv@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
+                  cargo: "Docente",
+                  correo: "rhurtadoo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "LEON PAREDES GABRIEL ALEJANDRO",
+                  cargo: "Docente",
+                  correo: "gleon@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "ORDOÑEZ ORDOÑEZ JORGE OSMANI",
+                  cargo: "Docente",
+                  correo: "jordonezo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+            ],
+          ),
+          SizedBox(
+            height: re.hp(10),
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CustomDirectivaBox(
+                  nombre: "ORTIZ OCHOA MAURICIO SERGIO",
+                  cargo: "Docente",
+                  correo: "mortizo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "PARRA GONZALEZ GERMAN ERNESTO",
+                  cargo: "Docente",
+                  correo: "gparra@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "PLAZA CORDERO ANDREA MARICELA",
+                  cargo: "Docente",
+                  correo: "aplaza@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "ROBLES BYKBAEV VLADIMIR ESPARTACO",
+                  cargo: "Docente",
+                  correo: "vrobles@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+            ],
+          ),
+          SizedBox(
+            height: re.hp(10),
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CustomDirectivaBox(
+                  nombre: "SACOTO CABRERA ERWIN JAIRO",
+                  cargo: "Docente",
+                  correo: "esacoto@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "TACURI CAPELO BERTHA KATERINE",
+                  cargo: "Docente",
+                  correo: "btacuri@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "TIMBI SISALIMA CRISTIAN FERNANDO",
+                  cargo: "Docente",
+                  correo: "ctimbi@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              CustomDirectivaBox(
+                  nombre: "VAZQUEZ LOAIZA JUAN PABLO",
+                  cargo: "Docente",
+                  correo: "jvazquez@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+            ],
+          ),
+          SizedBox(
+            height: re.hp(10),
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: re.hp(9),
               ),
+              const CustomDirectivaBox(
+                  nombre: "YEPEZ ALULEMA JENNIFER ANDREA",
+                  cargo: "Docente",
+                  correo: "jyepez@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo)
             ],
           ),
         ],
@@ -110,38 +205,138 @@ class _MobileModel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
-              ),
+                  nombre: "ARCE CUESTA DIANA CAROLINA",
+                  cargo: "Docente",
+                  correo: "darcec@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
               SizedBox(
                 height: re.hp(7),
               ),
               const CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
-              ),
+                  nombre: "ARCOS ARGUDO MIGUEL ARTURO",
+                  cargo: "Docente",
+                  correo: "marcos@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
               SizedBox(
                 height: re.hp(7),
               ),
               const CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
-              ),
+                  nombre: "BOJORQUE CHASI RODOLFO XAVIER",
+                  cargo: "Docente",
+                  correo: "rbojorque@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
               SizedBox(
                 height: re.hp(7),
               ),
               const CustomDirectivaBox(
-                nombre: "NOMBRE",
-                cargo: "Cargo",
-                correo: "Correo",
-                foto: AppAssets.salesianosLogo
+                  nombre: "BRAVO QUEZADA OMAR GUSTAVO",
+                  cargo: "Docente",
+                  correo: "obravo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
               ),
+              const CustomDirectivaBox(
+                  nombre: "FLORES VAZQUEZ MARCELO ESTEBAN",
+                  cargo: "Docente",
+                  correo: "mfloresv@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
+                  cargo: "Docente",
+                  correo: "rhurtadoo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "LEON PAREDES GABRIEL ALEJANDRO",
+                  cargo: "Docente",
+                  correo: "gleon@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "ORDOÑEZ ORDOÑEZ JORGE OSMANI",
+                  cargo: "Docente",
+                  correo: "jordonezo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "ORTIZ OCHOA MAURICIO SERGIO",
+                  cargo: "Docente",
+                  correo: "mortizo@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "PARRA GONZALEZ GERMAN ERNESTO",
+                  cargo: "Docente",
+                  correo: "gparra@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "PLAZA CORDERO ANDREA MARICELA",
+                  cargo: "Docente",
+                  correo: "aplaza@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "ROBLES BYKBAEV VLADIMIR ESPARTACO",
+                  cargo: "Docente",
+                  correo: "vrobles@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "SACOTO CABRERA ERWIN JAIRO",
+                  cargo: "Docente",
+                  correo: "esacoto@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "TACURI CAPELO BERTHA KATERINE",
+                  cargo: "Docente",
+                  correo: "btacuri@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "TIMBI SISALIMA CRISTIAN FERNANDO",
+                  cargo: "Docente",
+                  correo: "ctimbi@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "VAZQUEZ LOAIZA JUAN PABLO",
+                  cargo: "Docente",
+                  correo: "jvazquez@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo),
+              SizedBox(
+                height: re.hp(7),
+              ),
+              const CustomDirectivaBox(
+                  nombre: "YEPEZ ALULEMA JENNIFER ANDREA",
+                  cargo: "Docente",
+                  correo: "jyepez@ups.edu.ec",
+                  foto: AppAssets.salesianosLogo)
             ],
           ),
         ],

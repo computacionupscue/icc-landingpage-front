@@ -72,7 +72,7 @@ class AppRouter {
       GoRoute(
         path: PAGES.perfilColab.pagePath,
         name: PAGES.perfilColab.pageName,
-        builder: (context, state) => const PerfilColabPage(),
+        builder: (context, state) => PerfilColabPage(),
       ),
     ],
 

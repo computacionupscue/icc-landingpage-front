@@ -1,166 +1,54 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/app_config.dart';
 import 'package:landing_page/app/config/router/app_routes_assets.dart';
+import 'package:landing_page/src/shared/perfil.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class PerfilColabPage extends StatelessWidget {
-  const PerfilColabPage({super.key});
+  PerfilColabPage({super.key});
+
+  final CollectionReference _perfil =
+      FirebaseFirestore.instance.collection('perfil1');
 
   @override
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
     return Scaffold(
-      body: ListView(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image.asset(
-                AppAssets.salesianosLogo,
-                width: re.hp(90), // Ancho de la imagen
-                height: re.hp(90),
-                fit: BoxFit.fill,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColors.btnBackground, // Color del borde
-                    width: 1.0, // Ancho del borde
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
+      body: StreamBuilder(
+          stream: _perfil.snapshots(),
+          builder: (context, AsyncSnapshot<QuerySnapshot?> snapshots) {
+            String nombre = "";
+            String titulo1 = "";
+            String titulo2 = "";
+            String titulo3 = "";
+            String titulo4 = "";
+            String asig1 = "";
+            String asig2 = "";
+            if (snapshots.hasData) {
+              nombre = snapshots.data!.docs[0]['nombre'];
+              titulo1 = snapshots.data!.docs[0]['titulo1'];
+              titulo2 = snapshots.data!.docs[0]['titulo2'];
+              titulo3 = snapshots.data!.docs[0]['titulo3'];
+              titulo4 = snapshots.data!.docs[0]['titulo4'];
+              asig1 = snapshots.data!.docs[0]['asig1'];
+              asig2 = snapshots.data!.docs[0]['asig2'];
+            }
+            return ListView(
+              children: [
+                Perfil(
+                  nombre: nombre,
+                  titulo1: titulo1,
+                  titulo2: titulo2,
+                  titulo3: titulo3,
+                  titulo4: titulo4,
+                  asig1: asig1,
+                  asig2: asig2,
+                  re: re,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: re.hp(100),
-                      color: AppColors.btnBackground,
-                      child: Text("JENNIFER ANDREA YEPEZ ALULEMA",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                          textAlign: TextAlign.center),
-                    ),
-                    Container(
-                      width: re.hp(100),
-                      color: const Color.fromARGB(255, 248, 248, 248),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: re.hp(4),
-                          ),
-                          Text("    Educación",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.start),
-                          SizedBox(
-                            height: re.hp(2),
-                          ),
-                          VinietaText("   INGENIERO DE SISTEMAS",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: re.hp(2),
-                          ),
-                          VinietaText(
-                              "   BACHILLER EN COMERCIO Y ADMINISTRACION",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: re.hp(2),
-                          ),
-                          VinietaText(
-                              "   MASTER OF SCIENCE IN COMPUTER FORENSICS AND CYBER SECURITY",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: re.hp(2),
-                          ),
-                          VinietaText(
-                              "   COMPETENCIA DIGITAL PERSONAL DOCENTE E INVESTIGACION -PDI",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: re.hp(2),
-                          ),
-                          Text("    Asignaturas Dictadas",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: re.hp(2),
-                          ),
-                          VinietaText(
-                              "   FUNDAMENTOS DE BASE DE DATOS | COMPUTACIÓN",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: re.hp(2),
-                          ),
-                          VinietaText(
-                              "   SEGURIDAD DE LA INFORMACIÓN | COMPUTACIÓN",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: re.hp(6),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class VinietaText extends StatelessWidget {
-  final String text;
-
-  const VinietaText(this.text, {super.key, required TextStyle style});
-
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: [
-          const WidgetSpan(
-            child: Padding(
-              padding: EdgeInsets.only(left: 40.0),
-              child: Icon(
-                Icons.circle,
-                color:
-                    Colors.black, // Puedes ajustar el color de la viñeta aquí
-                size: 8.0,
-              ),
-            ),
-          ),
-          TextSpan(text: text, style: Theme.of(context).textTheme.bodyMedium)
-        ],
-      ),
+              ],
+            );
+          }),
     );
   }
 }
