@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class MallaBox extends StatelessWidget {

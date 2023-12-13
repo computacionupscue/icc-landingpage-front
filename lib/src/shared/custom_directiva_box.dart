@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/app_routes_pages.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
-import 'package:landing_page/src/perfilColab/perfilColab.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class CustomDirectivaBox extends StatefulWidget {
@@ -42,8 +41,9 @@ class _MyButtonState extends State<CustomDirectivaBox> {
         },
         child: InkWell(
             onTap: () {
-              GoRouter.of(context)
-                  .go(PAGES.perfilColab.pagePath); // Navegar a la ruta '/second
+              GoRouter.of(context).go(
+                PAGES.perfilColab.pagePath, 
+              ); // Navegar a la ruta '/second
             },
             child: Container(
                 width: re.hp(40), // Ancho de la imagen
