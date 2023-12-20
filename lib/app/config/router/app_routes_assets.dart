@@ -11,6 +11,29 @@ class AppAssets {
   static const upsIsoLogoWhite = 'assets/images/logos/ups-iso-white.png';
   static const salesianosLogo = 'assets/images/logos/logo-salesianos.png';
   static const upsSocialNetworks = 'assets/images/logos/ups-redes-sociales.png';
+  static const finalizacionInscripcion =
+      'assets/images/finalizacioninscripcion.png';
+  static const finalizacionMatriculas =
+      'assets/images/finalizacionmatriculas.png';
+  static const inicioInscripcion = 'assets/images/inicioinscripcion.png';
+  static const inicioMatriculas = 'assets/images/iniciomatriculas.png';
+  static const titulo = 'assets/images/titulo.png';
+  static const modalidad = 'assets/images/modalidad.png';
+  static const duracion = 'assets/images/duracion.png';
+  static const descargas = 'assets/images/descargas.png';
+  static const jenniferYepez = 'assets/images/jenniferyepez.png';
+  static const robertoGarcia = 'assets/images/perfiles/ROBERTOGARCIA.jpg';
+  static const logoRecicla = 'assets/images/logorecicla.png';
+  static const logoSoftwareLibre = 'assets/images/logosoftwarelibre.png';
+  static const logoIEEE = 'assets/images/logoieee.png';
+  static const computacion = 'assets/images/computacion.jpg';
+  static const inscripciones = 'assets/images/inscripciones.jpg';
+  static const posgrados = 'assets/images/posgrados.jpg';
+  static const becas = 'assets/images/becas.jpg';
+
+  /// [/archivos]
+
+  static const n1 = 'assets/archivos/n1.json';
 }
 
 class AppAssetsSVG {
@@ -43,6 +66,13 @@ class AppAssetsSVG {
       'assets/svg/icons/circle-exclamation-solid.svg';
   static const iconLightbulb = 'assets/svg/icons/lightbulb-regular.svg';
   static const iconLanguage = 'assets/svg/icons/language-solid.svg';
+  static const iconFinalizacionInscripcion =
+      'assets/svg/icons/finalizacioninscripcion.svg';
+  static const iconFinalizacionMatriculas =
+      'assets/svg/icons/finalizacionmatriculas.svg';
+  static const iconInicioInscripcion = 'assets/svg/icons/inicioinscripcion.svg';
+  static const iconInicioMatriculas = 'assets/svg/icons/iniciomatriculas.svg';
+  static const iconTitulo = 'assets/svg/icons/titulo.svg';
 
   static const atom = 'assets/svg/icons/atom-solid.svg';
   static const usersGear = 'assets/svg/icons/user-gear-solid.svg';

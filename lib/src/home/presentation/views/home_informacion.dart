@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:landing_page/app/config/router/app_routes_assets.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:hovering/hovering.dart';
 
 class Informacion extends StatelessWidget {
   const Informacion({
@@ -20,7 +24,7 @@ class Informacion extends StatelessWidget {
     //         : _MobileModel(re: re);
     //   },
     // )<
-    return re.width<950 ? _MobileModel(re: re): _DesktopModel(re: re);
+    return re.width < 950 ? _MobileModel(re: re) : _DesktopModel(re: re);
   }
 }
 
@@ -54,84 +58,144 @@ class _DesktopModel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.inicioInscripcion,
                       ),
-                      Text("Inicio de inscripciones\n02/05/2023",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryBlue,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Inicio de inscripciones",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
+                          Text("04/12/2023",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontSize: 15,
+                                  )),
+                        ],
+                      )
                     ],
                   ),
                 ),
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.finalizacionInscripcion,
                       ),
-                      Text(
-                        'Finalizacion de inscripciones\n02/05/2023',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              color: AppColors.primaryBlue,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Finalizacion de inscripciones",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                          Text("30/04/2024",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontSize: 15,
+                                  )),
+                        ],
+                      )
                     ],
                   ),
                 ),
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.inicioMatriculas,
                       ),
-                      Text("Inicio de matriculas\n02/05/2023",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryBlue,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Inicio de matriculas",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
+                          Text("20/11/2023",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontSize: 15,
+                                  )),
+                        ],
+                      )
                     ],
                   ),
                 ),
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.finalizacionMatriculas,
                       ),
-                      Text("Finalizacion de matriculas\n02/05/2023",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryBlue,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Finalizacion de matriculas",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
+                          Text("25/03/2024",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontSize: 15,
+                                  )),
+                        ],
+                      )
                     ],
                   ),
                 ),
               ],
             )),
+        SizedBox(height: re.hp(5)),
         SizedBox(
             height: re.hp(10),
             width: double.maxFinite,
@@ -140,78 +204,157 @@ class _DesktopModel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.titulo,
                       ),
-                      Text("Inicio de inscripciones\n02/05/2023",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryBlue,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Título a obtener",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
+                          Text("Ingeniero/a en Ciencias\nde la Computación",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontSize: 15,
+                                  )),
+                        ],
+                      )
                     ],
                   ),
                 ),
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.modalidad,
                       ),
-                      Text("Finalizacion de inscripciones\n02/05/2023",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryBlue,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Modalidad",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
+                          Text("Presencial",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontSize: 15,
+                                  )),
+                        ],
+                      )
                     ],
                   ),
                 ),
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.duracion,
                       ),
-                      Text("Inicio de matriculas\n02/05/2023",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryBlue,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Duración",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
+                          Text("8 semestres",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontSize: 15,
+                                  )),
+                        ],
+                      )
                     ],
                   ),
                 ),
                 SizedBox(
+                  width: re.hp(37),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.app_registration, // El ícono que deseas mostrar
-                        color: AppColors
-                            .primaryBlue, // Opcional: Define el color del ícono
-                        size: 48.0,
+                      Image.asset(
+                        height: re.hp(9),
+                        width: re.hp(9),
+                        AppAssets.descargas,
                       ),
-                      Text("Finalizacion de matriculas\n02/05/2023",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryBlue,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Descargas",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
+                          GestureDetector(
+                            onTap: () {
+                              _launchURL(
+                                  'https://computacioncue.ups.edu.ec/documents/20121/486030/Computaci%C3%B3n+-+MC.pdf'); // Reemplaza con tu URL
+                            },
+                            child: HoverWidget(
+                              hoverChild: Text('Malla curricular',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                        color: const Color.fromARGB(
+                                            255, 0, 64, 182),
+                                        fontSize: 15,
+                                        decoration: TextDecoration.underline,
+                                      )),
+                              onHover: (PointerEnterEvent event) {},
+                              child: Text('Malla curricular',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                        color: AppColors.primaryBlue,
+                                        fontSize: 15,
+                                      )),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
@@ -436,5 +579,13 @@ class _MobileModel extends StatelessWidget {
             )),
       ]),
     );
+  }
+}
+
+void _launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'No se pudo abrir el enlace: $url';
   }
 }

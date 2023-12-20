@@ -55,26 +55,6 @@ class MenuHome extends StatelessWidget {
                     },
                   ),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                      foregroundColor:
-                          Colors.white, // Color del texto del botón
-                      textStyle: Theme.of(context).textTheme.bodyMedium),
-                  child: const Text(
-                    "Fuente",
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                      foregroundColor:
-                          Colors.white, // Color del texto del botón
-                      textStyle: Theme.of(context).textTheme.bodyMedium),
-                  child: const Text(
-                    "Idioma",
-                  ),
-                ),
               ],
             )),
         Container(

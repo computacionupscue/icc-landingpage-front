@@ -1,0 +1,47 @@
+{
+  "nombre": "Primer Nivel",
+  "materias": [
+    {
+      "nombre": "Álgebra Lineal",
+      "horas_cd": 64,
+      "horas_pe": 0,
+      "horas_a": 96,
+      "codigo": "C1"
+    },
+    {
+      "nombre": "Cálculo Diferencial",
+      "horas_cd": 96,
+      "horas_pe": 0,
+      "horas_a": 144,
+      "codigo": "C1"
+    },
+    {
+      "nombre": "Programación",
+      "horas_cd": 64,
+      "horas_pe": 32,
+      "horas_a": 64,
+      "codigo": "C1"
+    },
+    {
+      "nombre": "Antropología Filosófico-Teológica",
+      "horas_cd": 32,
+      "horas_pe": 0,
+      "horas_a": 48,
+      "codigo": "C1"
+    },
+    {
+      "nombre": "Introducción a la Física para Ciencias de la Computación",
+      "horas_cd": 16,
+      "horas_pe": 16,
+      "horas_a": 8,
+      "codigo": "C1"
+    },
+    {
+      "nombre": "Comuniacion Oral y Escrita",
+      "horas_cd": 16,
+      "horas_pe": 16,
+      "horas_a": 8,
+      "codigo": "C1"
+    }
+  ]
+}

@@ -69,9 +69,9 @@ class _DesktopModel extends StatelessWidget {
             margin: const EdgeInsets.only(right: 200),
             child: ClipOval(
               child: Image.asset(
-                AppAssets.salesianosLogo,
-                width: re.hp(50), // Ancho de la imagen
-                height: re.hp(35), // Alto de la imagen
+                AppAssets.computacion,
+                width: re.hp(90), // Ancho de la imagen
+                height: re.hp(55), // Alto de la imagen
                 fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
               ),
             ),

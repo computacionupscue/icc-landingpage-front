@@ -35,19 +35,17 @@ class DirectivaPage extends StatelessWidget {
                     //MenuHome(re: re),
                     Header(re: re),
                     Administrativos(
-                      nombre1: nombre1,
-                      correo1: correo1,
-                      nombre2: nombre2,
-                      correo2: correo2,
-                      re: re
-                    ),
+                        nombre1: nombre1,
+                        correo1: correo1,
+                        nombre2: nombre2,
+                        correo2: correo2,
+                        re: re),
                     Docentes(re: re),
                   ],
                 )
               ],
             );
-          }
-      ),
+          }),
     );
   }
 }

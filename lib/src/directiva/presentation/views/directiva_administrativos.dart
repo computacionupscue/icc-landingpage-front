@@ -41,20 +41,19 @@ class Administrativos extends StatelessWidget {
 }
 
 class _DesktopModel extends StatelessWidget {
-  String nombre1 = "";
-  String correo1 = "";
-  String nombre2 = "";
-  String correo2 = "";
-
-  _DesktopModel({
+  const _DesktopModel({
     required this.re,
-    required String nombre1,
-    required String correo1,
-    required String nombre2,
-    required String correo2,
+    required this.nombre1,
+    required this.correo1,
+    required this.nombre2,
+    required this.correo2,
   });
 
   final Responsive re;
+  final String nombre1;
+  final String correo1;
+  final String nombre2;
+  final String correo2;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +76,7 @@ class _DesktopModel extends StatelessWidget {
                   nombre: nombre1,
                   cargo: "Director de Carrera",
                   correo: correo1,
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.jenniferYepez),
             ],
           ),
           Column(
@@ -97,7 +96,7 @@ class _DesktopModel extends StatelessWidget {
                       cargo:
                           "Responsable de Extensiones Universitarias, Prácticas Pre Profesionales / Pasantías",
                       correo: correo2,
-                      foto: AppAssets.salesianosLogo),
+                      foto: AppAssets.robertoGarcia),
                   SizedBox(
                     width: re.hp(10),
                   ),
@@ -117,20 +116,19 @@ class _DesktopModel extends StatelessWidget {
 }
 
 class _MobileModel extends StatelessWidget {
-  String nombre1 = "";
-  String correo1 = "";
-  String nombre2 = "";
-  String correo2 = "";
-
-  _MobileModel({
+  const _MobileModel({
     required this.re,
-    required String nombre1,
-    required String correo1,
-    required String nombre2,
-    required String correo2,
+    required this.nombre1,
+    required this.correo1,
+    required this.nombre2,
+    required this.correo2,
   });
 
   final Responsive re;
+  final String nombre1;
+  final String correo1;
+  final String nombre2;
+  final String correo2;
 
   @override
   Widget build(BuildContext context) {

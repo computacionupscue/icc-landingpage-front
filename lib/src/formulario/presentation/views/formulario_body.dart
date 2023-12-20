@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/app_routes_pages.dart';
@@ -25,11 +26,17 @@ class Body extends StatelessWidget {
 }
 
 class _DesktopModel extends StatelessWidget {
-  const _DesktopModel({
+  final CollectionReference _registro = FirebaseFirestore.instance.collection('registro');
+      
+  _DesktopModel({
     required this.re,
   });
 
   final Responsive re;
+  final TextEditingController _textController1 = TextEditingController();
+  final TextEditingController _textController2 = TextEditingController();
+  String _correo = '';
+  String _cedula = '';
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +68,9 @@ class _DesktopModel extends StatelessWidget {
         Container(
             width: re.hp(78),
             margin: const EdgeInsets.only(bottom: AppLayoutConst.marginM),
-            child: const TextField(
-              decoration: InputDecoration(
+            child: TextField(
+              controller: _textController1,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.email_outlined),
                 hintText: "Correo",
                 fillColor: Colors.white,
@@ -78,8 +86,9 @@ class _DesktopModel extends StatelessWidget {
         Container(
             width: re.hp(78),
             margin: const EdgeInsets.only(bottom: AppLayoutConst.marginS),
-            child: const TextField(
-              decoration: InputDecoration(
+            child: TextField(
+              controller: _textController2,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.email_outlined),
                 hintText: "Cedula",
                 fillColor: Colors.white,
@@ -100,7 +109,31 @@ class _DesktopModel extends StatelessWidget {
                 foregroundColor: Colors.black,
                 fixedSize: const Size(250, 45)),
             onPressed: () {
-              GoRouter.of(context).go(PAGES.home.pagePath);
+              if (_textController1.text.isNotEmpty &&
+                  _textController2.text.isNotEmpty) {
+                _correo = _textController1.text;
+                _cedula = _textController2.text;
+                GoRouter.of(context).go(PAGES.home.pagePath);
+                _registro.add({'correo': _correo, 'cedula': _cedula});
+              } else {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text('Campos Vacíos'),
+                      content: const Text('Todos los campos deben estar llenos.'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context); // Cerrar el AlertDialog
+                          },
+                          child: const Text('Aceptar'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }
             },
             child: const Text("Siguiente",
                 style: TextStyle(

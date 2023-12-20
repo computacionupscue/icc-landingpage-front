@@ -42,7 +42,7 @@ class _MyButtonState extends State<CustomDirectivaBox> {
         child: InkWell(
             onTap: () {
               GoRouter.of(context).go(
-                PAGES.perfilColab.pagePath, 
+                PAGES.perfilColab.pagePath,
               ); // Navegar a la ruta '/second
             },
             child: Container(
@@ -69,6 +69,7 @@ class _MyButtonState extends State<CustomDirectivaBox> {
                       widget.foto,
                       width: re.hp(25), // Ancho de la imagen
                       height: re.hp(25),
+                      fit: BoxFit.cover,
                       // Alto de la imagen
                     ),
                     Text(widget.nombre,

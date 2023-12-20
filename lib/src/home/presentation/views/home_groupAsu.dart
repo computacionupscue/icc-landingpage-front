@@ -48,7 +48,7 @@ class _DesktopModel extends StatelessWidget {
             children: [
               ClipOval(
                 child: Image.asset(
-                  AppAssets.salesianosLogo,
+                  AppAssets.logoRecicla,
                   width: re.hp(25), // Ancho de la imagen
                   height: re.hp(25), // Alto de la imagen
                   fit:
@@ -68,13 +68,12 @@ class _DesktopModel extends StatelessWidget {
                       GoRouter.of(context)
                           .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
                     },
-                    child: Text(
-                      "ASU\nRECICLA\nUPS",
-                      style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                            color: AppColors.primaryBlue,
-                          ),
-                      textAlign: TextAlign.center
-                    ),
+                    child: Text("ASU\nRECICLA\nUPS",
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  color: AppColors.primaryBlue,
+                                ),
+                        textAlign: TextAlign.center),
                   ),
                 ),
               ),
@@ -84,7 +83,7 @@ class _DesktopModel extends StatelessWidget {
             children: [
               ClipOval(
                 child: Image.asset(
-                  AppAssets.salesianosLogo,
+                  AppAssets.logoSoftwareLibre,
                   width: re.hp(25), // Ancho de la imagen
                   height: re.hp(25), // Alto de la imagen
                   fit:
@@ -98,15 +97,13 @@ class _DesktopModel extends StatelessWidget {
                     GoRouter.of(context)
                         .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
                   },
-                  child: Text(
-                    "ASU\nSOFTWARE\nLIBRE",
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: AppColors.primaryBlue,
-                        ),
-                    textAlign: TextAlign.center
-                  ),
+                  child: Text("ASU\nSOFTWARE\nLIBRE",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: AppColors.primaryBlue,
+                              ),
+                      textAlign: TextAlign.center),
                 ),
-                
               ),
             ],
           ),
@@ -114,7 +111,7 @@ class _DesktopModel extends StatelessWidget {
             children: [
               ClipOval(
                 child: Image.asset(
-                  AppAssets.salesianosLogo,
+                  AppAssets.logoIEEE,
                   width: re.hp(25), // Ancho de la imagen
                   height: re.hp(25), // Alto de la imagen
                   fit:
@@ -128,13 +125,12 @@ class _DesktopModel extends StatelessWidget {
                     GoRouter.of(context)
                         .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
                   },
-                  child: Text(
-                    "ASU\nIEEE\nUPS",
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: AppColors.primaryBlue,
-                        ),
-                    textAlign: TextAlign.center
-                  ),
+                  child: Text("ASU\nIEEE\nUPS",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: AppColors.primaryBlue,
+                              ),
+                      textAlign: TextAlign.center),
                 ),
               ),
             ],
@@ -186,13 +182,12 @@ class _MobileModel extends StatelessWidget {
                       GoRouter.of(context)
                           .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
                     },
-                    child: Text(
-                      "ASU\nRECICLA\nUPS",
-                      style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                            color: AppColors.primaryBlue,
-                          ),
-                      textAlign: TextAlign.center
-                    ),
+                    child: Text("ASU\nRECICLA\nUPS",
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  color: AppColors.primaryBlue,
+                                ),
+                        textAlign: TextAlign.center),
                   ),
                 ),
               ),
@@ -219,13 +214,12 @@ class _MobileModel extends StatelessWidget {
                     GoRouter.of(context)
                         .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
                   },
-                  child: Text(
-                    "ASU\nSOFTWARE\nLIBRE",
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: AppColors.primaryBlue,
-                        ),
-                    textAlign: TextAlign.center
-                  ),
+                  child: Text("ASU\nSOFTWARE\nLIBRE",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: AppColors.primaryBlue,
+                              ),
+                      textAlign: TextAlign.center),
                 ),
               ),
             ],
@@ -251,14 +245,13 @@ class _MobileModel extends StatelessWidget {
                     GoRouter.of(context)
                         .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
                   },
-                  child: Text(
-                    "ASU\nIEEE\nUPS",
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: AppColors.primaryBlue,
-                        ),
-                    textAlign: TextAlign.center
-                  ),
-                ),   
+                  child: Text("ASU\nIEEE\nUPS",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: AppColors.primaryBlue,
+                              ),
+                      textAlign: TextAlign.center),
+                ),
               ),
             ],
           ),

@@ -31,7 +31,7 @@ class Perfil extends StatelessWidget {
           children: <Widget>[
             Column(children: [
               Image.asset(
-                AppAssets.salesianosLogo,
+                AppAssets.jenniferYepez,
                 width: re.hp(90), // Ancho de la imagen
                 height: re.hp(90),
                 fit: BoxFit.fill,

@@ -18,7 +18,7 @@ class AppRouter {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
   static final GoRouter _router = GoRouter(
-    initialLocation: PAGES.login.pagePath,
+    initialLocation: PAGES.home.pagePath,
 
     //TODO: ajustar segun varibale de entorno
     // debugLogDiagnostics: Environment.appProd,
@@ -52,12 +52,12 @@ class AppRouter {
       GoRoute(
         path: PAGES.directiva.pagePath,
         name: PAGES.directiva.pageName,
-        builder: (context, state) => const DirectivaPage(),
+        builder: (context, state) => DirectivaPage(),
       ),
       GoRoute(
         path: PAGES.malla.pagePath,
         name: PAGES.malla.pageName,
-        builder: (context, state) => const MallaPage(),
+        builder: (context, state) => MallaPage(),
       ),
       GoRoute(
         path: PAGES.asu.pagePath,
