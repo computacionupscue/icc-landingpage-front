@@ -25,140 +25,123 @@ class Perfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Column(children: [
-              Image.asset(
-                AppAssets.jenniferYepez,
-                width: re.hp(90), // Ancho de la imagen
-                height: re.hp(90),
-                fit: BoxFit.fill,
+        return Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: AppColors.btnBackground, // Color del borde
+              width: 1.0, // Ancho del borde
+            ),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: re.hp(100),
+                color: AppColors.btnBackground,
+                child: Text(nombre,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                    textAlign: TextAlign.center),
               ),
-              SizedBox(
-                height: re.hp(10),
-              )
-            ]),
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppColors.btnBackground, // Color del borde
-                  width: 1.0, // Ancho del borde
-                ),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: re.hp(100),
-                    color: AppColors.btnBackground,
-                    child: Text(nombre,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+              Container(
+                width: re.hp(100),
+                color: const Color.fromARGB(255, 248, 248, 248),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: re.hp(2),
+                    ),
+                    Text("    $cargo",
+                        style: Theme.of(context).textTheme.bodyMedium,
                         textAlign: TextAlign.center),
-                  ),
-                  Container(
-                    width: re.hp(100),
-                    color: const Color.fromARGB(255, 248, 248, 248),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    SizedBox(
+                      height: re.hp(2),
+                    ),
+                    Text("    Educación",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.start),
+                    SizedBox(
+                      height: re.hp(2),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: titulo1.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: VinietaText("    ${titulo1[index]}",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(fontWeight: FontWeight.bold)),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: re.hp(2),
+                    ),
+                    Text("    Asignaturas Dictadas",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(fontWeight: FontWeight.bold)),
+                    SizedBox(
+                      height: re.hp(2),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: asig1.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: VinietaText("    ${asig1[index]}",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(fontWeight: FontWeight.bold)),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: re.hp(8),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: re.hp(2),
+                          width: re.hp(3),
                         ),
-                        Text("    $cargo",
-                            style: Theme.of(context).textTheme.bodyMedium,
+                        Icon(
+                          Icons
+                              .email, // Puedes cambiar esto por cualquier otro icono de la clase Icons
+                          color: AppColors
+                              .primaryBlue, // Puedes personalizar el color del icono
+                          size:
+                              re.hp(2.8), // Puedes ajustar el tamaño del icono
+                        ),
+                        SizedBox(
+                          width: re.hp(1),
+                        ),
+                        Text(correo,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall!
+                                .copyWith(color: AppColors.primaryBlue),
                             textAlign: TextAlign.center),
-                        SizedBox(
-                          height: re.hp(2),
-                        ),
-                        Text("    Educación",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.start),
-                        SizedBox(
-                          height: re.hp(2),
-                        ),
-                        ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: titulo1.length,
-                          itemBuilder: (context, index) {
-                            return ListTile(
-                              title: VinietaText("    ${titulo1[index]}",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .copyWith(fontWeight: FontWeight.bold)),
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          height: re.hp(2),
-                        ),
-                        Text("    Asignaturas Dictadas",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: re.hp(2),
-                        ),
-                        ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: asig1.length,
-                          itemBuilder: (context, index) {
-                            return ListTile(
-                              title: VinietaText("    ${asig1[index]}",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .copyWith(fontWeight: FontWeight.bold)),
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          height: re.hp(8),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: re.hp(3),
-                            ),
-                            Icon(
-                              Icons
-                                  .email, // Puedes cambiar esto por cualquier otro icono de la clase Icons
-                              color: AppColors
-                                  .primaryBlue, // Puedes personalizar el color del icono
-                              size: re.hp(
-                                  2.8), // Puedes ajustar el tamaño del icono
-                            ),
-                            SizedBox(
-                              width: re.hp(1),
-                            ),
-                            Text(correo,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(color: AppColors.primaryBlue),
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                        SizedBox(
-                          height: re.hp(4),
-                        )
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-          ],
+                    SizedBox(
+                      height: re.hp(4),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         );
       },
     );

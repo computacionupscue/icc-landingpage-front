@@ -65,12 +65,14 @@ class _MyButtonState extends State<CustomDirectivaBox> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(
-                      widget.foto,
-                      width: re.hp(25), // Ancho de la imagen
-                      height: re.hp(25),
-                      fit: BoxFit.cover,
-                      // Alto de la imagen
+                    ClipOval(
+                      child: Image.asset(
+                        widget.foto,
+                        width: re.hp(25), // Ancho de la imagen
+                        height: re.hp(25),
+                        fit: BoxFit.cover,
+                        // Alto de la imagen
+                      ),
                     ),
                     Text(widget.nombre,
                         style: Theme.of(context)

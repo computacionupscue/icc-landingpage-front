@@ -17,7 +17,7 @@ class Registro extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) {
-        return (constraints.maxWidth > 1200)
+        return (constraints.maxWidth > 1100)
             ? _DesktopModel(re: re)
             : _MobileModel(re: re);
       },
@@ -39,11 +39,10 @@ class _DesktopModel extends StatelessWidget {
       width: double.maxFinite,
       color: AppColors.primaryYellow,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            padding: const EdgeInsets.only(left: 200),
             margin: const EdgeInsets.only(top: AppLayoutConst.marginXL),
             child: TextButton(
               onPressed: () {
@@ -65,15 +64,12 @@ class _DesktopModel extends StatelessWidget {
                   textAlign: TextAlign.center),
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(right: 200),
-            child: ClipOval(
-              child: Image.asset(
-                AppAssets.computacion,
-                width: re.hp(90), // Ancho de la imagen
-                height: re.hp(55), // Alto de la imagen
-                fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
-              ),
+          ClipOval(
+            child: Image.asset(
+              AppAssets.computacion,
+              width: re.hp(90), // Ancho de la imagen
+              height: re.hp(55), // Alto de la imagen
+              fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
             ),
           ),
         ],
@@ -92,11 +88,11 @@ class _MobileModel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: re.hp(70),
+      height: re.hp(90),
       width: double.maxFinite,
       color: AppColors.primaryYellow,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
@@ -121,17 +117,20 @@ class _MobileModel extends StatelessWidget {
                   textAlign: TextAlign.center),
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(bottom: AppLayoutConst.marginXL),
-            child: ClipOval(
-              child: Image.asset(
-                AppAssets.salesianosLogo,
-                width: re.hp(50), // Ancho de la imagen
-                height: re.hp(35), // Alto de la imagen
-                fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
-              ),
+          SizedBox(
+            height: re.hp(5),
+          ),
+          ClipOval(
+            child: Image.asset(
+              AppAssets.computacion,
+              width: re.hp(90), // Ancho de la imagen
+              height: re.hp(55), // Alto de la imagen
+              fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
             ),
           ),
+          SizedBox(
+            height: re.hp(5),
+          )
         ],
       ),
     );

@@ -151,7 +151,6 @@ class _MobileModel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 50),
       height: re.hp(140),
       width: double.maxFinite,
       child: Column(
@@ -162,7 +161,7 @@ class _MobileModel extends StatelessWidget {
             children: [
               ClipOval(
                 child: Image.asset(
-                  AppAssets.salesianosLogo,
+                  AppAssets.logoRecicla,
                   width: re.hp(25), // Ancho de la imagen
                   height: re.hp(25), // Alto de la imagen
                   fit:
@@ -193,14 +192,11 @@ class _MobileModel extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
           Column(
             children: [
               ClipOval(
                 child: Image.asset(
-                  AppAssets.salesianosLogo,
+                  AppAssets.logoSoftwareLibre,
                   width: re.hp(25), // Ancho de la imagen
                   height: re.hp(25), // Alto de la imagen
                   fit:
@@ -224,14 +220,11 @@ class _MobileModel extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
           Column(
             children: [
               ClipOval(
                 child: Image.asset(
-                  AppAssets.salesianosLogo,
+                  AppAssets.logoIEEE,
                   width: re.hp(25), // Ancho de la imagen
                   height: re.hp(25), // Alto de la imagen
                   fit:

@@ -52,22 +52,22 @@ class _DesktopModel extends StatelessWidget {
                   nombre: "ARCE CUESTA DIANA CAROLINA",
                   cargo: "Docente",
                   correo: "darcec@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "ARCOS ARGUDO MIGUEL ARTURO",
                   cargo: "Docente",
                   correo: "marcos@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "BOJORQUE CHASI RODOLFO XAVIER",
                   cargo: "Docente",
                   correo: "rbojorque@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "BRAVO QUEZADA OMAR GUSTAVO",
                   cargo: "Docente",
                   correo: "obravo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
             ],
           ),
           SizedBox(
@@ -80,22 +80,22 @@ class _DesktopModel extends StatelessWidget {
                   nombre: "FLORES VAZQUEZ MARCELO ESTEBAN",
                   cargo: "Docente",
                   correo: "mfloresv@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
                   cargo: "Docente",
                   correo: "rhurtadoo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "LEON PAREDES GABRIEL ALEJANDRO",
                   cargo: "Docente",
                   correo: "gleon@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "ORDOÑEZ ORDOÑEZ JORGE OSMANI",
                   cargo: "Docente",
                   correo: "jordonezo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
             ],
           ),
           SizedBox(
@@ -108,22 +108,22 @@ class _DesktopModel extends StatelessWidget {
                   nombre: "ORTIZ OCHOA MAURICIO SERGIO",
                   cargo: "Docente",
                   correo: "mortizo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "PARRA GONZALEZ GERMAN ERNESTO",
                   cargo: "Docente",
                   correo: "gparra@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "PLAZA CORDERO ANDREA MARICELA",
                   cargo: "Docente",
                   correo: "aplaza@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "ROBLES BYKBAEV VLADIMIR ESPARTACO",
                   cargo: "Docente",
                   correo: "vrobles@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
             ],
           ),
           SizedBox(
@@ -136,22 +136,22 @@ class _DesktopModel extends StatelessWidget {
                   nombre: "SACOTO CABRERA ERWIN JAIRO",
                   cargo: "Docente",
                   correo: "esacoto@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "TACURI CAPELO BERTHA KATERINE",
                   cargo: "Docente",
                   correo: "btacuri@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "TIMBI SISALIMA CRISTIAN FERNANDO",
                   cargo: "Docente",
                   correo: "ctimbi@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               CustomDirectivaBox(
                   nombre: "VAZQUEZ LOAIZA JUAN PABLO",
                   cargo: "Docente",
                   correo: "jvazquez@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
             ],
           ),
           SizedBox(
@@ -166,7 +166,7 @@ class _DesktopModel extends StatelessWidget {
                   nombre: "YEPEZ ALULEMA JENNIFER ANDREA",
                   cargo: "Docente",
                   correo: "jyepez@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo)
+                  foto: AppAssets.usuariodef)
             ],
           ),
         ],
@@ -208,7 +208,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "ARCE CUESTA DIANA CAROLINA",
                   cargo: "Docente",
                   correo: "darcec@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -216,7 +216,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "ARCOS ARGUDO MIGUEL ARTURO",
                   cargo: "Docente",
                   correo: "marcos@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -224,7 +224,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "BOJORQUE CHASI RODOLFO XAVIER",
                   cargo: "Docente",
                   correo: "rbojorque@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -232,7 +232,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "BRAVO QUEZADA OMAR GUSTAVO",
                   cargo: "Docente",
                   correo: "obravo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -240,7 +240,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "FLORES VAZQUEZ MARCELO ESTEBAN",
                   cargo: "Docente",
                   correo: "mfloresv@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -248,7 +248,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
                   cargo: "Docente",
                   correo: "rhurtadoo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -256,7 +256,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "LEON PAREDES GABRIEL ALEJANDRO",
                   cargo: "Docente",
                   correo: "gleon@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -264,7 +264,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "ORDOÑEZ ORDOÑEZ JORGE OSMANI",
                   cargo: "Docente",
                   correo: "jordonezo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -272,7 +272,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "ORTIZ OCHOA MAURICIO SERGIO",
                   cargo: "Docente",
                   correo: "mortizo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -280,7 +280,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "PARRA GONZALEZ GERMAN ERNESTO",
                   cargo: "Docente",
                   correo: "gparra@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -288,7 +288,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "PLAZA CORDERO ANDREA MARICELA",
                   cargo: "Docente",
                   correo: "aplaza@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -296,7 +296,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "ROBLES BYKBAEV VLADIMIR ESPARTACO",
                   cargo: "Docente",
                   correo: "vrobles@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -304,7 +304,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "SACOTO CABRERA ERWIN JAIRO",
                   cargo: "Docente",
                   correo: "esacoto@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -312,7 +312,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "TACURI CAPELO BERTHA KATERINE",
                   cargo: "Docente",
                   correo: "btacuri@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -320,7 +320,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "TIMBI SISALIMA CRISTIAN FERNANDO",
                   cargo: "Docente",
                   correo: "ctimbi@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -328,7 +328,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "VAZQUEZ LOAIZA JUAN PABLO",
                   cargo: "Docente",
                   correo: "jvazquez@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -336,7 +336,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "YEPEZ ALULEMA JENNIFER ANDREA",
                   cargo: "Docente",
                   correo: "jyepez@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo)
+                  foto: AppAssets.usuariodef)
             ],
           ),
         ],

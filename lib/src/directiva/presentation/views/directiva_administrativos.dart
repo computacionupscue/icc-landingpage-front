@@ -76,7 +76,7 @@ class _DesktopModel extends StatelessWidget {
                   nombre: nombre1,
                   cargo: "Director de Carrera",
                   correo: correo1,
-                  foto: AppAssets.jenniferYepez),
+                  foto: AppAssets.jenniferYepezDocente),
             ],
           ),
           Column(
@@ -96,7 +96,7 @@ class _DesktopModel extends StatelessWidget {
                       cargo:
                           "Responsable de Extensiones Universitarias, Prácticas Pre Profesionales / Pasantías",
                       correo: correo2,
-                      foto: AppAssets.robertoGarcia),
+                      foto: AppAssets.robertoGarciaDocente),
                   SizedBox(
                     width: re.hp(10),
                   ),
@@ -104,7 +104,7 @@ class _DesktopModel extends StatelessWidget {
                       nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
                       cargo: "Responsable de Titulaciones",
                       correo: "rhurtadoo@ups.edu.ec",
-                      foto: AppAssets.salesianosLogo),
+                      foto: AppAssets.usuariodef),
                 ],
               )
             ],
@@ -149,7 +149,7 @@ class _MobileModel extends StatelessWidget {
               nombre: nombre1,
               cargo: "Director de Carrera",
               correo: correo1,
-              foto: AppAssets.salesianosLogo),
+              foto: AppAssets.jenniferYepezDocente),
           SizedBox(
             height: re.hp(7),
           ),
@@ -168,7 +168,7 @@ class _MobileModel extends StatelessWidget {
                   cargo:
                       "Responsable de Extensiones Universitarias, Prácticas Pre Profesionales / Pasantías",
                   correo: correo2,
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.robertoGarciaDocente),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -176,7 +176,7 @@ class _MobileModel extends StatelessWidget {
                   nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
                   cargo: "Responsable de Titulaciones",
                   correo: "rhurtadoo@ups.edu.ec",
-                  foto: AppAssets.salesianosLogo),
+                  foto: AppAssets.usuariodef),
             ],
           )
         ],

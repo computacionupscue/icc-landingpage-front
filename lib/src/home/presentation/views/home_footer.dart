@@ -13,25 +13,6 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (_, constraints) {
-        return (constraints.maxWidth > 800)
-            ? _DesktopModel(re: re)
-            : _MobileModel(re: re);
-      },
-    );
-  }
-}
-
-class _DesktopModel extends StatelessWidget {
-  const _DesktopModel({
-    required this.re,
-  });
-
-  final Responsive re;
-
-  @override
-  Widget build(BuildContext context) {
     return Container(
       height: re.hp(25),
       width: double.maxFinite,
@@ -46,101 +27,60 @@ class _DesktopModel extends StatelessWidget {
                   .headlineSmall!
                   .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, 
-            children: [
-              IconButton(
-                icon: const FaIcon(FontAwesomeIcons.facebookF),
-                color: Colors.white,       // Color personalizado
-                iconSize: re.hp(4), 
-                onPressed: () {
-                  // Acción al hacer clic en el ícono de Facebook
-                },
-              ),
-              IconButton(
-                icon: const FaIcon(FontAwesomeIcons.instagram),
-                color: Colors.white,       // Color personalizado
-                iconSize: re.hp(4), 
-                onPressed: () {
-                  // Acción al hacer clic en el ícono de Instagram
-                },
-              ),
-              IconButton(
-                icon: const FaIcon(FontAwesomeIcons.xTwitter),
-                color: Colors.white,       // Color personalizado
-                iconSize: re.hp(4), 
-                onPressed: () {
-                  // Acción al hacer clic en el ícono de Twitter
-                },
-              ),
-            ]
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, 
-            children: [
-              IconButton(
-                icon: const FaIcon(FontAwesomeIcons.youtube),
-                color: Colors.white,       // Color personalizado
-                iconSize: re.hp(4), 
-                onPressed: () {
-                  // Acción al hacer clic en el ícono de Facebook
-                },
-              ),
-              IconButton(
-                icon: const FaIcon(FontAwesomeIcons.linkedinIn),
-                color: Colors.white,       // Color personalizado
-                iconSize: re.hp(4), 
-                onPressed: () {
-                  // Acción al hacer clic en el ícono de Instagram
-                },
-              ),
-              IconButton(
-                icon: const FaIcon(FontAwesomeIcons.tiktok),
-                color: Colors.white,       // Color personalizado
-                iconSize: re.hp(4), 
-                onPressed: () {
-                  // Acción al hacer clic en el ícono de Twitter
-                },
-              ),
-            ]
-          ) 
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.facebookF),
+              color: Colors.white, // Color personalizado
+              iconSize: re.hp(4),
+              onPressed: () {
+                // Acción al hacer clic en el ícono de Facebook
+              },
+            ),
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.instagram),
+              color: Colors.white, // Color personalizado
+              iconSize: re.hp(4),
+              onPressed: () {
+                // Acción al hacer clic en el ícono de Instagram
+              },
+            ),
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.xTwitter),
+              color: Colors.white, // Color personalizado
+              iconSize: re.hp(4),
+              onPressed: () {
+                // Acción al hacer clic en el ícono de Twitter
+              },
+            ),
+          ]),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.youtube),
+              color: Colors.white, // Color personalizado
+              iconSize: re.hp(4),
+              onPressed: () {
+                // Acción al hacer clic en el ícono de Facebook
+              },
+            ),
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.linkedinIn),
+              color: Colors.white, // Color personalizado
+              iconSize: re.hp(4),
+              onPressed: () {
+                // Acción al hacer clic en el ícono de Instagram
+              },
+            ),
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.tiktok),
+              color: Colors.white, // Color personalizado
+              iconSize: re.hp(4),
+              onPressed: () {
+                // Acción al hacer clic en el ícono de Twitter
+              },
+            ),
+          ])
         ],
       ),
     );
-  }
-}
-
-class _MobileModel extends StatelessWidget {
-  const _MobileModel({
-    required this.re,
-  });
-
-  final Responsive re;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: re.hp(25),
-        width: double.maxFinite,
-        color: AppColors.primaryBlueMaterial,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("REDES SOCIALES",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineSmall!
-                    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center),
-            const SizedBox(height: 35),
-            Text("CONTACTO",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineSmall!
-                    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center),
-          ],
-        ));
   }
 }

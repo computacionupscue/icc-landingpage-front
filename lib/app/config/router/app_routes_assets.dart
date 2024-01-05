@@ -21,8 +21,10 @@ class AppAssets {
   static const modalidad = 'assets/images/modalidad.png';
   static const duracion = 'assets/images/duracion.png';
   static const descargas = 'assets/images/descargas.png';
-  static const jenniferYepez = 'assets/images/jenniferyepez.png';
-  static const robertoGarcia = 'assets/images/perfiles/ROBERTOGARCIA.jpg';
+  static const jenniferYepezPerfil = 'assets/images/perfiles/jenniferyepezperfil.jpg';
+  static const jenniferYepezDocente = 'assets/images/perfiles/jenniferyepezdocente.jpg';
+  static const robertoGarciaPerfil = 'assets/images/perfiles/robertogarciaperfil.jpg';
+  static const robertoGarciaDocente = 'assets/images/perfiles/robertogarciadocente.jpg';
   static const logoRecicla = 'assets/images/logorecicla.png';
   static const logoSoftwareLibre = 'assets/images/logosoftwarelibre.png';
   static const logoIEEE = 'assets/images/logoieee.png';
@@ -30,6 +32,7 @@ class AppAssets {
   static const inscripciones = 'assets/images/inscripciones.jpg';
   static const posgrados = 'assets/images/posgrados.jpg';
   static const becas = 'assets/images/becas.jpg';
+  static const usuariodef = 'assets/images/user_colab_default.png';
 
   /// [/archivos]
 

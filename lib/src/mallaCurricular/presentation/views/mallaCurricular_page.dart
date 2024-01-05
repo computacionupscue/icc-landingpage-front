@@ -15,42 +15,48 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 64,
         "horas_pe": 0,
         "horas_a": 96,
-        "codigo": "C1"
+        "codigo": "01",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Cálculo Diferencial",
         "horas_cd": 96,
         "horas_pe": 0,
         "horas_a": 144,
-        "codigo": "C1"
+        "codigo": "02",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Programación",
         "horas_cd": 64,
         "horas_pe": 32,
         "horas_a": 64,
-        "codigo": "C1"
+        "codigo": "03",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Antropología Filosófico-Teológica",
         "horas_cd": 32,
         "horas_pe": 0,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "04",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Introducción a la Física para Ciencias de la Computación",
         "horas_cd": 16,
         "horas_pe": 16,
         "horas_a": 8,
-        "codigo": "C1"
+        "codigo": "101",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Comuniacion Oral y Escrita",
         "horas_cd": 16,
         "horas_pe": 16,
         "horas_a": 8,
-        "codigo": "C1"
+        "codigo": "102",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -65,42 +71,48 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 64,
         "horas_pe": 0,
         "horas_a": 96,
-        "codigo": "C1"
+        "codigo": "07",
+        "requisito": "Álgebra Lineal - Cálculo Diferencial"
       },
       {
         "nombre": "Programación Orientada a Objetos",
         "horas_cd": 80,
         "horas_pe": 48,
         "horas_a": 72,
-        "codigo": "C1"
+        "codigo": "08",
+        "requisito": "Programación"
       },
       {
         "nombre": "Estructura de Datos",
         "horas_cd": 48,
         "horas_pe": 48,
         "horas_a": 24,
-        "codigo": "C1"
+        "codigo": "104",
+        "requisito": "Programación"
       },
       {
         "nombre": "Electrotecnia",
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "09",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Física para Ciencias de la Computación",
         "horas_cd": 16,
         "horas_pe": 16,
         "horas_a": 8,
-        "codigo": "C1"
+        "codigo": "103",
+        "requisito": "Introducción a la Física para Ciencias de la Computación"
       },
       {
         "nombre": "Ética",
         "horas_cd": 32,
         "horas_pe": 0,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "06",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -115,35 +127,40 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 64,
         "horas_pe": 0,
         "horas_a": 96,
-        "codigo": "C1"
+        "codigo": "12",
+        "requisito": "Cálculo Integral"
       },
       {
         "nombre": "Programación Aplicada",
         "horas_cd": 80,
         "horas_pe": 48,
         "horas_a": 72,
-        "codigo": "C1"
+        "codigo": "14",
+        "requisito": "Programación Orientada a Objetos - Estructura de Datos"
       },
       {
         "nombre": "Electrónica",
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "13",
+        "requisito": "Electrotecnia"
       },
       {
         "nombre": "Fundamentos de Sistemas Operativos",
         "horas_cd": 64,
         "horas_pe": 32,
         "horas_a": 64,
-        "codigo": "C1"
+        "codigo": "15",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Vida y Trascendencia",
         "horas_cd": 32,
         "horas_pe": 0,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "11",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -158,35 +175,48 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 64,
         "horas_pe": 0,
         "horas_a": 96,
-        "codigo": "C1"
+        "codigo": "17",
+        "requisito": "Ecuaciones Diferenciales"
       },
       {
         "nombre": "Fundamentos de Base de Datos",
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "21",
+        "requisito": "Programación Aplicada"
       },
       {
         "nombre": "Redes de Computadoras l",
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "19",
+        "requisito": "Arquitectura del Computador"
+      },
+      {
+        "nombre": "Arquitectura del Computador",
+        "horas_cd": 48,
+        "horas_pe": 16,
+        "horas_a": 56,
+        "codigo": "18",
+        "requisito": "Electrónica"
       },
       {
         "nombre": "Administración de Sistemas Operativos",
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "20",
+        "requisito": "Fundamentos de Sistemas Operativos"
       },
       {
         "nombre": "Pensamiento Social de la Iglesia",
         "horas_cd": 32,
         "horas_pe": 0,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "16",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -201,42 +231,48 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "26",
+        "requisito": "Métodos Numéricos"
       },
       {
         "nombre": "Gestión de Base de Datos",
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "24",
+        "requisito": "Fundamentos de Base de Datos"
       },
       {
         "nombre": "ITINERARIO",
         "horas_cd": 64,
         "horas_pe": 32,
         "horas_a": 64,
-        "codigo": "C1"
+        "codigo": "27",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Redes de Computadoras ll",
         "horas_cd": 48,
         "horas_pe": 48,
         "horas_a": 24,
-        "codigo": "C1"
+        "codigo": "23",
+        "requisito": "Redes de Computadoras I"
       },
       {
         "nombre": "Sistemas Embebidos",
         "horas_cd": 48,
         "horas_pe": 48,
         "horas_a": 24,
-        "codigo": "C1"
+        "codigo": "25",
+        "requisito": "Arquitectura del Computador"
       },
       {
         "nombre": "Pensamiento Crítico",
         "horas_cd": 32,
         "horas_pe": 0,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "22",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -251,35 +287,40 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 48,
         "horas_pe": 16,
         "horas_a": 56,
-        "codigo": "C1"
+        "codigo": "29",
+        "requisito": "Probabilidad y Estadística"
       },
       {
         "nombre": "Inteligencia Artificial",
         "horas_cd": 64,
         "horas_pe": 32,
         "horas_a": 64,
-        "codigo": "C1"
+        "codigo": "32",
+        "requisito": "Sistemas Embebidos"
       },
       {
         "nombre": "ITINERARIO",
         "horas_cd": 64,
         "horas_pe": 48,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "30",
+        "requisito": "ITINERARIO"
       },
       {
         "nombre": "Análisis y Diseño de Sistemas",
         "horas_cd": 64,
         "horas_pe": 48,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "31",
+        "requisito": "Administración de Sistemas Operativos"
       },
       {
         "nombre": "Prácticas de Servicio Comunitario",
         "horas_cd": 0,
         "horas_pe": 120,
         "horas_a": 0,
-        "codigo": "C1"
+        "codigo": "28",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -294,35 +335,40 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 48,
         "horas_pe": 48,
         "horas_a": 24,
-        "codigo": "C1"
+        "codigo": "36",
+        "requisito": "Análisis Multivariado y Modelos Estocásticos - Inteligencia Artificial"
       },
       {
         "nombre": "Aprendizaje Automático",
         "horas_cd": 48,
         "horas_pe": 48,
         "horas_a": 24,
-        "codigo": "C1"
+        "codigo": "35",
+        "requisito": "Análisis Multivariado y Modelos Estocásticos - Inteligencia Artificial"
       },
       {
         "nombre": "Ingeniería de Software",
         "horas_cd": 64,
         "horas_pe": 0,
         "horas_a": 96,
-        "codigo": "C1"
+        "codigo": "37",
+        "requisito": "Análisis y Diseño de Sistemas"
       },
       {
         "nombre": "Gestión Empresarial",
         "horas_cd": 32,
         "horas_pe": 0,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "33",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Prácticas Pre Profesionales",
         "horas_cd": 0,
         "horas_pe": 240,
         "horas_a": 0,
-        "codigo": "C1"
+        "codigo": "34",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -337,35 +383,40 @@ class MallaPage extends StatelessWidget {
         "horas_cd": 48,
         "horas_pe": 48,
         "horas_a": 24,
-        "codigo": "C1"
+        "codigo": "42",
+        "requisito": "Visión por Computador - Aprendizaje Automático"
       },
       {
         "nombre": "Minería de Datos",
         "horas_cd": 48,
         "horas_pe": 48,
         "horas_a": 24,
-        "codigo": "C1"
+        "codigo": "40",
+        "requisito": "Visión por Computador - Aprendizaje Automático - Fundamentos de Base de Datos"
       },
       {
         "nombre": "Seguridad de la Información",
         "horas_cd": 64,
         "horas_pe": 64,
         "horas_a": 32,
-        "codigo": "C1"
+        "codigo": "41",
+        "requisito": "Ingeniería de Software"
       },
       {
         "nombre": "Proyectos",
         "horas_cd": 32,
         "horas_pe": 0,
         "horas_a": 48,
-        "codigo": "C1"
+        "codigo": "39",
+        "requisito": "Ninguno"
       },
       {
         "nombre": "Integración Curricular",
         "horas_cd": 0,
         "horas_pe": 240,
         "horas_a": 0,
-        "codigo": "C1"
+        "codigo": "38",
+        "requisito": "Ninguno"
       }
     ]
   }
@@ -396,10 +447,23 @@ class MallaPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MyExpansionTileList(nivel: n1),
-                        MyExpansionTileList(nivel: n2),
-                        MyExpansionTileList(nivel: n3),
-                        MyExpansionTileList(nivel: n4),
+                        SizedBox(width: re.hp(8)),
+                        MyExpansionTileList(
+                            nivel: n1,
+                            boxColor: const Color.fromARGB(255, 0, 78, 161),
+                            expanded: true),
+                        MyExpansionTileList(
+                            nivel: n2,
+                            boxColor: const Color.fromARGB(255, 0, 78, 161),
+                            expanded: true),
+                        MyExpansionTileList(
+                            nivel: n3,
+                            boxColor: const Color.fromARGB(255, 0, 78, 161),
+                            expanded: true),
+                        MyExpansionTileList(
+                            nivel: n4,
+                            boxColor: const Color.fromARGB(255, 0, 78, 161),
+                            expanded: true),
                         // SizedBox(
                         //   width: re.hp(10),
                         // ),
@@ -412,14 +476,520 @@ class MallaPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MyExpansionTileList(nivel: n5),
-                        MyExpansionTileList(nivel: n6),
-                        MyExpansionTileList(nivel: n7),
-                        MyExpansionTileList(nivel: n8),
+                        SizedBox(width: re.hp(8)),
+                        MyExpansionTileList(
+                            nivel: n5,
+                            boxColor: const Color.fromARGB(255, 161, 0, 0),
+                            expanded: false),
+                        MyExpansionTileList(
+                            nivel: n6,
+                            boxColor: const Color.fromARGB(255, 161, 0, 0),
+                            expanded: false),
+                        MyExpansionTileList(
+                            nivel: n7,
+                            boxColor: const Color.fromARGB(255, 161, 0, 0),
+                            expanded: false),
+                        MyExpansionTileList(
+                            nivel: n8,
+                            boxColor: const Color.fromARGB(255, 161, 0, 0),
+                            expanded: false),
                         // SizedBox(
                         //   width: re.hp(10),
                         // ),
                       ],
+                    ),
+                    SizedBox(
+                      height: re.hp(5),
+                    ),
+                    Row(
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              width: re.hp(33),
+                              height: re.hp(28),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black, // Color del borde
+                                  width: 1, // Ancho del borde
+                                ),
+                              ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.all(re.hp(2)),
+                                        width: re.hp(5),
+                                        height: re.hp(3),
+                                        // color: Colors.blue,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 0, 78, 161),
+                                          border: Border.all(
+                                            color:
+                                                Colors.black, // Color del borde
+                                            width: 1, // Ancho del borde
+                                          ),
+                                        ),
+                                      ),
+                                      const Text("Básica")
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.all(re.hp(2)),
+                                        width: re.hp(5),
+                                        height: re.hp(3),
+                                        // color: Colors.blue,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 161, 0, 0),
+                                          border: Border.all(
+                                            color:
+                                                Colors.black, // Color del borde
+                                            width: 1, // Ancho del borde
+                                          ),
+                                        ),
+                                      ),
+                                      const Text("Profesional")
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.all(re.hp(2)),
+                                        width: re.hp(5),
+                                        height: re.hp(3),
+                                        // color: Colors.blue,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 17, 94, 20),
+                                          border: Border.all(
+                                            color:
+                                                Colors.black, // Color del borde
+                                            width: 1, // Ancho del borde
+                                          ),
+                                        ),
+                                      ),
+                                      const Text("Integración Curricular")
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(
+                                          top: re.hp(2),
+                                          right: re.hp(2),
+                                          left: re.hp(2),
+                                        ),
+                                        width: re.hp(5),
+                                        height: re.hp(3),
+                                        child: const Icon(
+                                          Icons.mouse_outlined,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.only(top: re.hp(2)),
+                                        child: const Text("Pre-requisito"),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          width: re.hp(2.5),
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: re.hp(40),
+                              height: re.hp(8),
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                border: Border.all(
+                                  color: Colors.white, // Color del borde
+                                  width: 1, // Ancho del borde
+                                ),
+                              ),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "ITINERARIO 1: SOFTWARE",
+                                    style: TextStyle(color: Colors.white),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: re.hp(2),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: re.hp(10),
+                                  height: re.hp(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    border: Border.all(
+                                      color: Colors.white, // Color del borde
+                                      width: 1, // Ancho del borde
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Nivel 5",
+                                        style: TextStyle(color: Colors.white),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: re.hp(2),
+                                ),
+                                Container(
+                                  width: re.hp(28),
+                                  height: re.hp(8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.grey, // Color del borde
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Programación y Plataformas Web",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: re.hp(2),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: re.hp(10),
+                                  height: re.hp(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    border: Border.all(
+                                      color: Colors.white, // Color del borde
+                                      width: 1, // Ancho del borde
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Nivel 6",
+                                        style: TextStyle(color: Colors.white),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: re.hp(2),
+                                ),
+                                Container(
+                                  width: re.hp(28),
+                                  height: re.hp(8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.grey, // Color del borde
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Sistemas Distribuidos",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: re.hp(2.5),
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: re.hp(40),
+                              height: re.hp(8),
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                border: Border.all(
+                                  color: Colors.white, // Color del borde
+                                  width: 1, // Ancho del borde
+                                ),
+                              ),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "ITINERARIO 2: GESTIÓN DE SISTEMAS DE INFORMACIÓN",
+                                    style: TextStyle(color: Colors.white),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: re.hp(2),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: re.hp(10),
+                                  height: re.hp(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    border: Border.all(
+                                      color: Colors.white, // Color del borde
+                                      width: 1, // Ancho del borde
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Nivel 5",
+                                        style: TextStyle(color: Colors.white),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: re.hp(2),
+                                ),
+                                Container(
+                                  width: re.hp(28),
+                                  height: re.hp(8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.grey, // Color del borde
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Gestión de Procesos",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: re.hp(2),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: re.hp(10),
+                                  height: re.hp(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    border: Border.all(
+                                      color: Colors.white, // Color del borde
+                                      width: 1, // Ancho del borde
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Nivel 6",
+                                        style: TextStyle(color: Colors.white),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: re.hp(2),
+                                ),
+                                Container(
+                                  width: re.hp(28),
+                                  height: re.hp(8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.grey, // Color del borde
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Administración de Proyectos y Gobierno de TI",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: re.hp(2.5),
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: re.hp(40),
+                              height: re.hp(8),
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                border: Border.all(
+                                  color: Colors.white, // Color del borde
+                                  width: 1, // Ancho del borde
+                                ),
+                              ),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "ITINERARIO 3: REDES",
+                                    style: TextStyle(color: Colors.white),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: re.hp(2),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: re.hp(10),
+                                  height: re.hp(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    border: Border.all(
+                                      color: Colors.white, // Color del borde
+                                      width: 1, // Ancho del borde
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Nivel 5",
+                                        style: TextStyle(color: Colors.white),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: re.hp(2),
+                                ),
+                                Container(
+                                  width: re.hp(28),
+                                  height: re.hp(8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.grey, // Color del borde
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Arquitectura y Gestión de Redes",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: re.hp(2),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: re.hp(10),
+                                  height: re.hp(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    border: Border.all(
+                                      color: Colors.white, // Color del borde
+                                      width: 1, // Ancho del borde
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Nivel 6",
+                                        style: TextStyle(color: Colors.white),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: re.hp(2),
+                                ),
+                                Container(
+                                  width: re.hp(28),
+                                  height: re.hp(8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.grey, // Color del borde
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Redes Inalámbricas",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: re.hp(5),
                     )
                   ],
                 ),
@@ -443,6 +1013,7 @@ class MallaPage extends StatelessWidget {
                           width: re.hp(25),
                           height: re.hp(8),
                           decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 206, 206, 206),
                             border: Border.all(
                               color: Colors.black, // Color del borde
                               width: 1, // Ancho del borde
@@ -495,6 +1066,7 @@ class MallaPage extends StatelessWidget {
                           width: re.hp(25),
                           height: re.hp(8),
                           decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 206, 206, 206),
                             border: Border.all(
                               color: Colors.black, // Color del borde
                               width: 1, // Ancho del borde
@@ -547,6 +1119,7 @@ class MallaPage extends StatelessWidget {
                           width: re.hp(25),
                           height: re.hp(8),
                           decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 206, 206, 206),
                             border: Border.all(
                               color: Colors.black, // Color del borde
                               width: 1, // Ancho del borde
@@ -599,6 +1172,7 @@ class MallaPage extends StatelessWidget {
                           width: re.hp(25),
                           height: re.hp(8),
                           decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 206, 206, 206),
                             border: Border.all(
                               color: Colors.black, // Color del borde
                               width: 1, // Ancho del borde
@@ -651,6 +1225,7 @@ class MallaPage extends StatelessWidget {
                           width: re.hp(25),
                           height: re.hp(8),
                           decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 206, 206, 206),
                             border: Border.all(
                               color: Colors.black, // Color del borde
                               width: 1, // Ancho del borde
@@ -703,6 +1278,7 @@ class MallaPage extends StatelessWidget {
                           width: re.hp(25),
                           height: re.hp(8),
                           decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 206, 206, 206),
                             border: Border.all(
                               color: Colors.black, // Color del borde
                               width: 1, // Ancho del borde
@@ -755,6 +1331,7 @@ class MallaPage extends StatelessWidget {
                           width: re.hp(25),
                           height: re.hp(8),
                           decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 206, 206, 206),
                             border: Border.all(
                               color: Colors.black, // Color del borde
                               width: 1, // Ancho del borde
@@ -927,7 +1504,7 @@ class MallaPage extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("1. Nombre de Asignatura",
+                            Text("1  Nombre de Asignatura",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
@@ -936,7 +1513,7 @@ class MallaPage extends StatelessWidget {
                             SizedBox(
                               height: re.hp(0.5),
                             ),
-                            Text("2. Horas de Aprendizaje Contacto\nDocente",
+                            Text("2  Horas de Aprendizaje Contacto\nDocente",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
@@ -946,7 +1523,7 @@ class MallaPage extends StatelessWidget {
                               height: re.hp(0.5),
                             ),
                             Text(
-                                "3. Horas de Aprendizaje Práctico\nExperimental",
+                                "3  Horas de Aprendizaje Práctico\nExperimental",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
@@ -955,7 +1532,7 @@ class MallaPage extends StatelessWidget {
                             SizedBox(
                               height: re.hp(0.5),
                             ),
-                            Text("4. Horas de Aprendizaje Autónomo",
+                            Text("4  Horas de Aprendizaje Autónomo",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
@@ -964,6 +1541,9 @@ class MallaPage extends StatelessWidget {
                           ],
                         )
                       ],
+                    ),
+                    SizedBox(
+                      height: re.hp(5),
                     )
                   ],
                 )
