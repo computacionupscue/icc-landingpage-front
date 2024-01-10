@@ -50,14 +50,20 @@ class AppRouter {
         builder: (context, state) => const FormularioPage(),
       ),
       GoRoute(
-        path: PAGES.directiva.pagePath,
-        name: PAGES.directiva.pageName,
-        builder: (context, state) => DirectivaPage(),
-      ),
+          path: PAGES.directiva.pagePath,
+          name: PAGES.directiva.pageName,
+          builder: (context, state) => DirectivaPage(),
+          routes: [
+            GoRoute(
+              path: PAGES.perfilColab.pagePath,
+              name: PAGES.perfilColab.pageName,
+              builder: (context, state) => PerfilColabPage(id: state.pathParameters["id"]!),
+            ),
+          ]),
       GoRoute(
         path: PAGES.malla.pagePath,
         name: PAGES.malla.pageName,
-        builder: (context, state) => MallaPage(),
+        builder: (context, state) => const MallaPage(),
       ),
       GoRoute(
         path: PAGES.asu.pagePath,
@@ -68,11 +74,6 @@ class AppRouter {
         path: PAGES.proyectos.pagePath,
         name: PAGES.proyectos.pageName,
         builder: (context, state) => const ProyectosPage(),
-      ),
-      GoRoute(
-        path: PAGES.perfilColab.pagePath,
-        name: PAGES.perfilColab.pageName,
-        builder: (context, state) => PerfilColabPage(),
       ),
     ],
 

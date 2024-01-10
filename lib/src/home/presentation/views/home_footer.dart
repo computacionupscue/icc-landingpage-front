@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -33,23 +34,18 @@ class Footer extends StatelessWidget {
               color: Colors.white, // Color personalizado
               iconSize: re.hp(4),
               onPressed: () {
-                // Acción al hacer clic en el ícono de Facebook
+                _launchURL("https://www.facebook.com/UPSalesianaEc/");
               },
+            ),
+            SizedBox(
+              width: re.hp(4),
             ),
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.instagram),
               color: Colors.white, // Color personalizado
               iconSize: re.hp(4),
               onPressed: () {
-                // Acción al hacer clic en el ícono de Instagram
-              },
-            ),
-            IconButton(
-              icon: const FaIcon(FontAwesomeIcons.xTwitter),
-              color: Colors.white, // Color personalizado
-              iconSize: re.hp(4),
-              onPressed: () {
-                // Acción al hacer clic en el ícono de Twitter
+                _launchURL("https://www.instagram.com/upsalesianaec/");
               },
             ),
           ]),
@@ -59,28 +55,33 @@ class Footer extends StatelessWidget {
               color: Colors.white, // Color personalizado
               iconSize: re.hp(4),
               onPressed: () {
-                // Acción al hacer clic en el ícono de Facebook
+                _launchURL(
+                    "https://www.youtube.com/channel/UCVtRZLpPa8CFkqXq7aTYiFA");
               },
+            ),
+            SizedBox(
+              width: re.hp(4),
             ),
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.linkedinIn),
               color: Colors.white, // Color personalizado
               iconSize: re.hp(4),
               onPressed: () {
-                // Acción al hacer clic en el ícono de Instagram
-              },
-            ),
-            IconButton(
-              icon: const FaIcon(FontAwesomeIcons.tiktok),
-              color: Colors.white, // Color personalizado
-              iconSize: re.hp(4),
-              onPressed: () {
-                // Acción al hacer clic en el ícono de Twitter
+                _launchURL(
+                    "https://ec.linkedin.com/school/universidad-politecnica-salesiana/");
               },
             ),
           ])
         ],
       ),
     );
+  }
+}
+
+_launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'No se pudo abrir el enlace $url';
   }
 }

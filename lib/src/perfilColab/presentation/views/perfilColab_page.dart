@@ -6,15 +6,15 @@ import 'package:landing_page/src/shared/perfil.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class PerfilColabPage extends StatelessWidget {
-  PerfilColabPage({super.key});
+  final String id;
 
+  PerfilColabPage({super.key, required this.id});
   final CollectionReference _perfil =
       FirebaseFirestore.instance.collection('perfil');
 
   @override
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
-
     return Scaffold(
       body: StreamBuilder(
           stream: _perfil.snapshots(),
@@ -25,11 +25,12 @@ class PerfilColabPage extends StatelessWidget {
             List<dynamic> titulo1 = [];
             List<dynamic> asig1 = [];
             if (snapshots.hasData) {
-              nombre = snapshots.data!.docs[0]['nombre'];
-              titulo1 = snapshots.data!.docs[0]['titulos'] ?? [];
-              asig1 = snapshots.data!.docs[0]['asignaturas'] ?? [];
-              cargo = snapshots.data!.docs[0]['cargo'];
-              correo = snapshots.data!.docs[0]['correo'];
+              int numero = int.parse(id);
+              nombre = snapshots.data!.docs[numero]['nombre'];
+              titulo1 = snapshots.data!.docs[numero]['titulos'] ?? [];
+              asig1 = snapshots.data!.docs[numero]['asignaturas'] ?? [];
+              cargo = snapshots.data!.docs[numero]['cargo'];
+              correo = snapshots.data!.docs[numero]['correo'];
             }
             return LayoutBuilder(
               builder: (_, constraints) {
@@ -40,14 +41,16 @@ class PerfilColabPage extends StatelessWidget {
                         titulo1: titulo1,
                         asig1: asig1,
                         cargo: cargo,
-                        correo: correo)
+                        correo: correo,
+                        id: id)
                     : _MobileModel(
                         re: re,
                         nombre: nombre,
                         titulo1: titulo1,
                         asig1: asig1,
                         cargo: cargo,
-                        correo: correo);
+                        correo: correo,
+                        id: id);
               },
             );
           }),
@@ -56,14 +59,14 @@ class PerfilColabPage extends StatelessWidget {
 }
 
 class _DesktopModel extends StatelessWidget {
-  const _DesktopModel({
-    required this.re,
-    required this.nombre,
-    required this.titulo1,
-    required this.asig1,
-    required this.cargo,
-    required this.correo,
-  });
+  _DesktopModel(
+      {required this.re,
+      required this.nombre,
+      required this.titulo1,
+      required this.asig1,
+      required this.cargo,
+      required this.correo,
+      required this.id});
 
   final Responsive re;
   final String nombre;
@@ -71,9 +74,16 @@ class _DesktopModel extends StatelessWidget {
   final List asig1;
   final String cargo;
   final String correo;
+  final String id;
+  String ruta = "0";
 
   @override
   Widget build(BuildContext context) {
+    if (id == "0") {
+      ruta = AppAssets.jenniferYepezPerfil;
+    } else if (id == "1") {
+      ruta = AppAssets.robertoGarciaPerfil;
+    }
     return ListView(
       children: [
         Row(
@@ -82,14 +92,14 @@ class _DesktopModel extends StatelessWidget {
           children: <Widget>[
             Column(children: [
               Image.asset(
-                AppAssets.jenniferYepezPerfil,
+                ruta,
                 width: re.hp(80), // Ancho de la imagen
                 height: re.hp(100),
                 fit: BoxFit.fill,
               ),
-              SizedBox(
-                height: re.hp(10),
-              )
+              // SizedBox(
+              //   height: re.hp(10),
+              // )
             ]),
             Perfil(
               nombre: nombre,
@@ -107,13 +117,14 @@ class _DesktopModel extends StatelessWidget {
 }
 
 class _MobileModel extends StatelessWidget {
-  const _MobileModel({
+  _MobileModel({
     required this.re,
     required this.nombre,
     required this.titulo1,
     required this.asig1,
     required this.cargo,
     required this.correo,
+    required this.id,
   });
 
   final Responsive re;
@@ -122,9 +133,16 @@ class _MobileModel extends StatelessWidget {
   final List asig1;
   final String cargo;
   final String correo;
+  final String id;
+  String ruta = "0";
 
   @override
   Widget build(BuildContext context) {
+    if (id == "0") {
+      ruta = AppAssets.jenniferYepezDocente;
+    } else if (id == "1") {
+      ruta = AppAssets.robertoGarciaDocente;
+    }
     return ListView(
       children: [
         Column(
@@ -136,13 +154,33 @@ class _MobileModel extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ClipOval(
-                    child: Image.asset(
-                      AppAssets.jenniferYepezPerfil,
-                      width: re.hp(25), // Ancho de la imagen
-                      height: re.hp(25),
-                      fit: BoxFit.cover,
-                      // Alto de la imagen
+                  Container(
+                    margin: EdgeInsets.only(right: re.hp(5)),
+                    width: re.hp(25), // Ancho de la imagen
+                    height: re.hp(25),
+                    decoration: BoxDecoration(
+                      shape: BoxShape
+                          .circle, // Hace que el contenedor sea circular
+                      border: Border.all(
+                        color: Colors.white, // Color del borde
+                        width: 2.0, // Ancho del borde
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black
+                              .withOpacity(0.2), // Color de la sombra
+                          spreadRadius: 0.2, // Extensión de la sombra
+                          blurRadius: 5, // Radio de desenfoque de la sombra
+                          offset:
+                              const Offset(0, 3), // Desplazamiento de la sombra
+                        ),
+                      ],
+                    ),
+                    child: ClipOval(
+                      child: Image.asset(
+                        ruta,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Column(

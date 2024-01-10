@@ -76,7 +76,8 @@ class _DesktopModel extends StatelessWidget {
                   nombre: nombre1,
                   cargo: "Director de Carrera",
                   correo: correo1,
-                  foto: AppAssets.jenniferYepezDocente),
+                  foto: AppAssets.jenniferYepezDocente,
+                  id: "0"),
             ],
           ),
           Column(
@@ -96,7 +97,8 @@ class _DesktopModel extends StatelessWidget {
                       cargo:
                           "Responsable de Extensiones Universitarias, Prácticas Pre Profesionales / Pasantías",
                       correo: correo2,
-                      foto: AppAssets.robertoGarciaDocente),
+                      foto: AppAssets.robertoGarciaDocente,
+                      id: "1"),
                   SizedBox(
                     width: re.hp(10),
                   ),
@@ -104,7 +106,8 @@ class _DesktopModel extends StatelessWidget {
                       nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
                       cargo: "Responsable de Titulaciones",
                       correo: "rhurtadoo@ups.edu.ec",
-                      foto: AppAssets.usuariodef),
+                      foto: AppAssets.usuariodef,
+                      id: "0"),
                 ],
               )
             ],
@@ -149,7 +152,8 @@ class _MobileModel extends StatelessWidget {
               nombre: nombre1,
               cargo: "Director de Carrera",
               correo: correo1,
-              foto: AppAssets.jenniferYepezDocente),
+              foto: AppAssets.jenniferYepezDocente,
+              id: "0"),
           SizedBox(
             height: re.hp(7),
           ),
@@ -168,7 +172,8 @@ class _MobileModel extends StatelessWidget {
                   cargo:
                       "Responsable de Extensiones Universitarias, Prácticas Pre Profesionales / Pasantías",
                   correo: correo2,
-                  foto: AppAssets.robertoGarciaDocente),
+                  foto: AppAssets.robertoGarciaDocente,
+                  id: "1"),
               SizedBox(
                 height: re.hp(7),
               ),
@@ -176,7 +181,8 @@ class _MobileModel extends StatelessWidget {
                   nombre: "HURTADO ORTIZ REMIGIO ISMAEL",
                   cargo: "Responsable de Titulaciones",
                   correo: "rhurtadoo@ups.edu.ec",
-                  foto: AppAssets.usuariodef),
+                  foto: AppAssets.usuariodef,
+                  id: "0"),
             ],
           )
         ],

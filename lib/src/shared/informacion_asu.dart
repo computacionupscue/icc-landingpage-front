@@ -35,7 +35,6 @@ class InformacionAsu extends StatelessWidget {
                 .copyWith(color: AppColors.primaryBlue)),
         Container(
             margin: EdgeInsets.all(re.hp(5)),
-            width: re.hp(150),
             child: Column(
               children: [
                 Card(

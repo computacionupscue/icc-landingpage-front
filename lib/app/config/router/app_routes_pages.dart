@@ -30,7 +30,7 @@ extension AppPageExtension on PAGES {
       case PAGES.proyectos:
         return "/proyectos";
       case PAGES.perfilColab:
-        return "/perfilColaboradores";
+        return "perfilColab/:id";
     }
   }
 

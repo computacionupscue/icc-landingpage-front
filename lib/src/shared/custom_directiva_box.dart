@@ -9,13 +9,15 @@ class CustomDirectivaBox extends StatefulWidget {
   final String cargo;
   final String correo;
   final String foto;
+  final String id;
 
   const CustomDirectivaBox(
       {super.key,
       required this.nombre,
       required this.cargo,
       required this.correo,
-      required this.foto});
+      required this.foto,
+      required this.id});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -41,9 +43,10 @@ class _MyButtonState extends State<CustomDirectivaBox> {
         },
         child: InkWell(
             onTap: () {
-              GoRouter.of(context).go(
-                PAGES.perfilColab.pagePath,
-              ); // Navegar a la ruta '/second
+              GoRouter.of(context)
+                  .goNamed(PAGES.perfilColab.pageName, pathParameters: {
+                "id": widget.id
+              });
             },
             child: Container(
                 width: re.hp(40), // Ancho de la imagen
@@ -65,13 +68,32 @@ class _MyButtonState extends State<CustomDirectivaBox> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ClipOval(
-                      child: Image.asset(
-                        widget.foto,
-                        width: re.hp(25), // Ancho de la imagen
-                        height: re.hp(25),
-                        fit: BoxFit.cover,
-                        // Alto de la imagen
+                    Container(
+                      width: re.hp(25), // Ancho de la imagen
+                      height: re.hp(25),
+                      decoration: BoxDecoration(
+                        shape: BoxShape
+                            .circle, // Hace que el contenedor sea circular
+                        border: Border.all(
+                          color: Colors.white, // Color del borde
+                          width: 2.0, // Ancho del borde
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black
+                                .withOpacity(0.2), // Color de la sombra
+                            spreadRadius: 0.2, // Extensión de la sombra
+                            blurRadius: 5, // Radio de desenfoque de la sombra
+                            offset: const Offset(
+                                0, 3), // Desplazamiento de la sombra
+                          ),
+                        ],
+                      ),
+                      child: ClipOval(
+                        child: Image.asset(
+                          widget.foto,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Text(widget.nombre,

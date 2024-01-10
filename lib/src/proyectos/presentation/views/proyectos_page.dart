@@ -17,7 +17,7 @@ class ProyectosPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
-    return re.width < 1300 ? _MobileModel(re: re) : _DesktopModel(re: re);
+    return re.width < 1400 ? _MobileModel(re: re) : _DesktopModel(re: re);
   }
 }
 
@@ -204,6 +204,7 @@ class _MobileModel extends StatelessWidget {
                             .copyWith(color: AppColors.primaryBlue)),
                   ),
                   Container(
+                    margin: EdgeInsets.symmetric(horizontal: re.hp(5)),
                     color: Colors.amber,
                     height: re.hp(45),
                     width: re.hp(90),
@@ -221,11 +222,11 @@ class _MobileModel extends StatelessWidget {
                       pagination: const SwiperPagination(),
                       control: const SwiperControl(),
                       fade: 1.0,
-                      viewportFraction: 0.85,
+                      viewportFraction: re.hp(0.135),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: re.hp(5)),
+                    margin: EdgeInsets.all(re.hp(5)),
                     height: re.hp(20),
                     width: re.hp(90),
                     decoration: BoxDecoration(
@@ -265,28 +266,28 @@ class _MobileModel extends StatelessWidget {
                             .copyWith(color: AppColors.primaryBlue)),
                   ),
                   Container(
+                    margin: EdgeInsets.symmetric(horizontal: re.hp(5)),
                     color: Colors.amber,
                     height: re.hp(45),
                     width: re.hp(90),
                     child: Swiper(
-                      itemBuilder: (BuildContext context, int index) {
-                        return Image.asset(
-                          images[index],
-                          fit: BoxFit.contain,
-                        );
-                      },
-                      indicatorLayout: PageIndicatorLayout.SCALE,
-                      autoplay: true,
-                      autoplayDelay: 5000,
-                      itemCount: images.length,
-                      pagination: const SwiperPagination(),
-                      control: const SwiperControl(),
-                      fade: 1.0,
-                      viewportFraction: 0.85,
-                    ),
+                        itemBuilder: (BuildContext context, int index) {
+                          return Image.asset(
+                            images[index],
+                            fit: BoxFit.contain,
+                          );
+                        },
+                        indicatorLayout: PageIndicatorLayout.SCALE,
+                        autoplay: true,
+                        autoplayDelay: 5000,
+                        itemCount: images.length,
+                        pagination: const SwiperPagination(),
+                        control: const SwiperControl(),
+                        fade: 1.0,
+                        viewportFraction: re.hp(0.135)),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: re.hp(5)),
+                    margin: EdgeInsets.all(re.hp(5)),
                     height: re.hp(20),
                     width: re.hp(90),
                     decoration: BoxDecoration(
