@@ -26,8 +26,9 @@ class Body extends StatelessWidget {
 }
 
 class _DesktopModel extends StatelessWidget {
-  final CollectionReference _registro = FirebaseFirestore.instance.collection('registro');
-      
+  final CollectionReference _registro =
+      FirebaseFirestore.instance.collection('registro');
+
   _DesktopModel({
     required this.re,
   });
@@ -35,8 +36,14 @@ class _DesktopModel extends StatelessWidget {
   final Responsive re;
   final TextEditingController _textController1 = TextEditingController();
   final TextEditingController _textController2 = TextEditingController();
+  final TextEditingController _textController3 = TextEditingController();
+  final TextEditingController _textController4 = TextEditingController();
+  final TextEditingController _textController5 = TextEditingController();
+  String _nombre = '';
+  String _apellido = '';
   String _correo = '';
   String _cedula = '';
+  String _inst = '';
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +78,42 @@ class _DesktopModel extends StatelessWidget {
             child: TextField(
               controller: _textController1,
               decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.person_3_outlined),
+                hintText: "Nombre",
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.black, // Color del borde
+                    width: 2.0, // Ancho del borde
+                  ),
+                ),
+              ),
+            )),
+        Container(
+            width: re.hp(78),
+            margin: const EdgeInsets.only(bottom: AppLayoutConst.marginM),
+            child: TextField(
+              controller: _textController2,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.person_2_outlined),
+                hintText: "Apellido",
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.black, // Color del borde
+                    width: 2.0, // Ancho del borde
+                  ),
+                ),
+              ),
+            )),
+        Container(
+            width: re.hp(78),
+            margin: const EdgeInsets.only(bottom: AppLayoutConst.marginM),
+            child: TextField(
+              controller: _textController3,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.email_outlined),
                 hintText: "Correo",
                 fillColor: Colors.white,
@@ -87,10 +130,28 @@ class _DesktopModel extends StatelessWidget {
             width: re.hp(78),
             margin: const EdgeInsets.only(bottom: AppLayoutConst.marginS),
             child: TextField(
-              controller: _textController2,
+              controller: _textController4,
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.email_outlined),
+                prefixIcon: Icon(Icons.credit_card),
                 hintText: "Cedula",
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.black, // Color del borde
+                    width: 2.0, // Ancho del borde
+                  ),
+                ),
+              ),
+            )),
+        Container(
+            width: re.hp(78),
+            margin: const EdgeInsets.only(bottom: AppLayoutConst.marginM),
+            child: TextField(
+              controller: _textController5,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.school_outlined),
+                hintText: "Institución Educativa",
                 fillColor: Colors.white,
                 filled: true,
                 border: OutlineInputBorder(
@@ -110,18 +171,47 @@ class _DesktopModel extends StatelessWidget {
                 fixedSize: const Size(250, 45)),
             onPressed: () {
               if (_textController1.text.isNotEmpty &&
-                  _textController2.text.isNotEmpty) {
-                _correo = _textController1.text;
-                _cedula = _textController2.text;
-                GoRouter.of(context).go(PAGES.home.pagePath);
-                _registro.add({'correo': _correo, 'cedula': _cedula});
+                  _textController2.text.isNotEmpty &&
+                  _textController3.text.isNotEmpty &&
+                  _textController4.text.isNotEmpty &&
+                  _textController5.text.isNotEmpty) {
+                _nombre = _textController1.text;
+                _apellido = _textController2.text;
+                _correo = _textController3.text;
+                _cedula = _textController4.text;
+                _inst = _textController5.text;
+
+                _registro.add({
+                  'nombre': _nombre,
+                  'apellido': _apellido,
+                  'correo': _correo,
+                  'cedula': _cedula,
+                  'inst': _inst
+                });
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text('Te has registrado correctamente'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('Aceptar'),
+                        ),
+                      ],
+                    );
+                  },
+                );
               } else {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
                       title: const Text('Campos Vacíos'),
-                      content: const Text('Todos los campos deben estar llenos.'),
+                      content:
+                          const Text('Todos los campos deben estar llenos.'),
                       actions: [
                         TextButton(
                           onPressed: () {
@@ -143,6 +233,44 @@ class _DesktopModel extends StatelessWidget {
                     fontWeight: FontWeight.bold)),
           ),
         ),
+        SizedBox(
+          height: re.hp(5),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.primaryBlueMaterial,
+                  foregroundColor: Colors.black,
+                  fixedSize: const Size(250, 45)),
+              onPressed: () {
+                GoRouter.of(context).go(PAGES.malla.pagePath);
+              },
+              child: const Text("Ver Malla Curricular",
+                  style: TextStyle(
+                      color: Colors.white,
+                      backgroundColor: AppColors.primaryBlueMaterial,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.primaryBlueMaterial,
+                  foregroundColor: Colors.black,
+                  fixedSize: const Size(250, 45)),
+              onPressed: () {
+                GoRouter.of(context).go(PAGES.home.pagePath);
+              },
+              child: const Text("Ir a pagina principal",
+                  style: TextStyle(
+                      color: Colors.white,
+                      backgroundColor: AppColors.primaryBlueMaterial,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
+            )
+          ],
+        )
       ],
     );
   }

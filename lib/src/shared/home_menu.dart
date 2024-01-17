@@ -140,6 +140,17 @@ class _DesktopModel extends StatelessWidget {
                   "Proyectos",
                 ),
               ),
+              TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go(PAGES.admin.pagePath);
+                },
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.white, // Color del texto del botón
+                    textStyle: Theme.of(context).textTheme.bodyMedium),
+                child: const Text(
+                  "Administración",
+                ),
+              ),
             ],
           ),
         ),
@@ -202,7 +213,7 @@ class _MobileModelState extends State<_MobileModel>
                     padding: EdgeInsets.symmetric(horizontal: widget.re.hp(2)),
                     width: widget.re.hp(18),
                     height: widget.re.hp(6),
-                    color: Colors.black,
+                    color: AppColors.primaryBlueMaterial,
                     child: Column(
                       children: [
                         _MenuTile(
@@ -262,7 +273,7 @@ class _MobileModelState extends State<_MobileModel>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  color: Colors.black,
+                  color: AppColors.primaryBlueMaterial,
                   child: ListTile(
                     title: Text(
                       'Directiva',
@@ -279,7 +290,7 @@ class _MobileModelState extends State<_MobileModel>
                   ),
                 ),
                 Container(
-                  color: Colors.black,
+                  color: AppColors.primaryBlueMaterial,
                   child: ListTile(
                     title: Text(
                       'Malla Curricular',
@@ -296,7 +307,7 @@ class _MobileModelState extends State<_MobileModel>
                   ),
                 ),
                 Container(
-                  color: Colors.black,
+                  color: AppColors.primaryBlueMaterial,
                   child: ListTile(
                     title: Text(
                       'Grupos ASU',
@@ -313,7 +324,7 @@ class _MobileModelState extends State<_MobileModel>
                   ),
                 ),
                 Container(
-                  color: Colors.black,
+                  color: AppColors.primaryBlueMaterial,
                   child: ListTile(
                     title: Text(
                       'Proyectos',

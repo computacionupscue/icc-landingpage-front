@@ -2,6 +2,10 @@ import 'package:flutter/material.dart' show GlobalKey, NavigatorState;
 
 import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/screens/not_found_page.dart';
+import 'package:landing_page/src/addProyectos/presentation/views/addProyectos_page.dart';
+import 'package:landing_page/src/admin/presentation/admin_presentation.dart';
+import 'package:landing_page/src/listProyectos/listProyectos.dart';
+import 'package:landing_page/src/listRegistros/presentation/views/listRegistros_page.dart';
 import 'package:landing_page/src/perfilColab/perfilColab.dart';
 import 'app_routes_pages.dart';
 
@@ -57,7 +61,8 @@ class AppRouter {
             GoRoute(
               path: PAGES.perfilColab.pagePath,
               name: PAGES.perfilColab.pageName,
-              builder: (context, state) => PerfilColabPage(id: state.pathParameters["id"]!),
+              builder: (context, state) =>
+                  PerfilColabPage(id: state.pathParameters["id"]!),
             ),
           ]),
       GoRoute(
@@ -75,6 +80,27 @@ class AppRouter {
         name: PAGES.proyectos.pageName,
         builder: (context, state) => const ProyectosPage(),
       ),
+      GoRoute(
+          path: PAGES.admin.pagePath,
+          name: PAGES.admin.pageName,
+          builder: (context, state) => const AdminPage(),
+          routes: [
+            GoRoute(
+              path: PAGES.listProyectos.pagePath,
+              name: PAGES.listProyectos.pageName,
+              builder: (context, state) => const ListProyectosPage(),
+            ),
+            GoRoute(
+              path: PAGES.listRegistros.pagePath,
+              name: PAGES.listRegistros.pageName,
+              builder: (context, state) => const ListRegistrosPage(),
+            ),
+            GoRoute(
+              path: PAGES.addProyectos.pagePath,
+              name: PAGES.addProyectos.pageName,
+              builder: (context, state) => const AddProyectosPage(),
+            ),
+          ]),
     ],
 
     errorBuilder: (context, state) => NotFoundScreen(
