@@ -35,15 +35,30 @@ class _AdminPageState extends State<AdminPage> {
             Container(
               width: re.hp(100),
               decoration: BoxDecoration(
+                color: AppColors.primaryBlue,
                 border: Border.all(
-                  color: Colors.black, // Puedes cambiar el color del borde aquí
-                  width: 2.0, // Puedes ajustar el ancho del borde aquí
+                  color: Colors.grey,
+                  width: 2.0,
                 ),
+                borderRadius: BorderRadius.circular(10.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  ),
+                ],
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ListTile(
-                    title: const Text('Ver Lista de Proyectos',
+                    title: Text('Ver Lista de Proyectos',
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold, color: Colors.white),
                         textAlign: TextAlign.center),
                     onTap: () {
                       GoRouter.of(context)
@@ -51,7 +66,9 @@ class _AdminPageState extends State<AdminPage> {
                     },
                   ),
                   ListTile(
-                    title: const Text('Ver Lista de Estudiantes',
+                    title: Text('Ver Lista de Estudiantes',
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold, color: Colors.white),
                         textAlign: TextAlign.center),
                     onTap: () {
                       GoRouter.of(context)
@@ -59,7 +76,9 @@ class _AdminPageState extends State<AdminPage> {
                     },
                   ),
                   ListTile(
-                    title: const Text('Agregar proyectos',
+                    title: Text('Agregar proyectos',
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold, color: Colors.white),
                         textAlign: TextAlign.center),
                     onTap: () {
                       GoRouter.of(context).goNamed(PAGES.addProyectos.pageName);
