@@ -19,54 +19,57 @@ class _AdminPageState extends State<AdminPage> {
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
     return Scaffold(
-      body: Column(
-        children: [
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryBlueMaterial,
-                foregroundColor: Colors.black,
-                fixedSize: const Size(250, 45)),
-            onPressed: () {
-              GoRouter.of(context).goNamed(PAGES.listProyectos.pageName);
-            },
-            child: const Text("Ver Lista de Proyectos",
-                style: TextStyle(
-                    color: Colors.white,
-                    backgroundColor: AppColors.primaryBlueMaterial,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold)),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryBlueMaterial,
-                foregroundColor: Colors.black,
-                fixedSize: const Size(250, 45)),
-            onPressed: () {
-              GoRouter.of(context).goNamed(PAGES.listRegistros.pageName);
-            },
-            child: const Text("Ver Lista de Estudiantes",
-                style: TextStyle(
-                    color: Colors.white,
-                    backgroundColor: AppColors.primaryBlueMaterial,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold)),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryBlueMaterial,
-                foregroundColor: Colors.black,
-                fixedSize: const Size(250, 45)),
-            onPressed: () {
-              GoRouter.of(context).goNamed(PAGES.addProyectos.pageName);
-            },
-            child: const Text("Agregar proyectos",
-                style: TextStyle(
-                    color: Colors.white,
-                    backgroundColor: AppColors.primaryBlueMaterial,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold)),
-          )
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(vertical: re.hp(7)),
+              child: Text(
+                "Administración",
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineMedium!
+                    .copyWith(color: AppColors.primaryBlue),
+              ),
+            ),
+            Container(
+              width: re.hp(100),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black, // Puedes cambiar el color del borde aquí
+                  width: 2.0, // Puedes ajustar el ancho del borde aquí
+                ),
+              ),
+              child: Column(
+                children: [
+                  ListTile(
+                    title: const Text('Ver Lista de Proyectos',
+                        textAlign: TextAlign.center),
+                    onTap: () {
+                      GoRouter.of(context)
+                          .goNamed(PAGES.listProyectos.pageName);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Ver Lista de Estudiantes',
+                        textAlign: TextAlign.center),
+                    onTap: () {
+                      GoRouter.of(context)
+                          .goNamed(PAGES.listRegistros.pageName);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Agregar proyectos',
+                        textAlign: TextAlign.center),
+                    onTap: () {
+                      GoRouter.of(context).goNamed(PAGES.addProyectos.pageName);
+                    },
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
