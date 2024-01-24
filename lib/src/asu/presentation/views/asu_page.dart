@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/router/app_routes_assets.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
+import 'package:landing_page/src/shared/home_footer.dart';
+import 'package:landing_page/src/shared/home_menu.dart';
 import 'package:landing_page/src/shared/informacion_asu.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -28,7 +30,8 @@ class _DesktopModel extends StatelessWidget {
         children: [
           Column(
             children: [
-              Container(height: re.hp(7)),
+              MenuHome(re: re),
+              SizedBox(height: re.hp(7)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -66,7 +69,6 @@ class _DesktopModel extends StatelessWidget {
                         ),
                         SizedBox(
                           width: re.hp(150),
-                          height: re.hp(20),
                           child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -94,7 +96,6 @@ class _DesktopModel extends StatelessWidget {
                         ),
                         SizedBox(
                           width: re.hp(150),
-                          height: re.hp(14),
                           child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -119,7 +120,6 @@ class _DesktopModel extends StatelessWidget {
                         ),
                         SizedBox(
                           width: re.hp(150),
-                          height: re.hp(11),
                           child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -142,7 +142,6 @@ class _DesktopModel extends StatelessWidget {
                         ),
                         SizedBox(
                           width: re.hp(150),
-                          height: re.hp(8),
                           child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -161,7 +160,6 @@ class _DesktopModel extends StatelessWidget {
                         ),
                         SizedBox(
                           width: re.hp(150),
-                          height: re.hp(14),
                           child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -421,7 +419,8 @@ class _DesktopModel extends StatelessWidget {
                 ],
               ),
             ],
-          )
+          ),
+          Footer(re: re)
         ],
       ),
     );
@@ -442,6 +441,7 @@ class _MobileModel extends StatelessWidget {
         children: [
           Column(
             children: [
+              MenuHome(re: re),
               ClipOval(
                 child: Image.asset(
                   AppAssets.logoRecicla,
@@ -814,6 +814,7 @@ class _MobileModel extends StatelessWidget {
                       ),
                     ],
                   )),
+              Footer(re: re)
             ],
           )
         ],

@@ -150,8 +150,7 @@ class _MobileModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: re.hp(140),
+    return SizedBox(
       width: double.maxFinite,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -159,6 +158,9 @@ class _MobileModel extends StatelessWidget {
         children: [
           Column(
             children: [
+              SizedBox(
+                height: re.hp(4),
+              ),
               ClipOval(
                 child: Image.asset(
                   AppAssets.logoRecicla,
@@ -190,6 +192,9 @@ class _MobileModel extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: re.hp(5),
+              )
             ],
           ),
           Column(
@@ -218,6 +223,9 @@ class _MobileModel extends StatelessWidget {
                       textAlign: TextAlign.center),
                 ),
               ),
+              SizedBox(
+                height: re.hp(5),
+              )
             ],
           ),
           Column(
@@ -246,6 +254,9 @@ class _MobileModel extends StatelessWidget {
                       textAlign: TextAlign.center),
                 ),
               ),
+              SizedBox(
+                height: re.hp(5),
+              )
             ],
           ),
         ],

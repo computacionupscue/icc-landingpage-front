@@ -185,7 +185,17 @@ class _MobileModel extends StatelessWidget {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [Text(nombre), Text(cargo)],
+                    children: [
+                      Padding(padding: EdgeInsets.only(right: re.hp(2))),
+                      Text(nombre,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 12)),
+                      Text(
+                        cargo,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 12),
+                      )
+                    ],
                   )
                 ],
               ),

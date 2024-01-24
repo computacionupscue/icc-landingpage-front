@@ -12,19 +12,19 @@ class FormularioPage extends StatelessWidget {
     Responsive re = Responsive.of(context);
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Header(re: re),
-            const SizedBox(height: 15),
-            Body(re: re)
-          ],
-        ),
+      body: ListView(
+        children: [
+          Center(
+            child: Column(
+              children: [
+                Header(re: re),
+                const SizedBox(height: 15),
+                Body(re: re)
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 }
-
-
-
-

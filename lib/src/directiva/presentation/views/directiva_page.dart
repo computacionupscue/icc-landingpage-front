@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:landing_page/src/directiva/presentation/views/directiva_administrativos.dart';
 import 'package:landing_page/src/directiva/presentation/views/directiva_docentes.dart';
 import 'package:landing_page/src/directiva/presentation/views/directiva_header.dart';
+import 'package:landing_page/src/shared/home_footer.dart';
+import 'package:landing_page/src/shared/home_menu.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class DirectivaPage extends StatelessWidget {
@@ -32,7 +34,7 @@ class DirectivaPage extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    //MenuHome(re: re),
+                    MenuHome(re: re),
                     Header(re: re),
                     Administrativos(
                         nombre1: nombre1,
@@ -41,6 +43,7 @@ class DirectivaPage extends StatelessWidget {
                         correo2: correo2,
                         re: re),
                     Docentes(re: re),
+                    Footer(re: re)
                   ],
                 )
               ],

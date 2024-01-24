@@ -34,46 +34,51 @@ class _DesktopModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: re.hp(60),
-      width: double.maxFinite,
-      color: AppColors.primaryYellow,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: const EdgeInsets.only(top: AppLayoutConst.marginXL),
-            child: TextButton(
-              onPressed: () {
-                GoRouter.of(context).go(PAGES.formulario.pagePath);
-              },
-              style: TextButton.styleFrom(
-                foregroundColor:
-                    AppColors.primaryBlue, // Color del texto del botón
-                textStyle: const TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Roboto' // Tamaño del texto del botón
-                    ),
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(vertical: re.hp(5)),
+          width: double.maxFinite,
+          color: AppColors.primaryYellow,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                child: TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).go(PAGES.formulario.pagePath);
+                  },
+                  style: TextButton.styleFrom(
+                    foregroundColor:
+                        AppColors.primaryBlue, // Color del texto del botón
+                    textStyle: const TextStyle(
+                        fontSize: 20.0,
+                        fontFamily: 'Roboto' // Tamaño del texto del botón
+                        ),
+                  ),
+                  child: Text(
+                      "Te interesa la carrera,\nregistrate para tener\nmas informacion",
+                      style:
+                          Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                color: AppColors.primaryBlue,
+                              ),
+                      textAlign: TextAlign.center),
+                ),
               ),
-              child: Text(
-                  "Te interesa la carrera,\nregistrate para tener\nmas informacion",
-                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        color: AppColors.primaryBlue,
-                      ),
-                  textAlign: TextAlign.center),
-            ),
+              ClipOval(
+                child: Image.asset(
+                  AppAssets.computacion,
+                  width: re.hp(90), // Ancho de la imagen
+                  height: re.hp(55), // Alto de la imagen
+                  fit:
+                      BoxFit.cover, // Puedes ajustar esto según tus necesidades
+                ),
+              ),
+            ],
           ),
-          ClipOval(
-            child: Image.asset(
-              AppAssets.computacion,
-              width: re.hp(90), // Ancho de la imagen
-              height: re.hp(55), // Alto de la imagen
-              fit: BoxFit.cover, // Puedes ajustar esto según tus necesidades
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -88,7 +93,6 @@ class _MobileModel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: re.hp(90),
       width: double.maxFinite,
       color: AppColors.primaryYellow,
       child: Column(

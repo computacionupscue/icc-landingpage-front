@@ -69,6 +69,7 @@ class Perfil extends StatelessWidget {
                       height: re.hp(2),
                     ),
                     ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: titulo1.length,
                       itemBuilder: (context, index) {
@@ -93,6 +94,7 @@ class Perfil extends StatelessWidget {
                       height: re.hp(2),
                     ),
                     ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: asig1.length,
                       itemBuilder: (context, index) {

@@ -31,30 +31,38 @@ class Novedades extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        height: re.hp(54),
-        width: double.maxFinite,
         color: AppColors.primaryBlue,
-        child: Center(
-          child: Swiper(
-            onIndexChanged: (index) {
-              // Aquí puedes hacer lo que necesites con el índice
-              indice = index;
-            },
-            itemBuilder: (BuildContext context, int index) {
-              return Image.asset(
-                images[index],
-                fit: BoxFit.contain,
-              );
-            },
-            indicatorLayout: PageIndicatorLayout.SCALE,
-            autoplay: true,
-            autoplayDelay: 5000,
-            itemCount: images.length,
-            pagination: const SwiperPagination(),
-            control: const SwiperControl(color: Colors.black),
-            fade: 1.0,
-            viewportFraction: re.hp(1),
-          ),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            double containerHeight = constraints.maxWidth *
+                0.26; // Ajusta el factor según tus necesidades
+
+            return Center(
+              child: SizedBox(
+                height: containerHeight,
+                width: double.infinity,
+                child: Swiper(
+                  onIndexChanged: (index) {
+                    indice = index;
+                  },
+                  itemBuilder: (BuildContext context, int index) {
+                    return Image.asset(
+                      images[index],
+                      fit: BoxFit.contain,
+                    );
+                  },
+                  indicatorLayout: PageIndicatorLayout.SCALE,
+                  autoplay: true,
+                  autoplayDelay: 5000,
+                  itemCount: images.length,
+                  pagination: const SwiperPagination(),
+                  control: const SwiperControl(color: Colors.black),
+                  fade: 1.0,
+                  viewportFraction: 1.0, // Usar 1.0 para ocupar toda la anchura
+                ),
+              ),
+            );
+          },
         ),
       ),
       onTap: () async {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
+import 'package:landing_page/src/shared/home_footer.dart';
+import 'package:landing_page/src/shared/home_menu.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 final List<String> images = [
@@ -35,6 +37,7 @@ class _DesktopModel extends StatelessWidget {
         children: [
           Column(
             children: [
+              MenuHome(re: re),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -171,7 +174,8 @@ class _DesktopModel extends StatelessWidget {
                 ],
               )
             ],
-          )
+          ),
+          Footer(re: re)
         ],
       ),
     );
@@ -192,6 +196,7 @@ class _MobileModel extends StatelessWidget {
         children: [
           Column(
             children: [
+              MenuHome(re: re),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -319,7 +324,8 @@ class _MobileModel extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
+              Footer(re: re)
             ],
           )
         ],

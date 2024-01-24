@@ -75,15 +75,15 @@ class _AdminPageState extends State<AdminPage> {
                           .goNamed(PAGES.listRegistros.pageName);
                     },
                   ),
-                  ListTile(
-                    title: Text('Agregar proyectos',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.bold, color: Colors.white),
-                        textAlign: TextAlign.center),
-                    onTap: () {
-                      GoRouter.of(context).goNamed(PAGES.addProyectos.pageName);
-                    },
-                  ),
+                  // ListTile(
+                  //   title: Text('Agregar proyectos',
+                  //       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  //           fontWeight: FontWeight.bold, color: Colors.white),
+                  //       textAlign: TextAlign.center),
+                  //   onTap: () {
+                  //     GoRouter.of(context).goNamed(PAGES.addProyectos.pageName);
+                  //   },
+                  // ),
                 ],
               ),
             )

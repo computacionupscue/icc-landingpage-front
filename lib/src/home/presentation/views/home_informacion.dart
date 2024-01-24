@@ -396,7 +396,7 @@ class _MobileModel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(
@@ -408,7 +408,7 @@ class _MobileModel extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Inicio de inscripciones",
+                          Text("Inicio de\ninscripciones",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
@@ -430,7 +430,7 @@ class _MobileModel extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(
@@ -442,7 +442,7 @@ class _MobileModel extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Finalizacion de inscripciones",
+                          Text("Finalizacion de\ninscripciones",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
@@ -474,7 +474,7 @@ class _MobileModel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(
@@ -486,7 +486,7 @@ class _MobileModel extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Inicio de matriculas",
+                          Text("Inicio de\nmatriculas",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
@@ -508,7 +508,7 @@ class _MobileModel extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(
@@ -520,7 +520,7 @@ class _MobileModel extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Finalizacion de matriculas",
+                          Text("Finalizacion de\nmatriculas",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
@@ -552,7 +552,7 @@ class _MobileModel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(
@@ -572,7 +572,7 @@ class _MobileModel extends StatelessWidget {
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   )),
-                          Text("Ingeniero/a en Ciencias\nde la Computación",
+                          Text("Ing en Ciencias de\nla Computación",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
@@ -586,7 +586,7 @@ class _MobileModel extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(
@@ -630,7 +630,7 @@ class _MobileModel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(
@@ -664,7 +664,7 @@ class _MobileModel extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: re.hp(37),
+                  width: re.hp(28),
                   child: Row(
                     children: [
                       Image.asset(

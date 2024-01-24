@@ -50,29 +50,32 @@ class _DesktopModel extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    final homebloc = context.read<HomeBloc>();
-                    homebloc.add(const GetDataEvent(valor: 'Modo claro'));
+                    // final homebloc = context.read<HomeBloc>();
+                    // homebloc.add(const GetDataEvent(valor: 'Modo claro'));
                   },
                   style: TextButton.styleFrom(
                       foregroundColor:
                           Colors.white, // Color del texto del botón
                       textStyle: Theme.of(context).textTheme.bodyMedium),
-                  child: BlocBuilder<HomeBloc, HomeState>(
-                    builder: (context, state) {
-                      if (state is HomeInitial) {
-                        return const Text(
-                          "Modo Oscuro",
-                        );
-                      } else if (state is HomeLoading) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
+                  // child: BlocBuilder<HomeBloc, HomeState>(
+                  //   builder: (context, state) {
+                  //     if (state is HomeInitial) {
+                  //       return const Text(
+                  //         "Modo Oscuro",
+                  //       );
+                  //     } else if (state is HomeLoading) {
+                  //       return const Center(
+                  //         child: CircularProgressIndicator(),
+                  //       );
+                  //     }
 
-                      return Text(
-                        (state as HomeLoaded).valor,
-                      );
-                    },
+                  //     return Text(
+                  //       (state as HomeLoaded).valor,
+                  //     );
+                  //   },
+                  // ),
+                  child: const Text(
+                    "Modo Oscuro",
                   ),
                 ),
               ],
@@ -93,6 +96,17 @@ class _DesktopModel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go(PAGES.home.pagePath);
+                },
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.white, // Color del texto del botón
+                    textStyle: Theme.of(context).textTheme.bodyMedium),
+                child: const Text(
+                  "Inicio",
+                ),
+              ),
               TextButton(
                 onPressed: () {
                   GoRouter.of(context).go(PAGES.directiva.pagePath);
@@ -140,17 +154,17 @@ class _DesktopModel extends StatelessWidget {
                   "Proyectos",
                 ),
               ),
-              TextButton(
-                onPressed: () {
-                  GoRouter.of(context).go(PAGES.admin.pagePath);
-                },
-                style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, // Color del texto del botón
-                    textStyle: Theme.of(context).textTheme.bodyMedium),
-                child: const Text(
-                  "Administración",
-                ),
-              ),
+              // TextButton(
+              //   onPressed: () {
+              //     GoRouter.of(context).go(PAGES.admin.pagePath);
+              //   },
+              //   style: TextButton.styleFrom(
+              //       foregroundColor: Colors.white, // Color del texto del botón
+              //       textStyle: Theme.of(context).textTheme.bodyMedium),
+              //   child: const Text(
+              //     "Administración",
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -172,9 +186,8 @@ class _MobileModel extends StatefulWidget {
 
 class _MobileModelState extends State<_MobileModel>
     with SingleTickerProviderStateMixin {
-  GlobalKey _containerKey = GlobalKey();
-  OverlayEntry? _overlayEntry;
   bool isOpen = false;
+  bool _showColumn = false;
   late AnimationController controller;
 
   @override
@@ -184,179 +197,90 @@ class _MobileModelState extends State<_MobileModel>
         vsync: this, duration: const Duration(milliseconds: 200));
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return Stack(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                    if (isOpen) {
-                      controller.reverse();
-                      _hideOverlayMenu();
-                    } else {
-                      controller.forward();
-
-                      _showOverlayMenu(context);
-                    }
-                    setState(() {
-                      isOpen = !isOpen;
-                    });
-                  },
-                  child: Container(
-                    key: _containerKey,
-                    padding: EdgeInsets.symmetric(horizontal: widget.re.hp(2)),
-                    width: widget.re.hp(18),
-                    height: widget.re.hp(6),
-                    color: AppColors.primaryBlueMaterial,
-                    child: Column(
-                      children: [
-                        _MenuTile(
-                            isOpen: isOpen,
-                            controller: controller,
-                            re: widget.re),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(
-                    vertical: AppLayoutConst.marginL),
-                child: Image.asset(
-                  AppAssets.upsLogo,
-                  height: widget.re.hp(15),
-                  width: widget.re.hp(50),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: const FaIcon(
-                  FontAwesomeIcons.solidMoon,
-                  size: 30, //
-                ),
-              ),
-            ],
-          ),
-        ],
-      );
+  void _toggleColumn() {
+    if (_showColumn) {
+      controller.reverse();
+    } else {
+      controller.forward();
+    }
+    setState(() {
+      _showColumn = !_showColumn;
     });
   }
 
-  void _showOverlayMenu(BuildContext context) {
-    // Obtener las coordenadas del Container anterior
-    RenderBox renderBox =
-        _containerKey.currentContext?.findRenderObject() as RenderBox;
-    Offset containerPosition = renderBox.localToGlobal(Offset.zero);
-
-    // Calcular la posición del menú debajo del Container
-    double menuTop = containerPosition.dy + renderBox.size.height;
-    double menuRight = MediaQuery.of(context).size.width -
-        containerPosition.dx -
-        renderBox.size.width;
-    // Crear una entrada para el Overlay
-    _overlayEntry = OverlayEntry(
-      builder: (context) => Positioned(
-        top: menuTop,
-        right: menuRight,
-        child: Material(
-          child: Container(
-            width: widget.re.hp(18),
-            height: 202,
-            color: Colors.black,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, constraints) {
+      return Container(
+        decoration: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: Colors
+                  .black, // Puedes ajustar el color del borde según tus necesidades
+              width:
+                  0.3, // Puedes ajustar el ancho del borde según tus necesidades
+            ),
+          ),
+        ),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  color: AppColors.primaryBlueMaterial,
-                  child: ListTile(
-                    title: Text(
-                      'Directiva',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall!
-                          .copyWith(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
                     onTap: () {
-                      _hideOverlayMenu();
-                      GoRouter.of(context).go(PAGES.directiva.pagePath);
+                      _toggleColumn(); // Llama al nuevo método al presionar el botón
+                      setState(() {
+                        isOpen = !isOpen;
+                      });
                     },
+                    child: Container(
+                      width: widget.re.hp(6),
+                      height: widget.re.hp(5),
+                      color: Colors.transparent,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _MenuTile(
+                              isOpen: isOpen,
+                              controller: controller,
+                              re: widget.re),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
                 Container(
-                  color: AppColors.primaryBlueMaterial,
-                  child: ListTile(
-                    title: Text(
-                      'Malla Curricular',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall!
-                          .copyWith(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                    onTap: () {
-                      _hideOverlayMenu();
-                      GoRouter.of(context).go(PAGES.malla.pagePath);
-                    },
+                  margin: const EdgeInsets.symmetric(
+                      vertical: AppLayoutConst.marginL),
+                  child: Image.asset(
+                    AppAssets.upsLogo,
+                    height: widget.re.hp(15),
+                    width: widget.re.hp(50),
                   ),
                 ),
-                Container(
-                  color: AppColors.primaryBlueMaterial,
-                  child: ListTile(
-                    title: Text(
-                      'Grupos ASU',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall!
-                          .copyWith(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                    onTap: () {
-                      _hideOverlayMenu();
-                      GoRouter.of(context).go(PAGES.asu.pagePath);
-                    },
-                  ),
-                ),
-                Container(
-                  color: AppColors.primaryBlueMaterial,
-                  child: ListTile(
-                    title: Text(
-                      'Proyectos',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall!
-                          .copyWith(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                    onTap: () {
-                      _hideOverlayMenu();
-                      GoRouter.of(context).go(PAGES.proyectos.pagePath);
-                    },
+                GestureDetector(
+                  onTap: () {},
+                  child: const FaIcon(
+                    FontAwesomeIcons.solidMoon,
+                    size: 35, //
                   ),
                 ),
               ],
             ),
-          ),
+            if (_showColumn)
+              AnimatedSize(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeInOut,
+                child: _MenuColumn(),
+              ),
+          ],
         ),
-      ),
-    );
-
-    // Insertar la entrada en el Overlay
-    Overlay.of(context).insert(_overlayEntry!);
-  }
-
-  void _hideOverlayMenu() {
-    // Eliminar la entrada del Overlay
-    _overlayEntry?.remove();
-    // setState(() {
-    //   isOpen = !isOpen;
-    // });
+      );
+    });
   }
 }
 
@@ -373,26 +297,100 @@ class _MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: re.hp(18),
-      height: re.hp(6),
       child: Row(
         children: [
           AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             curve: Curves.easeInOut,
-            width: isOpen ? 30 : 0,
+            width: isOpen ? 0 : 0,
           ),
-          Text("Menú",
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineSmall!
-                  .copyWith(color: Colors.white, fontSize: 16)),
-          const Spacer(),
           AnimatedIcon(
             icon: AnimatedIcons.menu_close,
             progress: controller,
-            color: Colors.white,
-          )
+            color: Colors.black,
+            size: 35,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MenuColumn extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Puedes personalizar el contenido del "column" según tus necesidades
+    return Container(
+      width: double.maxFinite,
+      color: AppColors.primaryBlueMaterial,
+      child: Column(
+        children: [
+          ListTile(
+            title: Text('Inicio',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: Colors.white),
+                textAlign: TextAlign.center),
+            onTap: () {
+              GoRouter.of(context).go(PAGES.home.pagePath);
+            },
+          ),
+          ListTile(
+            title: Text('Directiva',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: Colors.white),
+                textAlign: TextAlign.center),
+            onTap: () {
+              GoRouter.of(context).go(PAGES.directiva.pagePath);
+            },
+          ),
+          ListTile(
+            title: Text('Malla Curricular',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: Colors.white),
+                textAlign: TextAlign.center),
+            onTap: () {
+              GoRouter.of(context).go(PAGES.malla.pagePath);
+            },
+          ),
+          ListTile(
+            title: Text('Grupos ASU',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: Colors.white),
+                textAlign: TextAlign.center),
+            onTap: () {
+              GoRouter.of(context).go(PAGES.asu.pagePath);
+            },
+          ),
+          ListTile(
+            title: Text('Proyectos',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: Colors.white),
+                textAlign: TextAlign.center),
+            onTap: () {
+              GoRouter.of(context).go(PAGES.proyectos.pagePath);
+            },
+          ),
+          // ListTile(
+          //   title: Text('Administración',
+          //       style: Theme.of(context)
+          //           .textTheme
+          //           .bodyMedium!
+          //           .copyWith(color: Colors.white),
+          //       textAlign: TextAlign.center),
+          //   onTap: () {
+          //     GoRouter.of(context).go(PAGES.admin.pagePath);
+          //   },
+          // ),
         ],
       ),
     );

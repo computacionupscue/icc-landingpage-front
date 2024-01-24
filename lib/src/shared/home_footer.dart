@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/responsive.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
@@ -15,19 +15,24 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: re.hp(25),
       width: double.maxFinite,
       color: AppColors.primaryBlueMaterial,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(
+            height: re.hp(5),
+          ),
           Text("Síguenos",
               style: Theme.of(context)
                   .textTheme
                   .headlineSmall!
                   .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center),
+          SizedBox(
+            height: re.hp(2),
+          ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.facebookF),
@@ -71,7 +76,10 @@ class Footer extends StatelessWidget {
                     "https://ec.linkedin.com/school/universidad-politecnica-salesiana/");
               },
             ),
-          ])
+          ]),
+          SizedBox(
+            height: re.hp(5),
+          ),
         ],
       ),
     );
