@@ -11,7 +11,8 @@ enum PAGES {
   admin,
   listProyectos,
   listRegistros,
-  addProyectos
+  addProyectos,
+  updProyectos
 }
 
 extension AppPageExtension on PAGES {
@@ -43,6 +44,8 @@ extension AppPageExtension on PAGES {
         return "listRegistros";
       case PAGES.addProyectos:
         return "addProyectos";
+      case PAGES.updProyectos:
+        return "updProyectos/:nombre/:descripcion/:integrantes/:grupo/:imagen/:uid";
     }
   }
 
@@ -74,6 +77,8 @@ extension AppPageExtension on PAGES {
         return "listRegistros";
       case PAGES.addProyectos:
         return "addProyectos";
+      case PAGES.updProyectos:
+        return "updProyectos";
     }
   }
 }

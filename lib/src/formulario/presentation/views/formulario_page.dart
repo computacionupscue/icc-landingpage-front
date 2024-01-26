@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/src/formulario/presentation/views/formulario_header.dart';
 import 'package:landing_page/src/formulario/presentation/views/formulario_body.dart';
+import 'package:landing_page/src/shared/home_footer.dart';
+import 'package:landing_page/src/shared/home_menu.dart';
 
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -14,14 +16,13 @@ class FormularioPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          Center(
-            child: Column(
-              children: [
-                Header(re: re),
-                const SizedBox(height: 15),
-                Body(re: re)
-              ],
-            ),
+          Column(
+            children: [
+              MenuHome(re: re),
+              SizedBox(height: re.hp(7)),
+              Body(re: re),
+              Footer(re: re),
+            ],
           ),
         ],
       ),

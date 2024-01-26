@@ -37,24 +37,15 @@ class _DesktopModel extends StatelessWidget {
       width: double.maxFinite,
       color: AppColors.primaryBlue,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-              padding: const EdgeInsets.only(left: 200),
-              child: Image.asset(
-                AppAssets.upsLogoWhite,
-                height: re.hp(10),
-              )),
-          Container(
-            padding: const EdgeInsets.only(right: 200),
-            child: Text(
-              'Formulario de Registro',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(color: Colors.white, fontSize: 30),
-            ),
+          Text(
+            'Formulario de Registro',
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(color: Colors.white, fontSize: 30),
           ),
         ],
       ),

@@ -154,17 +154,17 @@ class _DesktopModel extends StatelessWidget {
                   "Proyectos",
                 ),
               ),
-              // TextButton(
-              //   onPressed: () {
-              //     GoRouter.of(context).go(PAGES.admin.pagePath);
-              //   },
-              //   style: TextButton.styleFrom(
-              //       foregroundColor: Colors.white, // Color del texto del botón
-              //       textStyle: Theme.of(context).textTheme.bodyMedium),
-              //   child: const Text(
-              //     "Administración",
-              //   ),
-              // ),
+              TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go(PAGES.admin.pagePath);
+                },
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.white, // Color del texto del botón
+                    textStyle: Theme.of(context).textTheme.bodyMedium),
+                child: const Text(
+                  "Administración",
+                ),
+              ),
             ],
           ),
         ),
@@ -380,17 +380,17 @@ class _MenuColumn extends StatelessWidget {
               GoRouter.of(context).go(PAGES.proyectos.pagePath);
             },
           ),
-          // ListTile(
-          //   title: Text('Administración',
-          //       style: Theme.of(context)
-          //           .textTheme
-          //           .bodyMedium!
-          //           .copyWith(color: Colors.white),
-          //       textAlign: TextAlign.center),
-          //   onTap: () {
-          //     GoRouter.of(context).go(PAGES.admin.pagePath);
-          //   },
-          // ),
+          ListTile(
+            title: Text('Administración',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: Colors.white),
+                textAlign: TextAlign.center),
+            onTap: () {
+              GoRouter.of(context).go(PAGES.admin.pagePath);
+            },
+          ),
         ],
       ),
     );

@@ -69,21 +69,23 @@ class _DesktopModel extends StatelessWidget {
                         ),
                         SizedBox(
                           width: re.hp(150),
-                          child: const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              VinietaText(
-                                  '     Taller de mantenimiento preventivo, correctivo hardware y software.'),
-                              VinietaText(
-                                  '     Taller de reutilización de componentes.'),
-                              VinietaText(
-                                  '     Taller sobre el manejo de Sistema operativo Linux.'),
-                              VinietaText('     Taller de ensamblaje.'),
-                              VinietaText(
-                                  '     Taller de adaptaciones teclado, mouse para uso en juegos u otros.'),
-                              VinietaText(
-                                  '     Talleres de servidores Media Wiki (código abierto)'),
-                            ],
+                          child: Expanded(
+                            child: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                VinietaText(
+                                    '     Taller de mantenimiento preventivo, correctivo hardware y software.'),
+                                VinietaText(
+                                    '     Taller de reutilización de componentes.'),
+                                VinietaText(
+                                    '     Taller sobre el manejo de Sistema operativo Linux.'),
+                                VinietaText('     Taller de ensamblaje.'),
+                                VinietaText(
+                                    '     Taller de adaptaciones teclado, mouse para uso en juegos u otros.'),
+                                VinietaText(
+                                    '     Talleres de servidores Media Wiki (código abierto)'),
+                              ],
+                            ),
                           ),
                         ),
                         Text(

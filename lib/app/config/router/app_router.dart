@@ -7,6 +7,7 @@ import 'package:landing_page/src/admin/presentation/admin_presentation.dart';
 import 'package:landing_page/src/listProyectos/listProyectos.dart';
 import 'package:landing_page/src/listRegistros/presentation/views/listRegistros_page.dart';
 import 'package:landing_page/src/perfilColab/perfilColab.dart';
+import 'package:landing_page/src/updProyectos/updProyectos.dart';
 import 'app_routes_pages.dart';
 
 // PAGES
@@ -78,7 +79,7 @@ class AppRouter {
       GoRoute(
         path: PAGES.proyectos.pagePath,
         name: PAGES.proyectos.pageName,
-        builder: (context, state) => const ProyectosPage(),
+        builder: (context, state) => ProyectosPage(),
       ),
       GoRoute(
           path: PAGES.admin.pagePath,
@@ -99,6 +100,18 @@ class AppRouter {
               path: PAGES.addProyectos.pagePath,
               name: PAGES.addProyectos.pageName,
               builder: (context, state) => const AddProyectosPage(),
+            ),
+            GoRoute(
+              path: PAGES.updProyectos.pagePath,
+              name: PAGES.updProyectos.pageName,
+              builder: (context, state) => UpdProyectosPage(
+                nombre: state.pathParameters["nombre"]!,
+                descripcion: state.pathParameters["descripcion"]!,
+                integrantes: state.pathParameters["integrantes"]!,
+                grupo: state.pathParameters["grupo"]!,
+                imagen: state.pathParameters["imagen"]!,
+                uid: state.pathParameters["uid"]!
+              ),
             ),
           ]),
     ],
