@@ -1,12 +1,7 @@
-import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/listRegistros/services/firebase_service.dart';
 import 'package:landing_page/src/shared/responsive.dart';
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:path_provider/path_provider.dart';
 
 class Registros extends StatelessWidget {
   const Registros({
@@ -117,7 +112,7 @@ class Registros extends StatelessWidget {
                         ),
                       )),
                     ],
-                    rows: estudiantes!.map((estudiante) {
+                    rows: estudiantes.map((estudiante) {
                       return DataRow(
                         cells: [
                           DataCell(Text(estudiante['nombre'] ?? '')),
@@ -136,40 +131,59 @@ class Registros extends StatelessWidget {
                 }
               })),
         ),
-        ElevatedButton(
-          onPressed: () => _generateCSV(data),
-          child: Text('Generar CSV'),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: re.hp(5)),
+          child: ElevatedButton(
+            onPressed: () async {
+              try {
+                //await _generateCSV(data);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Archivo CSV generado con éxito.'),
+                  ),
+                );
+              } catch (e) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Error al generar el archivo CSV: $e'),
+                  ),
+                );
+              }
+            },
+            child: Text('Generar CSV'),
+          ),
         ),
       ],
     );
   }
 }
 
-Future<void> _generateCSV(List<List<dynamic>> data) async {
-  String csv = const ListToCsvConverter().convert(data);
+// Future<void> _generateCSV() async {
+//   List estudiantes = await getEstudiante();
 
-  final Directory directory = await getApplicationDocumentsDirectory();
-  final String path = '${directory.path}/estudiantes.csv';
+//   final String documentsDir = PlatformDetector.isWeb
+//       ? '' // En el caso de web, puedes dejarlo en blanco o proporcionar la ruta adecuada
+//       : (await getApplicationDocumentsDirectory()).path;
 
-  await File(path).writeAsString(csv);
+//   final String path = '$documentsDir/estudiantes.csv';
 
-  print(path);
+//   // Abre el archivo en modo escritura
+//   final File file = File(path);
+//   IOSink sink = file.openWrite();
 
-  // showDialog(
-  //     context: context,
-  //     builder: (BuildContext context) {
-  //       return AlertDialog(
-  //         title: Text('CSV generado'),
-  //         content: Text('El archivo CSV se ha guardado en: $path'),
-  //         actions: [
-  //           TextButton(
-  //             onPressed: () {
-  //               Navigator.of(context).pop();
-  //             },
-  //             child: Text('Cerrar'),
-  //           ),
-  //         ],
-  //       );
-  //     },
-  //   );
-}
+//   // Escribe la cabecera del CSV
+//   sink.write('Nombre,Apellido,Correo,Cedula,Institucion\n');
+
+//   // Escribe los datos de cada estudiante
+//   for (var estudiante in estudiantes) {
+//     sink.write(
+//       '${estudiante['nombre'] ?? ''},${estudiante['apellido'] ?? ''},${estudiante['correo'] ?? ''},${estudiante['cedula'] ?? ''},${estudiante['inst'] ?? ''}\n',
+//     );
+//   }
+
+//   // Cierra el archivo
+//   await sink.flush();
+//   await sink.close();
+
+//   print(path);
+// }

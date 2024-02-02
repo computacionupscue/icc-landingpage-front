@@ -24,14 +24,14 @@ class Footer extends StatelessWidget {
           SizedBox(
             height: re.hp(5),
           ),
-          Text("Síguenos",
+          Text("Contáctanos",
               style: Theme.of(context)
                   .textTheme
                   .headlineSmall!
                   .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center),
           SizedBox(
-            height: re.hp(2),
+            height: re.hp(3),
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             IconButton(
@@ -39,7 +39,7 @@ class Footer extends StatelessWidget {
               color: Colors.white, // Color personalizado
               iconSize: re.hp(4),
               onPressed: () {
-                _launchURL("https://www.facebook.com/UPSalesianaEc/");
+                _launchURL("https://www.facebook.com/sistemasupscuenca");
               },
             ),
             SizedBox(
@@ -50,32 +50,42 @@ class Footer extends StatelessWidget {
               color: Colors.white, // Color personalizado
               iconSize: re.hp(4),
               onPressed: () {
-                _launchURL("https://www.instagram.com/upsalesianaec/");
-              },
-            ),
-          ]),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            IconButton(
-              icon: const FaIcon(FontAwesomeIcons.youtube),
-              color: Colors.white, // Color personalizado
-              iconSize: re.hp(4),
-              onPressed: () {
-                _launchURL(
-                    "https://www.youtube.com/channel/UCVtRZLpPa8CFkqXq7aTYiFA");
+                _launchURL("https://www.facebook.com/sistemasupscuenca");
               },
             ),
             SizedBox(
               width: re.hp(4),
             ),
             IconButton(
-              icon: const FaIcon(FontAwesomeIcons.linkedinIn),
+              icon: const FaIcon(FontAwesomeIcons.tiktok),
               color: Colors.white, // Color personalizado
               iconSize: re.hp(4),
               onPressed: () {
-                _launchURL(
-                    "https://ec.linkedin.com/school/universidad-politecnica-salesiana/");
+                _launchURL("https://www.tiktok.com/@computacionupscuen");
               },
             ),
+          ]),
+          Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            SizedBox(
+              height: re.hp(1),
+            ),
+            Text(
+              "Correo electronico",
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: re.hp(1),
+            ),
+            Text(
+              "computacioncue@ups.edu.ec",
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: Colors.white),
+            )
           ]),
           SizedBox(
             height: re.hp(5),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/app_routes_pages.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
+import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -103,7 +104,11 @@ class _AdminPageState extends State<AdminPage> {
                       ),
                     ],
                   ),
-                )
+                ),
+                SizedBox(
+                  height: re.hp(20),
+                ),
+                Footer(re: re)
               ],
             ),
           ),

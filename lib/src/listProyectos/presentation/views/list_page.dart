@@ -39,6 +39,7 @@ class _ProyectosState extends State<Proyectos> {
         ),
         Container(
           margin: EdgeInsets.symmetric(horizontal: widget.re.hp(5)),
+          padding: EdgeInsets.only(bottom: widget.re.hp(10)),
           child: FutureBuilder(
             future: getProyecto(),
             builder: (context, snapshot) {

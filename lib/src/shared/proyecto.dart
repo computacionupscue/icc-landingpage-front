@@ -65,22 +65,36 @@ class Proyecto extends StatelessWidget {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(descripcion,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(color: Colors.black)),
-              Text(integrantes,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(color: Colors.black)),
-              Text(grupo,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(color: Colors.black)),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: re.hp(2)),
+                child: Text(
+                  "Descripcion: $descripcion",
+                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: Colors.black,
+                      ),
+                  textAlign: TextAlign.start,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: re.hp(2)),
+                child: Text("Integrantes: $integrantes",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(color: Colors.black),
+                    textAlign: TextAlign.start),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: re.hp(2)),
+                child: Text("Grupo: $grupo",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(color: Colors.black),
+                    textAlign: TextAlign.start),
+              ),
             ],
           ),
         ),

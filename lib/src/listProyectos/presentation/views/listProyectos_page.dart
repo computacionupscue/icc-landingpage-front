@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/src/listProyectos/presentation/views/list_page.dart';
+import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -20,6 +21,7 @@ class _ListProyectosPageState extends State<ListProyectosPage> {
           Column(children: [
             MenuHome(re: re),
             Proyectos(re: re),
+            Footer(re: re)
           ]),
         ],
       ),

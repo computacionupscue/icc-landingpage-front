@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/app_routes_pages.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
+import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
@@ -161,84 +162,90 @@ class _AddProyectosPageState extends State<AddProyectosPage> {
             Container(
               width: re.hp(80),
               padding: EdgeInsets.symmetric(horizontal: re.hp(5)),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryBlueMaterial,
-                    foregroundColor: Colors.black,
-                    fixedSize: const Size(250, 45)),
-                onPressed: () {
-                  if (_textController1.text.isNotEmpty &&
-                      _textController2.text.isNotEmpty &&
-                      _textController3.text.isNotEmpty &&
-                      _textController4.text.isNotEmpty &&
-                      _textController5.text.isNotEmpty) {
-                    _nombre = _textController1.text;
-                    _descripcion = _textController2.text;
-                    _grupo = _textController3.text;
-                    _integrantes = _textController4.text;
-                    _imagen = _textController5.text;
+              child: Padding(
+                padding: EdgeInsets.only(bottom: re.hp(10)),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primaryBlueMaterial,
+                      foregroundColor: Colors.black,
+                      fixedSize: const Size(250, 45)),
+                  onPressed: () {
+                    if (_textController1.text.isNotEmpty &&
+                        _textController2.text.isNotEmpty &&
+                        _textController3.text.isNotEmpty &&
+                        _textController4.text.isNotEmpty &&
+                        _textController5.text.isNotEmpty) {
+                      _nombre = _textController1.text;
+                      _descripcion = _textController2.text;
+                      _grupo = _textController3.text;
+                      _integrantes = _textController4.text;
+                      _imagen = _textController5.text;
 
-                    _textController1.text = '';
-                    _textController2.text = '';
-                    _textController3.text = '';
-                    _textController4.text = '';
-                    _textController5.text = '';
+                      _textController1.text = '';
+                      _textController2.text = '';
+                      _textController3.text = '';
+                      _textController4.text = '';
+                      _textController5.text = '';
 
-                    _proyecto.add({
-                      'nombre': _nombre,
-                      'descripcion': _descripcion,
-                      'integrantes': _integrantes,
-                      'grupo': _grupo,
-                      'imagen': _imagen
-                    });
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text('Te has registrado correctamente'),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                                GoRouter.of(context)
-                                    .goNamed(PAGES.listProyectos.pageName);
-                              },
-                              child: const Text('Aceptar'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text('Campos Vacíos'),
-                          content: const Text(
-                              'Todos los campos deben estar llenos.'),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.pop(context); // Cerrar el AlertDialog
-                              },
-                              child: const Text('Aceptar'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  }
-                },
-                child: const Text("Crear",
-                    style: TextStyle(
-                        color: Colors.white,
-                        backgroundColor: AppColors.primaryBlueMaterial,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold)),
+                      _proyecto.add({
+                        'nombre': _nombre,
+                        'descripcion': _descripcion,
+                        'integrantes': _integrantes,
+                        'grupo': _grupo,
+                        'imagen': _imagen
+                      });
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title:
+                                const Text('Te has registrado correctamente'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  GoRouter.of(context)
+                                      .goNamed(PAGES.listProyectos.pageName);
+                                },
+                                child: const Text('Aceptar'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('Campos Vacíos'),
+                            content: const Text(
+                                'Todos los campos deben estar llenos.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(
+                                      context); // Cerrar el AlertDialog
+                                },
+                                child: const Text('Aceptar'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  },
+                  child: const Text("Crear",
+                      style: TextStyle(
+                          color: Colors.white,
+                          backgroundColor: AppColors.primaryBlueMaterial,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold)),
+                ),
               ),
             ),
           ]),
+          Footer(re: re)
         ],
       ),
     );
