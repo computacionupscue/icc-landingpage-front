@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
+import 'package:landing_page/src/mallaCurricular/data/sources/LocalMalla.dart';
 import 'package:landing_page/src/shared/datos_malla.dart';
 import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
@@ -498,6 +499,9 @@ class _DesktopModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final listaCiclos = LocalMalla.getMalla();
+    print(listaCiclos.length);
+    print(listaCiclos[0]);
     return Scaffold(
         body: ListView(
       children: [
@@ -522,6 +526,10 @@ class _DesktopModel extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(width: re.hp(8)),
+                        // ...listaCiclos.map((e) =>  MyExpansionTileList(
+                        //     nivel: n1,
+                        //     boxColor: const Color.fromARGB(255, 0, 78, 161),
+                        //     expanded: true),).toList(),
                         MyExpansionTileList(
                             nivel: n1,
                             boxColor: const Color.fromARGB(255, 0, 78, 161),

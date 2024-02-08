@@ -6,8 +6,8 @@ import 'package:landing_page/app/config/router/app_routes_pages.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
-class MenuHome extends StatelessWidget {
-  const MenuHome({
+class MenuAdmin extends StatelessWidget {
+  const MenuAdmin({
     super.key,
     required this.re,
   });
@@ -94,7 +94,7 @@ class _DesktopModel extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {
-                  GoRouter.of(context).go(PAGES.home.pagePath);
+                  GoRouter.of(context).goNamed(PAGES.admin.pageName);
                 },
                 style: TextButton.styleFrom(
                     foregroundColor: Colors.white, // Color del texto del botón
@@ -105,60 +105,39 @@ class _DesktopModel extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  GoRouter.of(context).goNamed(PAGES.directiva.pageName);
+                  GoRouter.of(context).goNamed(PAGES.listProyectos.pageName);
                 },
                 style: TextButton.styleFrom(
                     foregroundColor: Colors.white, // Color del texto del botón
                     textStyle: Theme.of(context).textTheme.bodyMedium),
                 child: const Text(
-                  "Directiva",
+                  "Lista Proyectos",
                 ),
               ),
               TextButton(
                 onPressed: () {
-                  GoRouter.of(context).goNamed(PAGES.malla.pageName);
+                  GoRouter.of(context).goNamed(PAGES.listRegistros.pageName);
                 },
                 style: TextButton.styleFrom(
                     foregroundColor: Colors.white, // Color del texto del botón
                     textStyle: Theme.of(context).textTheme.bodyMedium),
                 child: const Text(
-                  "Malla Curricular",
+                  "Lista Estudiantes",
                 ),
               ),
               TextButton(
                 onPressed: () {
-                  GoRouter.of(context).goNamed(PAGES.asu.pageName); // Navegar a la ruta '/second
+                  GoRouter.of(context).goNamed(PAGES
+                      .addProyectos.pageName); // Navegar a la ruta '/second
                 },
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.white, // Color del texto del botón
                   textStyle: Theme.of(context).textTheme.bodyMedium,
                 ),
                 child: const Text(
-                  "Grupos ASU",
+                  "Agregar Proyectos",
                 ),
               ),
-              TextButton(
-                onPressed: () {
-                  GoRouter.of(context).goNamed(PAGES.proyectos.pageName);
-                },
-                style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, // Color del texto del botón
-                    textStyle: Theme.of(context).textTheme.bodyMedium),
-                child: const Text(
-                  "Proyectos",
-                ),
-              ),
-              // TextButton(
-              //   onPressed: () {
-              //     GoRouter.of(context).go(PAGES.admin.pagePath);
-              //   },
-              //   style: TextButton.styleFrom(
-              //       foregroundColor: Colors.white, // Color del texto del botón
-              //       textStyle: Theme.of(context).textTheme.bodyMedium),
-              //   child: const Text(
-              //     "Administración",
-              //   ),
-              // ),
             ],
           ),
         ),
@@ -327,64 +306,42 @@ class _MenuColumn extends StatelessWidget {
                     .copyWith(color: Colors.white),
                 textAlign: TextAlign.center),
             onTap: () {
-              GoRouter.of(context).go(PAGES.home.pagePath);
+              GoRouter.of(context).go(PAGES.admin.pagePath);
             },
           ),
           ListTile(
-            title: Text('Directiva',
+            title: Text('Lista Proyectos',
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
                     .copyWith(color: Colors.white),
                 textAlign: TextAlign.center),
             onTap: () {
-              GoRouter.of(context).goNamed(PAGES.directiva.pageName);
+              GoRouter.of(context).goNamed(PAGES.listProyectos.pageName);
             },
           ),
           ListTile(
-            title: Text('Malla Curricular',
+            title: Text('Lista Estudiantes',
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
                     .copyWith(color: Colors.white),
                 textAlign: TextAlign.center),
             onTap: () {
-              GoRouter.of(context).goNamed(PAGES.malla.pageName);
+              GoRouter.of(context).goNamed(PAGES.listRegistros.pageName);
             },
           ),
           ListTile(
-            title: Text('Grupos ASU',
+            title: Text('Agregar Proyectos',
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
                     .copyWith(color: Colors.white),
                 textAlign: TextAlign.center),
             onTap: () {
-              GoRouter.of(context).goNamed(PAGES.asu.pageName);
+              GoRouter.of(context).goNamed(PAGES.addProyectos.pageName);
             },
           ),
-          ListTile(
-            title: Text('Proyectos',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(color: Colors.white),
-                textAlign: TextAlign.center),
-            onTap: () {
-              GoRouter.of(context).goNamed(PAGES.proyectos.pageName);
-            },
-          ),
-          // ListTile(
-          //   title: Text('Administración',
-          //       style: Theme.of(context)
-          //           .textTheme
-          //           .bodyMedium!
-          //           .copyWith(color: Colors.white),
-          //       textAlign: TextAlign.center),
-          //   onTap: () {
-          //     GoRouter.of(context).go(PAGES.admin.pagePath);
-          //   },
-          // ),
         ],
       ),
     );

@@ -12,7 +12,8 @@ enum PAGES {
   listProyectos,
   listRegistros,
   addProyectos,
-  updProyectos
+  updProyectos,
+  administracion
 }
 
 extension AppPageExtension on PAGES {
@@ -25,19 +26,19 @@ extension AppPageExtension on PAGES {
       case PAGES.home:
         return "/home";
       case PAGES.formulario:
-        return "/formulario";
+        return "formulario";
       case PAGES.directiva:
-        return "/directiva";
+        return "directiva";
       case PAGES.malla:
-        return "/malla";
+        return "malla";
       case PAGES.asu:
-        return "/asu";
+        return "asu";
       case PAGES.proyectos:
-        return "/proyectos";
+        return "proyectos";
       case PAGES.perfilColab:
         return "perfilColab/:id";
       case PAGES.admin:
-        return "/admin";
+        return "admin";
       case PAGES.listProyectos:
         return "listProyectos";
       case PAGES.listRegistros:
@@ -46,6 +47,8 @@ extension AppPageExtension on PAGES {
         return "addProyectos";
       case PAGES.updProyectos:
         return "updProyectos/:nombre/:descripcion/:integrantes/:grupo/:imagen/:uid";
+      case PAGES.administracion:
+        return "administracion";
     }
   }
 
@@ -79,6 +82,8 @@ extension AppPageExtension on PAGES {
         return "addProyectos";
       case PAGES.updProyectos:
         return "updProyectos";
+      case PAGES.administracion:
+        return "administracion";
     }
   }
 }

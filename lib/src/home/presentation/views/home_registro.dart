@@ -47,7 +47,7 @@ class _DesktopModel extends StatelessWidget {
               SizedBox(
                 child: TextButton(
                   onPressed: () {
-                    GoRouter.of(context).go(PAGES.formulario.pagePath);
+                    GoRouter.of(context).goNamed(PAGES.formulario.pageName);
                   },
                   style: TextButton.styleFrom(
                     foregroundColor:
@@ -103,7 +103,7 @@ class _MobileModel extends StatelessWidget {
             margin: const EdgeInsets.only(top: AppLayoutConst.marginXL),
             child: TextButton(
               onPressed: () {
-                GoRouter.of(context).go(PAGES.formulario.pagePath);
+                GoRouter.of(context).goNamed(PAGES.formulario.pageName);
               },
               style: TextButton.styleFrom(
                 foregroundColor:

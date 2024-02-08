@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:landing_page/src/services/firebase_remote_config_service.dart';
 import 'app/app.dart';
 import 'core/app_bloc_observer.dart';
 
@@ -13,12 +14,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: "AIzaSyBwTmeVMpUcNgQeYZoPROEjnvs2opHZViE",
-          authDomain: "fir-web-ff3be.firebaseapp.com",
-          projectId: "fir-web-ff3be",
-          storageBucket: "fir-web-ff3be.appspot.com",
-          messagingSenderId: "348238221266",
-          appId: "1:348238221266:web:5c3d6b8f75b0d88c0b820b"));
+          apiKey: "AIzaSyBGZvwyqiJcbadbLXprrTIcOjfZxinSGmo",
+          authDomain: "icc-landingpage.firebaseapp.com",
+          projectId: "icc-landingpage",
+          storageBucket: "icc-landingpage.appspot.com",
+          messagingSenderId: "486763575102",
+          appId: "1:486763575102:web:d292c5e4c05af91a721e6f",
+          measurementId: "G-3RJD2V0HG7"));
+
+  await FirebaseRemoteConfigService().initialize();
 
   Bloc.observer = AppBlocObserver();
 

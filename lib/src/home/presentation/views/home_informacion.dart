@@ -330,7 +330,8 @@ class _DesktopModel extends StatelessWidget {
                                   )),
                           GestureDetector(
                             onTap: () {
-                              GoRouter.of(context).go(PAGES.malla.pagePath);
+                              GoRouter.of(context)
+                                  .goNamed(PAGES.malla.pageName);
                             },
                             child: HoverWidget(
                               hoverChild: Text('Malla curricular',
@@ -686,7 +687,8 @@ class _MobileModel extends StatelessWidget {
                                   )),
                           GestureDetector(
                             onTap: () {
-                              GoRouter.of(context).go(PAGES.malla.pagePath);
+                              GoRouter.of(context)
+                                  .goNamed(PAGES.malla.pageName);
                             },
                             child: HoverWidget(
                               hoverChild: Text('Malla curricular',

@@ -135,4 +135,16 @@ class AppLayoutConst {
   static const double kfootbarHeightM = 60;
   static const double kfootbarHeightD = 80;
   static const double kAppBarHeigth = 65;
+
+  /// [Dimensions]
+  ///Icons
+  static const double iconArroForward = 16.0;
+
+  /// Cards
+  static const double cardBorderRadius = 8.0;
+  static const double cardElevation = 4.0;
+
+  /// Buttons
+  static const double buttonBorderRadius = 12.0;
+  static const double buttonElevation=2.0;
 }

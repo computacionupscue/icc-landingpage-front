@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:landing_page/src/listProyectos/presentation/views/list_page.dart';
 import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
+import 'package:landing_page/src/shared/menu_admin.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class ListProyectosPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _ListProyectosPageState extends State<ListProyectosPage> {
       body: ListView(
         children: [
           Column(children: [
-            MenuHome(re: re),
+            MenuAdmin(re: re),
             Proyectos(re: re),
             Footer(re: re)
           ]),

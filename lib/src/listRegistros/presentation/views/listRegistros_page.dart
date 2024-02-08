@@ -6,6 +6,7 @@ import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/listRegistros/presentation/views/list_page.dart';
 import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
+import 'package:landing_page/src/shared/menu_admin.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class ListRegistrosPage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _ListRegistrosPageState extends State<ListRegistrosPage> {
       body: ListView(
         children: [
           Column(
-            children: [MenuHome(re: re), Registros(re: re), Footer(re: re)],
+            children: [MenuAdmin(re: re), Registros(re: re), Footer(re: re)],
           ),
         ],
       ),

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:landing_page/app/config/router/screens/not_found_page.dart';
 import 'package:landing_page/src/addProyectos/presentation/views/addProyectos_page.dart';
 import 'package:landing_page/src/admin/presentation/admin_presentation.dart';
+import 'package:landing_page/src/auth/auth.dart';
 import 'package:landing_page/src/listProyectos/listProyectos.dart';
 import 'package:landing_page/src/listRegistros/presentation/views/listRegistros_page.dart';
 import 'package:landing_page/src/perfilColab/perfilColab.dart';
@@ -45,73 +46,81 @@ class AppRouter {
         builder: (context, state) => const LoginPage(),
       ),
       GoRoute(
-        path: PAGES.home.pagePath,
-        name: PAGES.home.pageName,
-        builder: (context, state) => const HomePage(),
-      ),
-      GoRoute(
-        path: PAGES.formulario.pagePath,
-        name: PAGES.formulario.pageName,
-        builder: (context, state) => const FormularioPage(),
-      ),
-      GoRoute(
-          path: PAGES.directiva.pagePath,
-          name: PAGES.directiva.pageName,
-          builder: (context, state) => DirectivaPage(),
+          path: PAGES.home.pagePath,
+          name: PAGES.home.pageName,
+          builder: (context, state) => const HomePage(),
           routes: [
             GoRoute(
-              path: PAGES.perfilColab.pagePath,
-              name: PAGES.perfilColab.pageName,
-              builder: (context, state) =>
-                  PerfilColabPage(id: state.pathParameters["id"]!),
-            ),
-          ]),
-      GoRoute(
-        path: PAGES.malla.pagePath,
-        name: PAGES.malla.pageName,
-        builder: (context, state) => const MallaPage(),
-      ),
-      GoRoute(
-        path: PAGES.asu.pagePath,
-        name: PAGES.asu.pageName,
-        builder: (context, state) => const AsuPage(),
-      ),
-      GoRoute(
-        path: PAGES.proyectos.pagePath,
-        name: PAGES.proyectos.pageName,
-        builder: (context, state) => ProyectosPage(),
-      ),
-      GoRoute(
-          path: PAGES.admin.pagePath,
-          name: PAGES.admin.pageName,
-          builder: (context, state) => const AdminPage(),
-          routes: [
+                path: PAGES.administracion.pagePath,
+                name: PAGES.administracion.pageName,
+                builder: (context, state) => const AuthPage(),
+                routes: [
+                  GoRoute(
+                      path: PAGES.admin.pagePath,
+                      name: PAGES.admin.pageName,
+                      builder: (context, state) => const AdminPage(),
+                      routes: [
+                        GoRoute(
+                          path: PAGES.listProyectos.pagePath,
+                          name: PAGES.listProyectos.pageName,
+                          builder: (context, state) =>
+                              const ListProyectosPage(),
+                        ),
+                        GoRoute(
+                          path: PAGES.listRegistros.pagePath,
+                          name: PAGES.listRegistros.pageName,
+                          builder: (context, state) =>
+                              const ListRegistrosPage(),
+                        ),
+                        GoRoute(
+                          path: PAGES.addProyectos.pagePath,
+                          name: PAGES.addProyectos.pageName,
+                          builder: (context, state) => const AddProyectosPage(),
+                        ),
+                        GoRoute(
+                          path: PAGES.updProyectos.pagePath,
+                          name: PAGES.updProyectos.pageName,
+                          builder: (context, state) => UpdProyectosPage(
+                              nombre: state.pathParameters["nombre"]!,
+                              descripcion: state.pathParameters["descripcion"]!,
+                              integrantes: state.pathParameters["integrantes"]!,
+                              grupo: state.pathParameters["grupo"]!,
+                              imagen: state.pathParameters["imagen"]!,
+                              uid: state.pathParameters["uid"]!),
+                        ),
+                      ]),
+                ]),
             GoRoute(
-              path: PAGES.listProyectos.pagePath,
-              name: PAGES.listProyectos.pageName,
-              builder: (context, state) => const ListProyectosPage(),
+              path: PAGES.formulario.pagePath,
+              name: PAGES.formulario.pageName,
+              builder: (context, state) => const FormularioPage(),
             ),
             GoRoute(
-              path: PAGES.listRegistros.pagePath,
-              name: PAGES.listRegistros.pageName,
-              builder: (context, state) => const ListRegistrosPage(),
+                path: PAGES.directiva.pagePath,
+                name: PAGES.directiva.pageName,
+                builder: (context, state) => DirectivaPage(),
+                routes: [
+                  GoRoute(
+                    path: PAGES.perfilColab.pagePath,
+                    name: PAGES.perfilColab.pageName,
+                    builder: (context, state) =>
+                        PerfilColabPage(id: state.pathParameters["id"]!),
+                  ),
+                ]),
+            GoRoute(
+              path: PAGES.malla.pagePath,
+              name: PAGES.malla.pageName,
+              builder: (context, state) => const MallaPage(),
             ),
             GoRoute(
-              path: PAGES.addProyectos.pagePath,
-              name: PAGES.addProyectos.pageName,
-              builder: (context, state) => const AddProyectosPage(),
+              path: PAGES.asu.pagePath,
+              name: PAGES.asu.pageName,
+              builder: (context, state) => const AsuPage(),
             ),
             GoRoute(
-              path: PAGES.updProyectos.pagePath,
-              name: PAGES.updProyectos.pageName,
-              builder: (context, state) => UpdProyectosPage(
-                nombre: state.pathParameters["nombre"]!,
-                descripcion: state.pathParameters["descripcion"]!,
-                integrantes: state.pathParameters["integrantes"]!,
-                grupo: state.pathParameters["grupo"]!,
-                imagen: state.pathParameters["imagen"]!,
-                uid: state.pathParameters["uid"]!
-              ),
+              path: PAGES.proyectos.pagePath,
+              name: PAGES.proyectos.pageName,
+              builder: (context, state) => ProyectosPage(),
             ),
           ]),
     ],

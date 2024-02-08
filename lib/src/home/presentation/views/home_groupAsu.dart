@@ -65,8 +65,8 @@ class _DesktopModel extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20),
                   child: TextButton(
                     onPressed: () {
-                      GoRouter.of(context)
-                          .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
+                      GoRouter.of(context).goNamed(
+                          PAGES.asu.pageName); // Navegar a la ruta '/second
                     },
                     child: Text("ASU\nRECICLA\nUPS",
                         style:
@@ -94,8 +94,8 @@ class _DesktopModel extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 20),
                 child: TextButton(
                   onPressed: () {
-                    GoRouter.of(context)
-                        .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
+                    GoRouter.of(context).goNamed(
+                        PAGES.asu.pageName); // Navegar a la ruta '/second
                   },
                   child: Text("ASU\nSOFTWARE\nLIBRE",
                       style:
@@ -122,8 +122,8 @@ class _DesktopModel extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 20),
                 child: TextButton(
                   onPressed: () {
-                    GoRouter.of(context)
-                        .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
+                    GoRouter.of(context).goNamed(
+                        PAGES.asu.pageName); // Navegar a la ruta '/second
                   },
                   child: Text("ASU\nIEEE\nUPS",
                       style:
@@ -180,8 +180,8 @@ class _MobileModel extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20),
                   child: TextButton(
                     onPressed: () {
-                      GoRouter.of(context)
-                          .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
+                      GoRouter.of(context).goNamed(
+                          PAGES.asu.pageName); // Navegar a la ruta '/second
                     },
                     child: Text("ASU\nRECICLA\nUPS",
                         style:
@@ -212,8 +212,8 @@ class _MobileModel extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 20),
                 child: TextButton(
                   onPressed: () {
-                    GoRouter.of(context)
-                        .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
+                    GoRouter.of(context).goNamed(
+                        PAGES.asu.pageName); // Navegar a la ruta '/second
                   },
                   child: Text("ASU\nSOFTWARE\nLIBRE",
                       style:
@@ -243,8 +243,8 @@ class _MobileModel extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 20),
                 child: TextButton(
                   onPressed: () {
-                    GoRouter.of(context)
-                        .go(PAGES.asu.pagePath); // Navegar a la ruta '/second
+                    GoRouter.of(context).goNamed(
+                        PAGES.asu.pageName); // Navegar a la ruta '/second
                   },
                   child: Text("ASU\nIEEE\nUPS",
                       style:

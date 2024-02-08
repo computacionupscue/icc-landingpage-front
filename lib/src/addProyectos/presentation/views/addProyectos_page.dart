@@ -5,6 +5,7 @@ import 'package:landing_page/app/config/router/app_routes_pages.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
+import 'package:landing_page/src/shared/menu_admin.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
 class AddProyectosPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _AddProyectosPageState extends State<AddProyectosPage> {
     return Scaffold(
       body: ListView(
         children: [
-          MenuHome(re: re),
+          MenuAdmin(re: re),
           Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SizedBox(
               height: re.hp(7),

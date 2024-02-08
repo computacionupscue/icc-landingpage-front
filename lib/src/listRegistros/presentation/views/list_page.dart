@@ -1,3 +1,8 @@
+import 'dart:convert';
+import 'dart:io';
+import 'dart:html' as html;
+import 'dart:typed_data';
+import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/listRegistros/services/firebase_service.dart';
@@ -136,9 +141,9 @@ class Registros extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () async {
               try {
-                //await _generateCSV(data);
+                await _generateCSV(data);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
+                  const SnackBar(
                     content: Text('Archivo CSV generado con éxito.'),
                   ),
                 );
@@ -150,7 +155,7 @@ class Registros extends StatelessWidget {
                 );
               }
             },
-            child: Text('Generar CSV'),
+            child: const Text('Generar CSV'),
           ),
         ),
       ],
@@ -158,32 +163,22 @@ class Registros extends StatelessWidget {
   }
 }
 
-// Future<void> _generateCSV() async {
-//   List estudiantes = await getEstudiante();
+Future<void> _generateCSV(List<List<dynamic>> data) async {
+  final List<List<dynamic>> csvData = List.from(data);
 
-//   final String documentsDir = PlatformDetector.isWeb
-//       ? '' // En el caso de web, puedes dejarlo en blanco o proporcionar la ruta adecuada
-//       : (await getApplicationDocumentsDirectory()).path;
+  String csv = ListToCsvConverter().convert(csvData);
 
-//   final String path = '$documentsDir/estudiantes.csv';
+  // Crea una URL de objeto para el contenido del CSV
+  final blob = html.Blob([Uint8List.fromList(utf8.encode(csv))]);
+  final url = html.Url.createObjectUrlFromBlob(blob);
 
-//   // Abre el archivo en modo escritura
-//   final File file = File(path);
-//   IOSink sink = file.openWrite();
+  // Crea un enlace y haz clic en él para iniciar la descarga
+  final anchor = html.AnchorElement(href: url)
+    ..target = 'web_browser'
+    ..download = 'registros.csv';
+  html.document.body!.children.add(anchor);
+  anchor.click();
 
-//   // Escribe la cabecera del CSV
-//   sink.write('Nombre,Apellido,Correo,Cedula,Institucion\n');
-
-//   // Escribe los datos de cada estudiante
-//   for (var estudiante in estudiantes) {
-//     sink.write(
-//       '${estudiante['nombre'] ?? ''},${estudiante['apellido'] ?? ''},${estudiante['correo'] ?? ''},${estudiante['cedula'] ?? ''},${estudiante['inst'] ?? ''}\n',
-//     );
-//   }
-
-//   // Cierra el archivo
-//   await sink.flush();
-//   await sink.close();
-
-//   print(path);
-// }
+  // Libera la URL del objeto después de la descarga
+  html.Url.revokeObjectUrl(url);
+}
