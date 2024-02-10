@@ -17,38 +17,38 @@ class DirectivaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Responsive re = Responsive.of(context);
     return Scaffold(
-      body: StreamBuilder(
-          stream: _perfil.snapshots(),
-          builder: (context, AsyncSnapshot<QuerySnapshot?> snapshots) {
-            String nombre1 = "";
-            String correo1 = "";
-            String nombre2 = "";
-            String correo2 = "";
-            if (snapshots.hasData) {
-              nombre1 = snapshots.data!.docs[0]['nombre'];
-              correo1 = snapshots.data!.docs[0]['correo'];
-              nombre2 = snapshots.data!.docs[1]['nombre'];
-              correo2 = snapshots.data!.docs[1]['correo'];
-            }
-            return ListView(
-              children: [
-                Column(
-                  children: [
-                    MenuHome(re: re),
-                    Header(re: re),
-                    Administrativos(
+      body: ListView(
+        children: [
+          Column(
+            children: [
+              MenuHome(re: re),
+              Header(re: re),
+              StreamBuilder(
+                  stream: _perfil.snapshots(),
+                  builder: (context, AsyncSnapshot<QuerySnapshot?> snapshots) {
+                    String nombre1 = "";
+                    String correo1 = "";
+                    String nombre2 = "";
+                    String correo2 = "";
+                    if (snapshots.hasData) {
+                      nombre1 = snapshots.data!.docs[0]['nombre'];
+                      correo1 = snapshots.data!.docs[0]['correo'];
+                      nombre2 = snapshots.data!.docs[1]['nombre'];
+                      correo2 = snapshots.data!.docs[1]['correo'];
+                    }
+                    return Administrativos(
                         nombre1: nombre1,
                         correo1: correo1,
                         nombre2: nombre2,
                         correo2: correo2,
-                        re: re),
-                    Docentes(re: re),
-                    Footer(re: re)
-                  ],
-                )
-              ],
-            );
-          }),
+                        re: re);
+                  }),
+              Docentes(re: re),
+              Footer(re: re)
+            ],
+          )
+        ],
+      ),
     );
   }
 }

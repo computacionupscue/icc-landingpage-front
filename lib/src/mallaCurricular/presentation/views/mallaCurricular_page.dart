@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/mallaCurricular/data/sources/LocalMalla.dart';
 import 'package:landing_page/src/shared/datos_malla.dart';
+import 'package:landing_page/src/shared/datos_malla_mobile.dart';
 import 'package:landing_page/src/shared/home_footer.dart';
 import 'package:landing_page/src/shared/home_menu.dart';
 import 'package:landing_page/src/shared/responsive.dart';
@@ -2874,56 +2875,56 @@ class _MobileModel extends StatelessWidget {
                   // mainAxisAlignment: MainAxisAlignment.center,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n1,
                         boxColor: const Color.fromARGB(255, 0, 78, 161),
                         expanded: false),
                     SizedBox(
                       height: re.hp(5),
                     ),
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n2,
                         boxColor: const Color.fromARGB(255, 0, 78, 161),
                         expanded: false),
                     SizedBox(
                       height: re.hp(5),
                     ),
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n3,
                         boxColor: const Color.fromARGB(255, 0, 78, 161),
                         expanded: false),
                     SizedBox(
                       height: re.hp(5),
                     ),
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n4,
                         boxColor: const Color.fromARGB(255, 0, 78, 161),
                         expanded: false),
                     SizedBox(
                       height: re.hp(5),
                     ),
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n5,
                         boxColor: const Color.fromARGB(255, 161, 0, 0),
                         expanded: false),
                     SizedBox(
                       height: re.hp(5),
                     ),
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n6,
                         boxColor: const Color.fromARGB(255, 161, 0, 0),
                         expanded: false),
                     SizedBox(
                       height: re.hp(5),
                     ),
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n7,
                         boxColor: const Color.fromARGB(255, 161, 0, 0),
                         expanded: false),
                     SizedBox(
                       height: re.hp(5),
                     ),
-                    MyExpansionTileList(
+                    MyExpansionTileListMobile(
                         nivel: n8,
                         boxColor: const Color.fromARGB(255, 161, 0, 0),
                         expanded: false),

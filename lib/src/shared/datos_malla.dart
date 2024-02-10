@@ -86,7 +86,7 @@ class MyExpansionTileList extends StatelessWidget {
                         ),
                       ),
                     ),
-                    height: re.hp(17),
+                    height: re.hp(20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [

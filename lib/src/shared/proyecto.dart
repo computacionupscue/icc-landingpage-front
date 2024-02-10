@@ -3,14 +3,6 @@ import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:landing_page/app/config/theme/app_colors.dart';
 import 'package:landing_page/src/shared/responsive.dart';
 
-final List<String> images = [
-  'assets/images/logos/ups.png',
-  'assets/images/logos/ups-white.png',
-  'assets/images/ups-30a.png',
-  'assets/images/ups-30a-white.png'
-  // ... más rutas de imágenes
-];
-
 class Proyecto extends StatelessWidget {
   final String nombre;
   final String descripcion;
@@ -48,8 +40,6 @@ class Proyecto extends StatelessWidget {
           width: re.hp(90),
           child: Image.network(
             imagen,
-            // width: 100, // Ajusta según tus necesidades
-            // height: 100, // Ajusta según tus necesidades
             fit: BoxFit.cover,
           ),
         ),
